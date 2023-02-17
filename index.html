@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pactel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="shortcut icon" href="logo.jpg" />
   <link href="output.css" rel="stylesheet">
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -59,12 +60,12 @@
   <!--Top-->
   <div class="p-4 flex justify-between items-center font-semibold ">
   <!--left-->
-  <div class="md:flex items-center text-black hover:text-gray-400 font-extrabold">
+  <div class="md:flex items-center text-black  font-extrabold">
     <img src="logo.jpg" width="70" class="mr-4" alt="logo">
-    <a href="" class="inline-block p-3 mr-4 ">Home</a> 
-    <a href="" class="inline-block p-3 mr-4 ">Pricing</a>
+    <a href="" class="inline-block p-3 mr-2 hover:text-gray-400">Home</a> 
+    <a href="" class="inline-block p-3 mr-4 hover:text-gray-400">Pricing</a>
     <a href="mailto:pactelcompeny@gmail.com" class="inline-block mr-4 hover:text-gray-400">Email us</a>
-    <a href="https://wa.me/201004416036" class="px-2">Call Us</a>
+    <a href="https://wa.me/201004416036" class="px-2 hover:text-gray-400">Call Us</a>
   </div>
 
  
@@ -73,7 +74,7 @@
 
   <div class="min-h-screen text-4xl px-10 md:p-20">
   
-  <p class="md:font-semibold text-xl font-sans mb-10 rounded" id="demo"><p class="font-bold text-4xl text-blue-900">Welcome,</p><p style="display: inline;" class="text-4xl text-blue-900">________To Pactel</p></p>
+  <p class="md:font-semibold text-xl font-sans mb-10 rounded" id="demo"><p class="font-bold text-4xl ">Welcome,</p><p style="display: inline;" class="text-4xl text-blue-800">________To Pactel</p></p>
   <br>
 
 <!--main-->
@@ -89,8 +90,8 @@
   <!-- <a href=""class="inline-block py-4 px-4 font-mono bg-gray-400 hover:bg-yellow-400 transition ease-in duration-150">Get started</a> -->
 </div>
 <!--Right-->
-<div class="w-56">
-  <img src="about.jpg" alt="photo" class=" rounded p-4">
+<div class="">
+  <img src="about.jpg" alt="photo" class=" rounded-t-xl p-4 mt-10">
 
 </div>
 </div>
@@ -101,20 +102,20 @@
 <!--content-->
 <h3 class="y-16 px-10 text-4xl mb-4 font-serif font-bold">Our Services</h3>
 <div class="md:flex py-16 px-10 text-center font-sans">
-  <div class="mr-6">
-    <img src="wd.jpg" class=" w-full rounded mr-2 mb-4" width="">
-    <p class="py-0 mb-5 text-center text-xl font-semibold font-mono">Web Design</p>
+  <div class="mr-6 mt-6 ml-6 md:w-">
+    <img src="wd.jpg" class="scale-100 hover:scale-110 ease-in duration-500 w-full rounded mr-2 mb-4" width="">
+    <p class="py-0 mb-10 text-center text-xl font-semibold font-mono">Web Design</p>
   </div>
-  <div class="mr-6">
-    <img src="marketing.jpg" class=" w-full rounded mr-2 mb-4" width="">
-    <p class="py-0 mb-5 text-center text-xl font-semibold font-mono">Digital Marketing</p>
+  <div class="mr-6 w-1/7">
+    <img src="marketing.jpg" class="scale-100 hover:scale-110 ease-in duration-500 w-full rounded mr-2 mb-4" width="">
+    <p class="py-0 mb-10 text-center text-xl font-semibold font-mono">Digital Marketing</p>
   </div>
-  <div class="mr-6">
-    <img src="org.jpg" class=" w-full rounded mr-2 mb-4" width="">
-    <p class="py-0 mb-5 text-center text-xl font-semibold font-mono">Organization</p>
+  <div class="mr-6 mt-6 md:w-">
+    <img src="org.jpg" class="scale-100 hover:scale-110 ease-in duration-500 w-full rounded mr-2 mb-4" width="">
+    <p class="py-0 mb-10 text-center text-xl font-semibold font-mono">Organization</p>
   </div>
-  <div class="mr-6">
-    <img src="design.jpg" class=" w-full rounded mr-2 mb-4" width="">
+  <div class="mr-6 ml-6">
+    <img src="design.jpg" class="scale-100 hover:scale-110 ease-in duration-500 w-full rounded mr-2 mb-4" width="">
     <p class="py-0 mb-5 text-center text-xl font-semibold font-mono">Graphic Design</p>
   </div>
 </div>
@@ -139,10 +140,10 @@
 
   </div>
   <!--Right-->
-  <div class="flex">
+  <div class="flex mr-20">
   
     
-    <a href="" class="px-4 py-4">About us</a></li>
+    <a href="" class="p-4 mt-4">About us</a></li>
     <a href="https://www.linkedin.com/company/pactel/mycompany/" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-linkedin"></i></a>
      <a href="https://www.instagram.com/pact.el/" class="  p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-instagram"></i></a>
      <a href="https://www.facebook.com/Pactel1" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-facebook"></i></a>
@@ -153,14 +154,14 @@
 
   <!-- <div class=" flex "> -->
     
-    <a href="" class=" hover:bg-blue-600 px-2 py-4"></a></li>
+    <button id="totopbutton" onclick="goToTop()" class="fixed z-90 bottom-20 right-8 border-0 w-14 h-14 rounded-full drop-shadow-md bg-gray-800 text-white text-2xl font-semibold">&uarr;</button>
      </div>
 
 <!--bottom info-->
 
 
  
- <div class="text-center justify-items-end p-4 text-gray-200">
+ <div class="text-center justify-items-end p-4 text-gray-400">
        
   &copy; copyrights  Ziad pactel-2023
   <a href="https://github.com/zeiadsalhin"><i class="fa-brands fa fa-xl fa-github-square"></i></a>
@@ -172,9 +173,9 @@
 </div>
 <!--end-->
 <script>
-  function displayDate() {
-    document.getElementById("demo").innerHTML = Date();
-  }
+    function goToTop(){
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
   </script>
 </body>
 </html>
