@@ -19,6 +19,21 @@
       scroll-behavior: smooth;
     }
   </style>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script><script>
+  function goToTop(){
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function about(){
+    document.getElementById('aboutus').scrollIntoView({behavior: 'smooth' });
+  }
+
+
+  $(window).on('load', function(){
+    $('.spin-wrapper').fadeOut('slow');
+  });
+</script>
   
   <!--Notification-->
   <script type="text/javascript">
@@ -189,19 +204,6 @@
 </div>
 </div>
 <!--end-->
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script><script>
-    function goToTop(){
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
 
-    function about(){
-      document.getElementById('aboutus').scrollIntoView({behavior: 'smooth' });
-    }
-
-
-    $(window).on('load', function(){
-      $('.spin-wrapper').fadeOut('slow');
-    });
-  </script>
 </body>
 </html>
