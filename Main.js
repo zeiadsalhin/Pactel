@@ -33,7 +33,3 @@ function reveal() {
     }
   }
 }
-
-$(window).on("load", function () {
-  $(".first").classList.add("active");
-});

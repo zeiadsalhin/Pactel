@@ -248,6 +248,11 @@
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
+
+    $(window).on("load", function () {
+      $(".first").addClass("active");
+    });
+
     function about(){
       document.getElementById('aboutus').scrollIntoView({behavior: 'smooth' });
     }
