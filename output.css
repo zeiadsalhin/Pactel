@@ -176009,3 +176009,14 @@ video {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
+@media (max-width: 767px) {
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .hiddenm {
+    display: none;
+  }
+  }
