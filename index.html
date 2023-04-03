@@ -249,9 +249,10 @@
     }
 
 
-    $(window).on("load", function () {
+    $(window).on("load", function func() {
       $(".first").addClass("active");
     });
+    setTimeout(func, 3000)
 
     function about(){
       document.getElementById('aboutus').scrollIntoView({behavior: 'smooth' });
