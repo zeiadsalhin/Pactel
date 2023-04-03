@@ -35,5 +35,5 @@ function reveal() {
 }
 
 $(window).on("load", function () {
-  $(".first").toggle.classList("active");
+  $(".first").classList.add("active");
 });
