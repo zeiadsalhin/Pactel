@@ -5,6 +5,7 @@ const menu = document.querySelector("#menu"); // Menu
 
 button.addEventListener("click", () => {
   menu.classList.toggle("active");
+  button.classList.toggle('change')
 });
 
 // const button2 = document.querySelector("#slang"); // Hamburger Icon
