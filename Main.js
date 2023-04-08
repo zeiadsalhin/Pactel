@@ -5,7 +5,8 @@ const menu = document.querySelector("#menu"); // Menu
 
 button.addEventListener("click", () => {
   menu.classList.toggle("active");
-  button.classList.toggle('change')
+  button.classList.toggle("change");
+  menu.classList.toggle("height");
 });
 
 // const button2 = document.querySelector("#slang"); // Hamburger Icon
