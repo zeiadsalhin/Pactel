@@ -73,6 +73,15 @@ transform: translate(0, -11px) rotate(45deg);
  a:hover{
   text-decoration: underline;
  }
+
+ .gtt{
+  opacity: 0;
+  transition: 0.5s;
+ }
+ .active{
+  opacity: 1;
+  transition: 0.5s;
+ }
   </style>
   
   <!--Notification-->
@@ -257,7 +266,7 @@ transform: translate(0, -11px) rotate(45deg);
 
   <!-- <div class=" flex "> -->
     
-    <button id="totopbutton" onclick="goToTop()" class="fixed z-90 bottom-20 right-8 border-0 w-14 h-14 rounded-full drop-shadow-md bg-gray-800 text-white text-2xl font-semibold">&uarr;</button>
+    <button id="totopbutton" onclick="goToTop()" class="fixed gtt z-90 bottom-20 right-8 border-0 w-14 h-14 rounded-full drop-shadow-md bg-gray-800 text-white text-2xl font-semibold">&uarr;</button>
      </div>
 
 <!--bottom info-->

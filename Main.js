@@ -35,3 +35,13 @@ function reveal() {
     }
   }
 }
+
+topbutton = document.querySelector("#totopbutton");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 300) {
+    topbutton.classList.add("active");
+  } else {
+    topbutton.classList.remove("active");
+  }
+});
