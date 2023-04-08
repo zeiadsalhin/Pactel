@@ -2,12 +2,10 @@
 
 const button = document.querySelector("#menub"); // Hamburger Icon
 const menu = document.querySelector("#menu"); // Menu
-const dark = document.getElementsByTagName("html");
 
 button.addEventListener("click", () => {
   menu.classList.toggle("active");
   button.classList.toggle('change')
-  dark.classList.add('dark')
 });
 
 // const button2 = document.querySelector("#slang"); // Hamburger Icon
