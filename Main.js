@@ -40,8 +40,8 @@ topbutton = document.querySelector("#totopbutton");
 
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 300) {
-    topbutton.classList.add("active");
+    topbutton.classList.add("activegtt");
   } else {
-    topbutton.classList.remove("active");
+    topbutton.classList.remove("activegtt");
   }
 });
