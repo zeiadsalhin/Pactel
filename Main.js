@@ -36,6 +36,8 @@ function reveal() {
   }
 }
 
+//go to top reveal
+
 topbutton = document.querySelector("#totopbutton");
 
 window.addEventListener("scroll", () => {
