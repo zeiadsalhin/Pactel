@@ -47,3 +47,28 @@ window.addEventListener("scroll", () => {
     topbutton.classList.remove("activegtt");
   }
 });
+
+// image slider
+
+var i = 0;
+var images = [];
+var time = 2000;
+
+images[0] = "/m.jpg";
+images[1] = "/1.jpg";
+images[2] = "/2.jpg";
+images[3] = "/3.jpg";
+
+function imageslider() {
+  document.slide.src = images[i];
+
+  if (i < images.length - 1) {
+    i++;
+  } else {
+    i = 0;
+  }
+
+  setTimeout("imageslider()", time);
+}
+
+window.onload = imageslider;
