@@ -82,6 +82,35 @@ transform: translate(0, -11px) rotate(45deg);
   opacity: 1;
   transition: 0.3s;
  }
+
+ .loader {
+  width: 100%;
+  height: 5px;
+  display: inline-block;
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  width: 5px;
+  height: 4px;
+  background: #0b0b0b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: animFw 5s linear infinite;
+}
+
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
   </style>
   
   <!--Notification-->
@@ -132,7 +161,7 @@ transform: translate(0, -11px) rotate(45deg);
 </head>
 <body>
 
-  <div class="spin-wrapper w-screen h-screen flex justify-center items-center bg-gray-400"><i class="fa-solid fa-spinner animate-spin fa-2xl"></i></div>
+  <div class="loader w-screen h-screen flex justify-center items-center bg-gray-400"></div>
   <!--Top-->
   <div class="hiddenm p-4 flex justify-center items-center font-semibold ">
   <!--left-->
@@ -318,7 +347,7 @@ transform: translate(0, -11px) rotate(45deg);
 
 
     $(window).on('load', function(){
-      $('.spin-wrapper').fadeOut('slow');
+      $('.loader').fadeOut('slow');
     });
   </script>
 </body>
