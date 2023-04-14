@@ -3,11 +3,12 @@
 const button = document.querySelector("#menub"); // Hamburger Icon
 const menu = document.querySelector("#menu"); // Menu
 
-button.addEventListener("click", () => {
+button.addEventListener("click", menuf);
+function menuf() {
   menu.classList.toggle("active");
   button.classList.toggle("change");
   menu.classList.toggle("height");
-});
+}
 
 // const button2 = document.querySelector("#slang"); // Hamburger Icon
 // const menu2 = document.querySelector("#lang"); // Menu
