@@ -86,4 +86,4 @@ function offline() {
   document.querySelector(".status").innerHTML = "website status:  " + "Offline";
 }
 
-document.addEventListener("contextmenu", (event) => event.preventDefault()); //
+document.addEventListener("contextmenu", (event) => event.preventDefault()); 
