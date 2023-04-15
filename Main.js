@@ -70,10 +70,10 @@ function imageslider() {
   }
 
   setTimeout("imageslider()", time);
-}*/
+}
 
 window.onload = imageslider;
-
+*/
 // website status
 
 document.querySelector(".status").innerHTML = "website status:  " + "Online";
