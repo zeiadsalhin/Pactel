@@ -50,7 +50,7 @@ window.addEventListener("scroll", () => {
 });
 
 // image slider
-
+/*
 var i = 0;
 var images = [];
 var time = 2000;
@@ -70,7 +70,7 @@ function imageslider() {
   }
 
   setTimeout("imageslider()", time);
-}
+}*/
 
 window.onload = imageslider;
 
