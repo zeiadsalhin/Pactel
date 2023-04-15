@@ -73,3 +73,13 @@ function imageslider() {
 }
 
 window.onload = imageslider;
+
+// server status
+
+function online() {
+  document.querySelector(".status").innerHTML = "Online";
+}
+
+function offline() {
+  document.querySelector(".status").innerHTML = "Offline";
+}
