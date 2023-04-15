@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="dark">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <link rel="stylesheet" href="./css/fontawesome/css/all.css">
+  <link rel="stylesheet" href="toggle-switchy.css">
   <link rel="stylesheet" href="output.css">
   <link rel="stylesheet" href="izmir.css">
   <style>
@@ -137,6 +138,7 @@ transform: translate(0, -11px) rotate(45deg);
 <body ononline="online()" onoffline="offline()">
 
   <div class="spin-wrapper w-screen h-screen flex justify-center items-center bg-gray-400"><i class="fa-solid fa-spinner animate-spin fa-2xl"></i></div>
+  <!-- <div id="darkmode" class="darkmode"> -->
   <!--Top-->
   <div class="hiddenm dark:bg-gray-700 dark:text-gray-200 shadow-sm p-4 flex justify-center items-center font-semibold ">
   <!--left-->
@@ -146,7 +148,14 @@ transform: translate(0, -11px) rotate(45deg);
     <p  class="inline-block p-3 md:mr-4 hover:text-gray-400">Pricing</p>
     <!-- <a href="mailto:pactelcompeny@gmail.com" class="inline-block mr-4 hover:text-gray-400">Email us</a> -->
     <a href="https://wa.me/201004416036" target="_blank" class="px-2 md:mr-4 hover:text-gray-400">Call Us</a>
-    <button onclick="about()" class="px-2 font-semibold hover:text-gray-400"><a>About US</a></button>
+    <button onclick="about()" class="px-2 mr-20 font-semibold hover:text-gray-400"><a>About US</a></button>
+    
+    <!-- <label for="tg" class="toggle-switchy"  data-label="left" data-size="sm" data-style="rounded">
+      <input  checked type="checkbox" id="tg">
+      <span class="toggle">
+        <span class="switch"></span>
+      </span>
+    </label> -->
   </div>
   </div>
 
@@ -156,7 +165,7 @@ transform: translate(0, -11px) rotate(45deg);
     <div class="flex justify-between">
       <img src="logo.webp" width="60" class="justify-between" alt="logo">
       <!--<button id="menub" class=" md:hidden justify-between "><img src="https://cdn4.iconfinder.com/data/icons/fluent-outline-20px-vol-4/20/ic_fluent_line_horizontal_3_20_regular-256.png" width="50"></button>-->
-        <button  id="menub" class="md:hidden justify-between">
+      <button  id="menub" class="md:hidden justify-between">
       <div class="container">
       <div class="bar1"><hr class="border-2 bg-black border-black"></div>
       <div class="bar2"><hr class="border-2 bg-black border-black"></div>
@@ -351,6 +360,7 @@ transform: translate(0, -11px) rotate(45deg);
   <a href=""><a href=""><i class="fa-brands fa fa-xl fa-facebook"></i></a>
   
   
+</div>
 </div>
 </div>
 <!--end-->

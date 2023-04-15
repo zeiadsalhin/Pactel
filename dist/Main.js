@@ -86,4 +86,13 @@ function offline() {
   document.querySelector(".status").innerHTML = "website status:  " + "Offline";
 }
 
-document.addEventListener("contextmenu", (event) => event.preventDefault()); 
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+//dark mode
+
+const darklightbutton = document.querySelector("#tg"); // Hamburger Icon
+const darklighttoggle = document.querySelector("#darkmode"); // Menu
+
+darklightbutton.addEventListener("click", () => {
+  darklighttoggle.classList.toggle("dark");
+});
