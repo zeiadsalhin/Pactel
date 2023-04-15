@@ -1,15 +1,15 @@
 {
-  "name": "tailwind",
+  "name": "tailwindinstall",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "tailwindcss": "^3.3.1"
   }
 }
