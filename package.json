@@ -9,7 +9,9 @@
   "author": "Ziad",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.2.4"
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0"
