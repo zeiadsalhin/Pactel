@@ -74,14 +74,14 @@ function imageslider() {
 
 window.onload = imageslider;
 
-// server status
+// website status
 
-document.querySelector(".status").innerHTML = "Online";
+document.querySelector(".status").innerHTML = "website status:  " + "Online";
 
 function online() {
-  document.querySelector(".status").innerHTML = "Online";
+  document.querySelector(".status").innerHTML = "website status:  " + "Online";
 }
 
 function offline() {
-  document.querySelector(".status").innerHTML = "Offline";
+  document.querySelector(".status").innerHTML = "website status:  " + "Offline";
 }
