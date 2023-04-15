@@ -76,6 +76,8 @@ window.onload = imageslider;
 
 // server status
 
+document.querySelector(".status").innerHTML = "Online";
+
 function online() {
   document.querySelector(".status").innerHTML = "Online";
 }
