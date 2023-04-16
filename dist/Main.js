@@ -87,3 +87,17 @@ function offline() {
 }
 
 document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+//dark mode
+
+const darklightbutton = document.querySelector("#tg"); // Hamburger Icon
+const darklightbuttonm = document.querySelector("#tg1");
+const darklighttoggle = document.querySelector("#darkmode"); // Menu
+
+darklightbutton.addEventListener("click", () => {
+  darklighttoggle.classList.toggle("dark");
+});
+
+darklightbuttonm.addEventListener("click", () => {
+  darklighttoggle.classList.toggle("dark");
+});
