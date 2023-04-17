@@ -36,6 +36,21 @@
   height: 40vh;
   transition: 0.5s;
 }
+
+.menudiv {
+  height: 0;
+  width: 100%;
+  position: relative;
+  /* z-index: 1; */
+  /* background-color: gray; */
+  overflow-y: hidden;
+  transition: 1s;
+  text-align: center;
+}
+.heightdiv{
+  height: auto;
+  transition: 1s;
+}
  
  /* .active{
   position: relative;
@@ -273,8 +288,74 @@ transform: translate(0, -11px) rotate(45deg);
 </div>  
 
 <br>
+
+<div class="p-1 mb-20 bg-gray-200 dark:text-gray-200 dark:bg-gray-500">
+ <div class="border-2 border-gray-400"><p class="text-4xl text-bold lg:text-3xl text-center font-semibold p-10 ">Our work - أعمالنا</p></div>
+  <div class="md:flex md:space-x-2 space-y-2 p-2">
+    <img src="assets/work/0/twitch 1.webp" width="490" alt="">
+    <img src="assets/work/0/twitch 2.webp" width="490" alt="">
+    <img src="assets/work/0/twitch 3.webp" width="490" alt="">
+  </div>
+  <hr class="mx-auto border-gray-400 w-40 mt-10">
+  <div class="md:flex mt-10 md:space-x-2 space-y-2 p-2">
+    <img src="assets/work/1/samir.gfx-20220918-0071.webp" width="490" alt="">
+    <img src="assets/work/1/samir.gfx-20220918-0072.webp" width="490" alt="">
+    <img src="assets/work/1/samir.gfx-20220918-0073.webp" width="490" alt="">
+    </div>
+    <hr class="mx-auto border-gray-400 w-40 mt-10">
+    <div id="tran" class="tran md:flex mt-10 md:space-x-2 space-y-2 p-2">
+    <img src="assets/work/1/samir.gfx-20220918-0074.webp" width="490" alt="">
+    <img src="assets/work/1/samir.gfx-20220918-0075.webp" width="490" alt="">
+    <img src="assets/work/1/samir.gfx-20220918-0076.webp" width="490" alt="">
+    </div>
+<button id="showmoreb" class="showmoreb flex justify center text-2xl font-semibold mx-auto p-4 bg-gray-400 text-gray-800">Show more</button>
+    <!--show more-->
+    <div id="showmoreclass" class="showmoreclass menudiv">
+    <div class="md:flex mt-10 md:space-x-2 space-y-2 p-2">
+      <img src="assets/work/2/samir.gfx-20220918-0065.webp" width="490" alt="">
+      <img src="assets/work/2/samir.gfx-20220918-0066.webp" width="490" alt="">
+      <img src="assets/work/2/samir.gfx-20220918-0067.webp" width="490" alt="">
+    </div>
+    <hr class="mx-auto border-gray-400 w-40 mt-10">
+    <div class="md:flex mt-10 md:space-x-2 space-y-2 p-2">
+      <img src="assets/work/2/samir.gfx-20220918-0068.webp" width="490" alt="">
+      <img src="assets/work/2/samir.gfx-20220918-0069.webp" width="490" alt="">
+      <img src="assets/work/2/samir.gfx-20220918-0070.webp" width="490" alt="">
+    </div>
+    <hr class="mx-auto border-gray-400 w-40 mt-10">
+    <div class="md:flex flex-col justify-around mx-auto mt-10 md:space-x-2 space-y-2 p-2">
+       <img src="assets/work/3/IMG-20220915-WA0006.webp" width="auto" alt="">
+       <img src="assets/work/3/IMG-20220915-WA0007.webp" width="auto" alt="">
+       <img src="assets/work/3/IMG-20220915-WA0010.webp" width="auto" alt="">
+       <img src="assets/work/3/IMG-20220915-WA0019.webp" width="auto" alt="">
+       <img src="assets/work/3/IMG-20220915-WA0029.webp" width="auto" alt="">
+
+      </div>
+      <hr class="mx-auto border-gray-400 w-40 mt-10">
+    <div class="md:flex flex-col mt-10 md:space-x-2 space-y-2 p-2">
+      <img src="assets/work/3/IMG-20220915-WA0016.webp" width="auto" alt="">
+      <img src="assets/work/3/IMG-20220915-WA0023.webp" width="auto" alt="">
+      <img src="assets/work/3/IMG-20220915-WA0027.webp" width="auto" alt="">
+      <img src="assets/work/3/IMG-20220915-WA0028.webp" width="auto" alt="">
+      <img src="assets/work/3/png_20220918_022634.webp" width="auto" alt="">
+
+    </div>
+    <hr class="mx-auto border-gray-400 w-40 mt-10">
+    <div class="md:flex mt-10 md:space-x-2 space-y-2 p-2">
+      <img src="assets/work/4/samir.gfx-20220918-0013.webp" width="490" alt="">
+      <img src="assets/work/4/samir.gfx-20220918-0014.webp" width="490" alt="">
+      <img src="assets/work/4/samir.gfx-20220918-0015.webp" width="490" alt="">
+    </div>
+    <hr class="mx-auto border-gray-400 w-40 mt-10">
+    <div class="md:flex mt-10 md:space-x-2 space-y-2 p-2">
+      <img src="assets/work/4/samir.gfx-20220918-0016.webp" width="490" alt="">
+      <img src="assets/work/4/samir.gfx-20220918-0017.webp" width="490" alt="">
+    </div>
+    <button onclick="sc()" id="hidemoreb" class="hidemoreb flex justify center text-2xl font-semibold mx-auto p-4 bg-gray-400">Hide</button>
+
+    </div>
 <!--content-->
-<h3 class="y-16 px-10 text-4xl mb-4 font-serif font-bold reveal">Our Services</h3>
+<h3 class="y-16 px-10 text-4xl mt-10 mb-4 font-serif font-bold reveal">Our Services</h3>
 <div class="md:flex py-10 px-10 text-center font-sans reveal" >
   <div class="mr-6 mt-6 ml-6 md:w- c4-izmir c4-image-zoom-in">
     <img src="wd.webp" class="transform scale-100 hover:scale-110 ease-in duration-500 w-full rounded  p-10 " width="" alt="pic1">

@@ -101,3 +101,26 @@ darklightbutton.addEventListener("click", () => {
 darklightbuttonm.addEventListener("click", () => {
   darklighttoggle.classList.toggle("dark");
 });
+
+// show more
+
+const showmoreb = document.querySelector("#showmoreb");
+const hidemoreb = document.querySelector("#hidemoreb");
+const showmore = document.querySelector("#showmoreclass");
+const tr = document.querySelector("#tran");
+
+showmoreb.addEventListener("click", () => {
+  showmore.classList.toggle("active");
+  showmore.classList.toggle("heightdiv");
+  showmoreb.classList.toggle("hidden");
+});
+
+hidemoreb.addEventListener("click", () => {
+  showmore.classList.toggle("active");
+  showmore.classList.toggle("heightdiv");
+  showmoreb.classList.toggle("hidden");
+});
+
+function sc() {
+  tr.scrollIntoView();
+}
