@@ -133,3 +133,11 @@ function ourwork() {
   menu.classList.toggle("height");
   ourworks.scrollIntoView();
 }
+
+// load
+
+loader = document.querySelector(".spin-wrapper");
+
+window.addEventListener("load", () => {
+  loader.classList.toggle("loader");
+});
