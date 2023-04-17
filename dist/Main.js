@@ -136,8 +136,8 @@ function ourwork() {
 
 // load
 
-loader = document.querySelector(".spin-wrapper");
+// loader = document.querySelector(".spin-wrapper");
 
-window.addEventListener("load", () => {
-  loader.classList.toggle("loader");
-});
+// window.addEventListener("load", () => {
+//   loader.classList.toggle("loader");
+// });
