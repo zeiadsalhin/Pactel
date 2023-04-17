@@ -124,3 +124,12 @@ hidemoreb.addEventListener("click", () => {
 function sc() {
   tr.scrollIntoView();
 }
+
+// our work
+
+const ourworks = document.querySelector("#ourwork");
+
+function ourwork() {
+  menu.classList.toggle("height");
+  ourworks.scrollIntoView();
+}
