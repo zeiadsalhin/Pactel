@@ -95,12 +95,29 @@ const darklightbuttonm = document.querySelector("#tg1");
 const darklighttoggle = document.querySelector("#darkmode"); // Menu
 
 darklightbutton.addEventListener("click", () => {
-  darklighttoggle.classList.toggle("dark");
+  // window.localStorage.setItem("theme", "dark");
+
+  if (localStorage.getItem("theme") === "dark") {
+    darklighttoggle.classList.toggle("dark");
+    window.localStorage.setItem("theme", "light");
+  } else {
+    darklighttoggle.classList.toggle("dark");
+    window.localStorage.setItem("theme", "dark");
+  }
 });
 
 darklightbuttonm.addEventListener("click", () => {
-  darklighttoggle.classList.toggle("dark");
+  // window.localStorage.setItem("theme", "dark");
+
+  if (localStorage.getItem("theme") === "dark") {
+    darklighttoggle.classList.toggle("dark");
+    window.localStorage.setItem("theme", "light");
+  } else {
+    darklighttoggle.classList.toggle("dark");
+    window.localStorage.setItem("theme", "dark");
+  }
 });
+darklighttoggle.classList.add(window.localStorage.getItem("theme"));
 
 // show more
 
