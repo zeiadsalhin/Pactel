@@ -21,6 +21,22 @@
       scroll-behavior: smooth;
     }
 
+    @font-face {
+  font-family: redhat;
+  src: url(fonts/RedHatDisplay-SemiBold.ttf);
+  
+ }
+ @font-face{
+  font-family: arabic;
+  src: url(fonts/NotoKufiArabic-Regular.ttf);
+ }
+ *{
+  font-family: redhat;
+ }
+ 
+ .arabic{
+  font-family: arabic;
+ }
 
 /* .spin-wrapper{
   position: absolute;
@@ -175,7 +191,7 @@ transform: translate(0, -11px) rotate(45deg);
   <div class="spin-wrapper w-screen h-screen flex justify-center items-center bg-gray-400"><i class="fa-solid fa-spinner animate-spin fa-2xl"></i></div>
   <div id="darkmode" class="darkmode">
   <!--Top-->
-  <div class="hiddenm dark:bg-gray-700 dark:text-gray-200 shadow-sm p-4 flex justify-center items-center font-semibold ">
+  <div class="hiddenm dark:bg-gray-700 dark:text-gray-200 shadow-sm p-4 flex justify-center items-center text-lg font-semibold ">
   <!--left-->
   <div class="md:flex items-center dark:text-gray-200 text-black sansmed  font-extrabold">
     <img src="logo.webp" width="70" height="70" class="mr-4 " alt="logo">
@@ -260,7 +276,7 @@ transform: translate(0, -11px) rotate(45deg);
 
 
 <div class="dark:bg-gray-600 dark:text-gray-200 mb-10 text-xl md:py-20 py-10 px-5 bg-gray-200 shadow-2xl ">
-  <h2 class="font-bold text-3xl font-sans underline-offset-auto underline mb-10 rounded">Meet our team</h2>
+  <h2 class="font-bold text-3xl underline-offset-4 hover:underline transform translate-y-8 mb-10 rounded">Meet our team</h2>
   <div class="md:flex shadow-xl justify-center">
     <div class="flex-col p-4">
       <img class="rounded-2xl" src="yaserr.webp" width="500" height="500" alt="foundericon">
@@ -291,8 +307,8 @@ transform: translate(0, -11px) rotate(45deg);
   <h2 class="md:text-4xl text-bold lg:text-5xl font-sans mb-10 rounded">About Us</h2>
   <p class="flex">In the past period, Pactel Marketing and Graphic Design was one of the leading companies in the field, and despite our success with many customers in Egypt and outside Egypt, we decided to expand with new services that we offer to become Pactel solutions for other companies, whether new in the market or existing ones. We used to provide two services now that we have become We offer 7 services, we know the size of the risk, but we trust our employees and customers, so here are our new services (marketing - graphic design - programming - organization - translation and proofreading - photography) Bechtel will not only provide services to companies, but also to people. Our business in it is not just a company that provides its services, but partners in success with our customers. __,</p>
   <br>
-  <h2 class="md:text-4xl text-bold lg:text-5xl text-right font-sans mb-10 rounded">من نحن؟</h2>
-  <p class="text-right">في الفترة الماضية كانت شركة بكتل للتسويق والتصميم الجرافيكي احدى الشركات الرائدة في المجال وعلى الرغم من نجاحنا مع العديد من العملاء في مصر وخارج مصر الا اننا قررنا التوسع بخدمات جديدة نقدمها لتصبح بكتل حلول للشركات الأخرى سواء الجديدة في السوق او الموجودة حاليا كنا نقدم خدمتين الان اصبحنا نقدم 7 خدمات نعلم حجم المخاطرة ولكننا نثق في موظفينا وعملاؤنا ولذلك ها هي خدماتنا الجديدة (التسويق – التصميم الجرافيكي – البرمجة – التنظيم – الترجمة والتدقيق اللغوي – التصوير) شركة بكتل لن تقتصر فقط على تقديم الخدمات للشركات انما للأشخاص أيضا انتظرو الإعلان عن خدماتنا مع سابقة اعمالنا بها لسنا مجرد شركة تقدم خدماتها انما شركاء النجاح مع عملاءونا.</p>
+  <h2 class="md:text-4xl text-bold lg:text-5xl text-right font-sans mb-10 rounded arabic">من نحن؟</h2>
+  <p class="text-right arabic">في الفترة الماضية كانت شركة بكتل للتسويق والتصميم الجرافيكي احدى الشركات الرائدة في المجال وعلى الرغم من نجاحنا مع العديد من العملاء في مصر وخارج مصر الا اننا قررنا التوسع بخدمات جديدة نقدمها لتصبح بكتل حلول للشركات الأخرى سواء الجديدة في السوق او الموجودة حاليا كنا نقدم خدمتين الان اصبحنا نقدم 7 خدمات نعلم حجم المخاطرة ولكننا نثق في موظفينا وعملاؤنا ولذلك ها هي خدماتنا الجديدة (التسويق – التصميم الجرافيكي – البرمجة – التنظيم – الترجمة والتدقيق اللغوي – التصوير) شركة بكتل لن تقتصر فقط على تقديم الخدمات للشركات انما للأشخاص أيضا انتظرو الإعلان عن خدماتنا مع سابقة اعمالنا بها لسنا مجرد شركة تقدم خدماتها انما شركاء النجاح مع عملاءونا.</p>
   <a href="" class=" inline-block py-4 px-4 text-lg ">Learn more</a>
   <!--founder info-->
   <hr class="border-gray-400 mt-4">
@@ -317,7 +333,9 @@ transform: translate(0, -11px) rotate(45deg);
 <br>
 
 <div class="p-1 mb-20 bg-gray-200 dark:text-gray-200 dark:bg-gray-500">
- <div class="ourwork border-2 border-gray-400"><p class="text-4xl text-bold lg:text-3xl text-center font-semibold p-10 ">Our work - أعمالنا</p></div>
+ <div class="ourwork flex justify-center border-2 border-gray-400">
+  <p class="text-4xl text-bold lg:text-3xl text-center font-semibold py-10 ">Our work - <p class="text-4xl text-bold lg:text-3xl text-center font-semibold px-2 py-10 arabic">أعمالنا</p>
+</div>
   <div class="md:flex md:space-x-2 space-y-2 p-2">
     <img src="assets/work/0/twitch 1.webp" width="740" height="740" alt="">
     <img src="assets/work/0/twitch 2.webp" width="740" height="740" alt="">
