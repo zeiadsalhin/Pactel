@@ -20,6 +20,9 @@
     html {
       scroll-behavior: smooth;
     }
+.body-scroll{
+overflow: hidden;
+}
 
 /* .spin-wrapper{
   position: absolute;
@@ -121,9 +124,6 @@ transform: translate(0, -11px) rotate(45deg);
   -webkit-user-drag: none;
  }
 
-body{
-    overflow: hidden;
-}
   </style>
   
   <!--Notification-->
@@ -172,7 +172,7 @@ body{
 </script>
 <!-- /Sendinblue Conversations {/literal} -->
 </head>
-<body ononline="online()" onoffline="offline()">
+<body class"body-scroll" ononline="online()" onoffline="offline()">
 
   <div class="spin-wrapper w-screen h-screen flex justify-center items-center bg-gray-400"><i class="fa-solid fa-spinner animate-spin fa-2xl"></i></div>
   <div id="darkmode" class="darkmode">
@@ -548,6 +548,7 @@ body{
 
     $(window).on('load', function(){
       $('.spin-wrapper').fadeOut('slow');
+      $('body').removeClass("body-scroll")
     });
   </script>
 </body>
