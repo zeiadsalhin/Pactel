@@ -167,9 +167,18 @@ function ourwork() {
 
 // store
 function soon() {
-  document.getElementById("soon").innerHTML = "Coming Soon";
-  document.getElementById("soon").classList.remove("transform");
-  document.getElementById("soon").classList.remove("hover:scale-125");
+  comingsoon = document.querySelector(".soon");
+
+  comingsoon.innerHTML = "Coming Soon";
+  comingsoon.classList.remove("transform");
+  comingsoon.classList.remove("hover:scale-125");
+}
+function soon1() {
+  comingsoon1 = document.querySelector(".soon1");
+
+  comingsoon1.innerHTML = "Coming Soon";
+  comingsoon1.classList.remove("transform");
+  comingsoon1.classList.remove("hover:scale-125");
 }
 
 //menu exit
