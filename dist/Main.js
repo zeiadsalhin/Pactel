@@ -158,3 +158,10 @@ function ourwork() {
 // window.addEventListener("load", () => {
 //   loader.classList.toggle("loader");
 // });
+
+// store
+function soon() {
+  document.getElementById("soon").innerHTML = "Coming Soon";
+  document.getElementById("soon").classList.remove("transform");
+  document.getElementById("soon").classList.remove("hover:scale-125");
+}
