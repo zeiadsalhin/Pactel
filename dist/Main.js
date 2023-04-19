@@ -8,6 +8,12 @@ function menuf() {
   menu.classList.toggle("active");
   button.classList.toggle("change");
   menu.classList.toggle("height");
+
+  if (menu.classList.contains("active")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "visible";
+  }
 }
 
 // const button2 = document.querySelector("#slang"); // Hamburger Icon
@@ -165,3 +171,13 @@ function soon() {
   document.getElementById("soon").classList.remove("transform");
   document.getElementById("soon").classList.remove("hover:scale-125");
 }
+
+//menu exit
+
+document.addEventListener("click", function () {
+  menuf();
+});
+
+document.querySelector("nav").addEventListener("click", function (event) {
+  event.stopPropagation();
+});

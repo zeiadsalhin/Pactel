@@ -20,9 +20,7 @@
     html {
       scroll-behavior: smooth;
     }
-body{
-overflow: hidden;
-}
+
 
 /* .spin-wrapper{
   position: absolute;
@@ -172,7 +170,7 @@ transform: translate(0, -11px) rotate(45deg);
 </script>
 <!-- /Sendinblue Conversations {/literal} -->
 </head>
-<body ononline="online()" onoffline="offline()">
+<body style="overflow: hidden;" ononline="online()" onoffline="offline()">
 
   <div class="spin-wrapper w-screen h-screen flex justify-center items-center bg-gray-400"><i class="fa-solid fa-spinner animate-spin fa-2xl"></i></div>
   <div id="darkmode" class="darkmode">
@@ -187,17 +185,17 @@ transform: translate(0, -11px) rotate(45deg);
     <a href="https://wa.me/201004416036" target="_blank" class="px-2 md:mr-4 hover:text-gray-400">Call Us</a>
     <button onclick="about()" class="px-2 font-semibold hover:text-gray-400"><a>About US</a></button>
   </div>
-  
+  <div class="flex m-10">
    <label for="tg" class="toggle-switchy"  data-label="left" data-size="sm" data-style="rounded">
       <input  checked type="checkbox" id="tg">
       <span class="toggle">
         <span class="switch"></span>
       </span>
-    </label> 
+    </label> </div>
 </div>
 
   <!--mob-->
-  <nav class="dark:bg-gray-500 dark:text-gray-200 md:hidden shadow-md sticky top-0 z-10 bg-white p-4 justify-between font-semibold ">
+  <nav class="nav dark:bg-gray-500 dark:text-gray-200 md:hidden shadow-md sticky top-0 z-10 bg-white p-4 justify-between font-semibold ">
  
     <div class="flex justify-between">
       <img src="logo.webp" width="60" class="justify-between" alt="logo">
@@ -220,11 +218,11 @@ transform: translate(0, -11px) rotate(45deg);
       </label> 
     </div>
     <div class=" flex justify-center p-1">
-        <div class="menu dark:bg-gray-500 dark:text-gray-300 transition ease-in duration-500  mt-2 px-4 bg-gray-200 " id="menu">
+        <div class="menu dark:bg-gray-600 dark:text-gray-300 transition ease-in duration-500  mt-2 px-4 bg-gray-200 " id="menu">
           <!-- <i id="exit" class="p-2 fa-solid fa-x fa-lg"></i> -->
           <a onclick="menuf()" href="#" class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a>
           <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
-          <p onclick="menuf()" class="inline-block ml-2  hover:bg-gray-400 p-2  hover:text-white">pricing</p><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <p id="soon" onclick="soon()" class="inline-block ml-2  hover:bg-gray-400 p-2  hover:text-white">pricing</p><i class="fa-solid fa-arrow-up-right-from-square"></i>
           <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
           <a href="https://wa.me/201004416036" class="block mr-2 hover:bg-gray-400 p-2"  id="slang">Call us</a>
           <hr class="border-1 rounded border-gray-400 m-2 opacity-50">  
@@ -548,7 +546,7 @@ transform: translate(0, -11px) rotate(45deg);
 
     $(window).on('load', function(){
       $('.spin-wrapper').fadeOut('slow');
-      
+      $('body').removeAttr('style')
     });
   </script>
 </body>

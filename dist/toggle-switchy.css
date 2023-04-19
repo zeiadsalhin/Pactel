@@ -16,10 +16,10 @@ Releases:	https://github.com/adamculpepper/toggle-switchy/releases
   color: #d8d8d8;
 }
 .toggle-switchy > input + .toggle:before {
-  content: "Light";
+  content: "Dark";
 }
 .toggle-switchy > input + .toggle:after {
-  content: "Dark";
+  content: "Light";
 }
 .toggle-switchy > input + .toggle > .switch {
   background: #ffffff;
@@ -97,7 +97,7 @@ CORE STYLES BELOW - NO TOUCHY
   position: absolute;
   right: 0;
   z-index: 3;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 /* Labels */
@@ -113,7 +113,7 @@ CORE STYLES BELOW - NO TOUCHY
   right: 55%;
 }
 .toggle-switchy > input + .toggle:after {
-  left: 50%;
+  left: 85%;
 }
 .toggle-switchy > input + .toggle + .label {
   margin-left: 10px;
@@ -124,7 +124,7 @@ CORE STYLES BELOW - NO TOUCHY
 .toggle-switchy[data-label="left"] > input + .toggle + .label {
   order: 1;
   margin-left: 0;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 /* Show / Hide */
