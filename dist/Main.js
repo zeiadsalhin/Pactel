@@ -175,7 +175,10 @@ function soon() {
 //menu exit
 
 document.addEventListener("click", function () {
-  menuf();
+  menu.classList.remove("active");
+  button.classList.remove("change");
+  menu.classList.remove("height");
+  document.body.style.overflow = "visible";
 });
 
 document.querySelector("nav").addEventListener("click", function (event) {
