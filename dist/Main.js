@@ -33,12 +33,12 @@ function reveal() {
   for (var i = 0; i < revealitems.length; i++) {
     var windowheight = window.innerHeight;
     var revealtop = revealitems[i].getBoundingClientRect().top;
-    var revealpoint = 100;
+    var revealpoint = 150;
 
     if (revealtop < windowheight - revealpoint) {
       revealitems[i].classList.add("active");
     } else {
-      revealitems[i].classList.remove("active");
+      // revealitems[i].classList.remove("active");
     }
   }
 }
