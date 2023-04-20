@@ -153,7 +153,7 @@ function sc() {
 const ourworks = document.querySelector("#ourwork");
 
 function ourwork() {
-  menu.classList.toggle("height");
+  // menu.classList.toggle("height");
   ourworks.scrollIntoView();
 }
 
