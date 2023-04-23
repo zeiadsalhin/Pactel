@@ -193,3 +193,18 @@ document.addEventListener("click", function () {
 document.querySelector("nav").addEventListener("click", function (event) {
   event.stopPropagation();
 });
+
+// progress bar
+
+window.addEventListener("scroll", () => {
+  const distanceFromPageTop =
+    document.body.scrollTop || document.documentElement.scrollTop;
+
+  const height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const scrolled = (distanceFromPageTop / height) * 100;
+
+  document.querySelector("#progress").style.width = `${scrolled}%`;
+});
