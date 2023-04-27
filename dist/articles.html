@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Articles</title>
+    <link rel="shortcut icon" href="logo.webp" />
+    <link rel="stylesheet" href="./css/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="toggle-switchy.css" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="izmir.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @font-face {
+        font-family: redhat;
+        src: url(fonts/RedHatDisplay-SemiBold.ttf);
+      }
+      @font-face {
+        font-family: arabic;
+        src: url(fonts/NotoKufiArabic-Regular.ttf);
+      }
+      * {
+        font-family: redhat;
+      }
+
+      .arabic {
+        font-family: arabic;
+      }
+
+      .menu {
+        top: 0;
+        height: 0;
+        width: 100%;
+        position: fixed;
+        z-index: 10;
+        /* background-color: gray; */
+        overflow-y: hidden;
+        transition: 0.5s;
+        text-align: center;
+      }
+      .height {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        transition: 0.5s;
+      }
+
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 35px;
+        height: 4px;
+        background-color: #0c0c0c;
+        margin: 7px 10px;
+        transition: 0s;
+      }
+      .change .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+      }
+      .change .bar2 {
+        opacity: 0;
+      }
+      .change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!--loader-->
+
+    <!---->
+    <div id="darkmode" class="darkmode">
+
+    <!--header-->
+    <!--Top-->
+    <div
+      class="dark:bg-gray-700 dark:text-gray-200 shadow-sm p- flex justify-center items-center text-lg font-semibold"
+    >
+      <!--left-->
+      <div
+        class="flex justify-start p-4 dark:text-gray-200 text-black sansmed font-extrabold"
+      >
+        <a href="index.html"
+          ><img src="logo.webp" width="70" height="70" class="mr-4" alt="logo"
+        /></a>
+      </div>
+      <div class="flex justify-center mr-5">
+        <p>Aritcles</p>
+      </div>
+      <div class="flex justify-center">
+        <!-- <button id="menub" class=" md:hidden justify-between "><img src="https://cdn4.iconfinder.com/data/icons/fluent-outline-20px-vol-4/20/ic_fluent_line_horizontal_3_20_regular-256.png" width="50"></button> -->
+        <button id="menub" class="flex justify-end">
+          <div class="container">
+            <div class="bar1">
+              <hr class="border-2 bg-black border-black" />
+            </div>
+            <div class="bar2">
+              <hr class="border-2 bg-black border-black" />
+            </div>
+            <div class="bar3">
+              <hr class="border-2 bg-black border-black" />
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="flex justify-end ml-20 w-2">
+        <label
+          for="tg11"
+          class="toggle-switchy"
+          data-label="left"
+          data-size="sm"
+          data-style="rounded"
+        >
+          <input checked type="checkbox" id="tg11" />
+          <span class="toggle">
+            <span class="switch"></span>
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="flex justify-center dark:bg-gray-700 dark:text-gray-200 p-1">
+      <div
+        class="menu dark:bg-gray-600 dark:text-gray-300 transition ease-in duration-500 mt-2 px-4 bg-gray-200"
+        id="menu"
+      >
+        <!-- <i id="exit" class="p-2 fa-solid fa-x fa-lg"></i> -->
+        <a
+          onclick="menuf()"
+          href="index.html"
+          class="block mr-2 mt-4 hover:bg-gray-400 p-2"
+          >Home</a
+        >
+        <hr class="border-1 rounded border-gray-400 m-2 opacity-50" />
+        <a
+          href="https://wa.me/201154185848"
+          class="block mr-2 hover:bg-gray-400 p-2"
+          id="slang"
+          >Call us</a
+        >
+        <hr class="border-1 rounded border-gray-400 m-2 opacity-50" />
+        <div class="hidden transition ease-in-out duration-200" id="lang">
+          <a href="" class="inline-block mr-2 hover:bg-gray-400 px-4 py-2 lang"
+            >عربي</a
+          >
+        </div>
+
+        <a class="block hover:bg-gray-400 p-2">Articles</a>
+        <hr class="border-1 rounded border-gray-400 m-2 opacity-50" />
+        <a
+          href="index.html"
+          onclick="menuf()"
+          id="menub"
+          class="block hover:bg-blue-500 p-2 my-10"
+          >About Us</a
+        >
+        <hr class="border-1 rounded border-gray-400 m-2 opacity-50 my-10" />
+        <button
+          onclick="menuf()"
+          id="menub"
+          class="block hover:bg-gray-400 p-2 mx-auto mt-10"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!--Articles-->
+    <div class="dark:bg-gray-600">
+    <div id="parm" class="flex justify-start p-4">Articles</div>
+
+   
+
+    <!--footer-->
+<div class="bg-black">sda</div>
+    <!-- <script src="Main.js"></script> -->
+    <script src="postsm.js"></script>
+  </body>
+</html>
