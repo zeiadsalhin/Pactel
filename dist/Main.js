@@ -208,3 +208,7 @@ window.addEventListener("scroll", () => {
 
   document.querySelector("#progress").style.width = `${scrolled}%`;
 });
+
+// copy
+date = new Date();
+document.getElementById("copyrights").innerText = date.getFullYear();
