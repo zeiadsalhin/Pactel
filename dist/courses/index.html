@@ -4,14 +4,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test-Course</title>
+    <title>Courses</title>
+    <link rel="shortcut icon" href="https://pactel.netlify.app/logo.webp" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="toggle-switchy.css">
+    <link rel="stylesheet" href="output.css">
 </head>
+<style>
+    @font-face {
+        font-family: redhat;
+        src: url(fonts/RedHatDisplay-SemiBold.ttf);
+
+    }
+
+    * {
+        font-family: redhat;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .menu {
+        height: 0;
+        width: 50vh;
+        position: relative;
+        z-index: 1;
+        /* background-color: gray; */
+        overflow-y: hidden;
+        transition: 0.5s;
+        text-align: center;
+    }
+
+    .height {
+        height: 30vh;
+        transition: 0.5s;
+    }
+
+    .menudiv {
+        height: 0;
+        width: 100%;
+        position: relative;
+        /* z-index: 1; */
+        /* background-color: gray; */
+        overflow-y: hidden;
+        transition: 1s;
+        text-align: center;
+    }
+
+    .heightdiv {
+        height: auto;
+        transition: 1s;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 35px;
+        height: 4px;
+        background-color: #0c0c0c;
+        margin: 7px 10px;
+        transition: 0s;
+    }
+
+    .change .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .gtt {
+        opacity: 0;
+        transition: 0.5s;
+    }
+
+    .activegtt {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+    img {
+        -webkit-user-drag: none;
+    }
+</style>
 
 <body>
-    <input id="name" type="text"><br>
-    <a href="#" id="downloadb">Download</a>
-    <canvas id="canvas" width="900" height="600"></canvas>
-    <script src="js.js"></script>
+    <div id="progress" class="progress fixed z-30 top-0 h-2 rounded-r dark:bg-gray-500 bg-gray-700"></div>
+    <div id="darkmode" class="darkmode">
+        <!--Top-->
+        <div
+            class="hiddenm bg-gray-600 text-gray-200 shadow-sm p-4 flex justify-center items-center text-lg font-semibold ">
+            <!--left-->
+            <div class="md:flex items-center text-gray-200 sansmed  font-extrabold">
+                <a href="https:pactel.netlify.app/index.html"><img src="logo.webp" width="70" height="70" class="mr-4 "
+                        alt="logo"></a>
+                <a href="https:pactel.netlify.app/index.html"
+                    class="inline-block p-3 md:mr-2 hover:text-gray-400">Home</a>
+                <a href="#" class="flex justify-center ml-7 p-2 underline">Courses<img class="ml-2 mb-2" src="soon.png"
+                        width="50" height="20"></a>
+                <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
+                <button onclick="about()" class="px-2 font-semibold hover:text-gray-400"><a>About US</a></button>
+            </div>
+        </div>
+
+        <!--mob-->
+        <nav
+            class="nav bg-gray-500 text-gray-200 md:hidden shadow-md sticky top-0 z-10 p-4 justify-between font-semibold ">
+
+            <div class="flex justify-between">
+                <a href="https:pactel.netlify.app/index.html"> <img src="logo.webp" width="60" class="justify-between"
+                        alt="logo"></a>
+                <!-- <button id="menub" class=" md:hidden justify-between "><img src="https://cdn4.iconfinder.com/data/icons/fluent-outline-20px-vol-4/20/ic_fluent_line_horizontal_3_20_regular-256.png" width="50"></button> -->
+                <h1 class="p-3 text-2xl text-gray-300">Courses</h1>
+                <button id="menub" class="md:hidden justify-between">
+                    <div class="container">
+                        <div class="bar1">
+                            <hr class="border-2 bg-black border-black">
+                        </div>
+                        <div class="bar2">
+                            <hr class="border-2 bg-black border-black">
+                        </div>
+                        <div class="bar3">
+                            <hr class="border-2 bg-black border-black">
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class=" flex justify-center p-1">
+                <div class="menu bg-gray-600 text-gray-300 transition ease-in duration-500  mt-2 px-4 bg-gray-200 "
+                    id="menu">
+                    <!-- <i id="exit" class="p-2 fa-solid fa-x fa-lg"></i> -->
+                    <a onclick="menuf()" href="https:pactel.netlify.app/index.html"
+                        class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a>
+                    <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
+                    <div class="hidden transition ease-in-out duration-200" id="lang"><a href=""
+                            class="inline-block mr-2 hover:bg-gray-400 px-4 py-2 lang">عربي</a></div>
+                    <a href="#" class="flex justify-center ml-7 hover:bg-gray-400 p-2 underline">Courses<img
+                            class="ml-2 mb-2" src="soon.png" width="50" height="20"></a>
+                    <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
+                    <a onclick="about(), menuf()" id="menub" class="block  hover:bg-blue-500 p-2">About Us</a>
+                </div>
+            </div>
+        </nav>
+        <div class="bg-gray-400 text-gray-900">
+
+
+            <img class="mx-auto justify-center p-4" src="website-under-construction-vector-21727880.jpg">
+
+
+
+
+
+
+
+
+
+            <footer>
+                <div id="aboutus" class=" bg-black text-white">
+                    <div class="py-10 px-10 font-semibold md:flex justify-between ">
+                        <!--left-->
+                        <div class="md:w-1/2">
+
+
+                            <div class="flex justify-end mb-10">
+                                <a href="https://www.linkedin.com/company/pactel/mycompany/" target="_blank"
+                                    class="ml-7 p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/pact.el/" target="_blank" class="  p-4 mt-4"><i
+                                        class="fa-brands fa-check fa-xl fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/Pactel1" target="_blank" class=" p-4 mt-4"><i
+                                        class="fa-brands fa-check fa-xl fa-facebook"></i></a>
+                                <!-- <a href="https://pactel-s.myshopify.com/" target="_blank" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-shopify"></i></a> -->
+                                <!-- <a href="https://t.me/Helwanuniv" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-telegram"></i></a> -->
+                                <!-- <a href="https://www.youtube.com/channel/UCd_hB3462dLbQ4_07esSPoA/videos" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-youtube"></i></a> -->
+                            </div>
+                            <hr>
+
+                            <p class=" text-gray-200 mt-5">About us<br><br> We are a leading Egyptian company in the
+                                field
+                                of
+                                services, <br>that has been worked for more than two years with many clients around the
+                                world
+                            </p>
+                            <hr class="mt-10 w-20">
+                        </div>
+                        <!--Contact-->
+                        <div class="text-gray-300 opacity-70 font-mono font-thin text-md md:py-20">
+                            <p class="mt-5">Contact us</p>
+                            <p class="mt-2">Egypt</p>
+                            <a href="https://wa.me/+201154185848" target="_blank">+201154185848</a>
+                            <br>
+                            <p class="mt-2">UAE</p>
+                            <a href="https://wa.me/+971521997339" target="_blank">+971521997339</a>
+                            <br>
+                            <p class="mt-2">Email:</p>
+                            <a href="mailto:pactelcompeny@gmail.com" target="_blank">pactelcompeny@gmail.com</a>
+                        </div> <button id="totopbutton" onclick="goToTop()"
+                            class="fixed gtt z-90 bottom-20 right-8 border-0 w-14 h-14 rounded-full drop-shadow-md bg-gray-800 text-white text-2xl font-semibold">&uarr;</button>
+                    </div>
+
+                    <div class="text-center flex-col justify-center p-4 text-gray-400">
+                        <a class="text-sm block m-8" href="https://pactel.info/license.txt">legal</a>
+                        <p>&copy; copyrights Ziad pactel-<span id="copyrights"></span>
+                            <a href="https://github.com/zeiadsalhin"><i
+                                    class="fa-brands fa fa-xl fa-github-square"></i></a>
+                        </p>
+                        <!-- <a href=""><a href=""><i class="fa-brands fa fa-xl fa-facebook"></i></a> -->
+
+
+                    </div>
+                </div>
+        </div>
+
+        <script async src="Main.js"></script>
+        <script>
+            function goToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            function about() {
+                document.getElementById('aboutus').scrollIntoView({ behavior: 'smooth' });
+            }
+        </script>
 </body>
 
 </html>
