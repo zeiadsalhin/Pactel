@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "https://courses.pactel.info/*"
-  to = "https://courses.pactel.info/courses/:splat"
-  status = 200
