@@ -128,8 +128,8 @@
             class="hiddenm bg-gray-600 text-gray-200 shadow-sm p-4 flex justify-center items-center text-lg font-semibold ">
             <!--left-->
             <div class="md:flex items-center text-gray-200 sansmed  font-extrabold">
-                <a onclick="home()"><img src="logo.webp" width="70" height="70" class="mr-4 " alt="logo"></a>
-                <a href="https:pactel.info" class="inline-block p-3 md:mr-2 hover:text-gray-400">Home</a>
+                <a onclick="homepage()"><img src="logo.webp" width="70" height="70" class="mr-4 " alt="logo"></a>
+                <a onclick="homepage()" class="inline-block p-3 md:mr-2 hover:text-gray-400">Home</a>
                 <a href="#" class="flex justify-center ml-7 p-2 underline">Courses<img class="ml-2 mb-2" src="soon.png"
                         width="50" height="20"></a>
                 <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
@@ -142,7 +142,7 @@
             class="nav bg-gray-500 text-gray-200 md:hidden shadow-md sticky top-0 z-10 p-4 justify-between font-semibold ">
 
             <div class="flex justify-between">
-                <a href="https:pactel.info"> <img src="logo.webp" width="60" class="justify-between" alt="logo"></a>
+                <a onclick="homepage()"> <img src="logo.webp" width="60" class="justify-between" alt="logo"></a>
                 <!-- <button id="menub" class=" md:hidden justify-between "><img src="https://cdn4.iconfinder.com/data/icons/fluent-outline-20px-vol-4/20/ic_fluent_line_horizontal_3_20_regular-256.png" width="50"></button> -->
                 <h1 class="p-3 text-2xl text-gray-300">Courses</h1>
                 <button id="menub" class="md:hidden justify-between">
@@ -164,7 +164,7 @@
                 <div class="menu bg-gray-600 text-gray-300 transition ease-in duration-500  mt-2 px-4 bg-gray-200 "
                     id="menu">
                     <!-- <i id="exit" class="p-2 fa-solid fa-x fa-lg"></i> -->
-                    <a onclick="menuf()" href="https:pactel.info" class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a>
+                    <a onclick="menuf(), homepage()" class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a>
                     <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
                     <div class="hidden transition ease-in-out duration-200" id="lang"><a href=""
                             class="inline-block mr-2 hover:bg-gray-400 px-4 py-2 lang">عربي</a></div>
@@ -252,7 +252,7 @@
             function about() {
                 document.getElementById('aboutus').scrollIntoView({ behavior: 'smooth' });
             }
-            function home() {
+            function homepage() {
                 window.location.href = 'http://pactel.info';
             }
         </script>
