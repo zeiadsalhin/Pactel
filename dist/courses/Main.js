@@ -98,7 +98,7 @@ document.addEventListener("click", function () {
     document.querySelector("#progress").style.width = `${o}%`;
   }),
   (date = new Date()),
-  (document.getElementById("copyrights").innerText = date.getFullYear());
+  (document.querySelector("#copyrights").innerText = date.getFullYear());
 
   let nums = document.querySelectorAll(".nums .num");
 let section = document.querySelector(".three");

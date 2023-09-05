@@ -263,6 +263,8 @@
             function homepage() {
                 window.location.href = 'http://pactel.info';
             }
+            (date = new Date()),
+                (document.querySelector("#copyrights").innerText = date.getFullYear());
         </script>
 </body>
 
