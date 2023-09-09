@@ -756,11 +756,11 @@
   <script async src="Main.js"></script>
   <script src="jquery.js"></script>
   <script>
-    $(document).ready(function () {
+    document.addEventListener('DOMContentLoaded', function () {
       const vid = document.querySelector('#vid')
       vid.setAttribute("src", "assets/work/4/v1.mp4")
       console.log(2)
-    });
+    }, false);
     function test() {
 
     }
