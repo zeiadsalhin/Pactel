@@ -757,16 +757,15 @@
   <script src="jquery.js"></script>
   <script>
     window.addEventListener('load', () => {
-      const vid = document.querySelector('#vid')
-      vid.setAttribute("src", "assets/work/4/v1.mp4")
+
       console.log(1)
     })
-    // function test() {
-    //   const vid = document.querySelector('#vid')
-    //   vid.setAttribute("src", "assets/work/4/v1.mp4")
-    //   console.log(2)
-    // }
-    // setTimeout(test, 2000)
+    function test() {
+      const vid = document.querySelector('#vid')
+      vid.setAttribute("src", "assets/work/4/v1.mp4")
+      console.log(2)
+    }
+    setTimeout(test, 2000)
     function goToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
