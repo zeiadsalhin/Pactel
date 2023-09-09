@@ -756,15 +756,12 @@
   <script async src="Main.js"></script>
   <script src="jquery.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    function vid() {
       const vid = document.querySelector('#vid')
       vid.setAttribute("src", "assets/work/4/v1.mp4")
       console.log(2)
-    }, false);
-    function test() {
-
     }
-    setTimeout(test, 2000)
+    setTimeout(vid, 2000)
     function goToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
