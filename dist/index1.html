@@ -428,8 +428,8 @@
           <p class="text-4xl text-bold lg:text-3xl text-center font-semibold px-2 py-10 arabic">أعمالنا</p>
         </div>
         <div class="md:flex justify-center md:space-x-2 space-y-2 p-2">
-          <video src="assets/work/4/v1.mp4" title="Twitch work" allowfullscreen="false" poster="poster.webp"
-            preload="none" width="1200px" height="600px" playsinline autoplay loop muted>
+          <video id="vid" src="" title="Twitch work" allowfullscreen="false" poster="poster.webp" preload="none"
+            width="1200px" height="600px" playsinline autoplay loop muted>
           </video>
         </div>
         <div class="md:flex md:space-x-2 space-y-2 p-2">
@@ -756,6 +756,17 @@
   <script async src="Main.js"></script>
   <script src="jquery.js"></script>
   <script>
+    window.addEventListener('load', () => {
+      const vid = document.querySelector('#vid')
+      vid.setAttribute("src", "assets/work/4/v1.mp4")
+      console.log(1)
+    })
+    // function test() {
+    //   const vid = document.querySelector('#vid')
+    //   vid.setAttribute("src", "assets/work/4/v1.mp4")
+    //   console.log(2)
+    // }
+    // setTimeout(test, 2000)
     function goToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
