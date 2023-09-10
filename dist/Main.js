@@ -72,13 +72,8 @@ function ourwork() {
 }
 const services = document.querySelector("#serv");
 function serv() {
-    // let position = document.querySelector("#serv").getBoundingClientRect();
-    // window.scrollTo(position.left, position.top + window.scrollY - 700);
     document.querySelector("#serv").scrollIntoView({ behavior: 'smooth' });
   }
-  function serv1() {
-    document.querySelector("#serv").scrollIntoView({ behavior: 'smooth' });
-}
 function soon() {
   ((comingsoon = document.querySelector(".soon")).innerHTML = "Coming Soon"),
     comingsoon.classList.remove("transform"),
