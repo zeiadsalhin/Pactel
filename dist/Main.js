@@ -75,7 +75,7 @@ function serv() {
   if (window.innerWidth < 768) {
     document.querySelector("#serv").scrollIntoView({ behavior: 'smooth' });
     let position = document.querySelector("#serv").getBoundingClientRect();
-    window.scrollTo(position.left, position.top + window.scrollY - 400);
+    window.scrollTo(position.left, position.top + window.scrollY - 700);
     console.log("done")
   } else if (window.innerWidth > 768) {
     document.querySelector("#serv").scrollIntoView({ behavior: 'smooth' });
