@@ -72,8 +72,10 @@ function ourwork() {
 }
 const services = document.querySelector("#serv");
 function serv() {
+    let position = document.querySelector("#serv").getBoundingClientRect();
+    window.scrollTo(position.left, position.top + window.scrollY - 700);
 
-    document.querySelector("#serv").scrollIntoView({ behavior: 'smooth' });
+    // document.querySelector("#serv").scrollIntoView({ behavior: 'smooth' });
   }
   // function serv() {
   //   if (window.innerWidth < 768) {
