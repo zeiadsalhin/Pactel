@@ -75,7 +75,7 @@ function serv() {
   if (window.innerWidth < 768) {
     services.scrollIntoView({ behavior: 'smooth' });
     let position = services.getBoundingClientRect();
-    window.scrollTo(position.left, position.top + window.scrollY - 450);
+    window.scrollTo(position.left, position.top + window.scrollY - 700);
     console.log("done")
   } else {
     services.scrollIntoView({ behavior: 'smooth' });
