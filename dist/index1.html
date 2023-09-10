@@ -32,6 +32,7 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <link rel="stylesheet" href="swiper-bundle.css" />
   <link rel="stylesheet" href="./css/fontawesome-free-6.4.2-web/css/all.min.css">
   <link rel="stylesheet" href="toggle-switchy.css">
   <link rel="stylesheet" href="output.css">
@@ -343,10 +344,32 @@
           <div class="flex justify-center p-2 m-2 bg-gray-100 dark:bg-gray-500 dark:text-gray-200 text-gray-800">
             <h1>News</h1><img class="p-1" src="new.webp" width="50" height="40" alt="new">
           </div>
-          <a href="https://forms.gle/v3GGTb531Vqv2htf7"><img src="course.webp"
-              class="mx-auto p-2 scale-100 hover:scale-105 transform transition duration-500" loading="lazy" width="700"
-              height="788" alt="course"></a><label class="text-sm p-2 text-gray-700">To register click
-            on the image</label>
+          <div class="swiper p-1">
+            <div class="swiper-wrapper">
+              <div id="bg" class="swiper-slide">
+                <a href="https://forms.gle/v3GGTb531Vqv2htf7"><img src="course.webp"
+                    class="mx-auto p-2 scale-100 hover:scale-105 transform transition duration-500" loading="lazy"
+                    width="700" height="100%" alt="course"><span class="text-sm p-2 text-gray-700">To view or register
+                    click
+                    on the image</span></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://realestate21.netlify.app"><img src="me.webp"
+                    class="mx-auto p-2 scale-100 hover:scale-105 transform transition duration-500" loading="lazy"
+                    width="700" height="100%" alt="middleeast"></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://wa.me/201004416036"><img src="hire.webp"
+                    class="mx-auto p-2 scale-100 hover:scale-105 transform transition duration-500" loading="lazy"
+                    width="700" height="100%" alt="job"></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#"><img src="logo_preview.webp"
+                    class="mx-auto p-2 scale-100 hover:scale-105 transform transition duration-500" loading="lazy"
+                    width="700" height="100%" alt="logo"></a>
+              </div>
+            </div>
+          </div>
         </div>
         <hr class="border-2 rounded border-gray-400 m-10 mx-auto w-60 opacity-90">
 
@@ -788,6 +811,10 @@
   <!-- /Sendinblue Conversations {/literal} -->
   <script async src="Main.js"></script>
   <script src="jquery.js"></script>
+  <script src="swiper-bundle.js"></script>
+
+
+
   <script>
     function vid() {
       const vid = document.querySelector('#vid')
@@ -814,6 +841,30 @@
       $('.spin-wrapper').fadeOut('slow');
       $('body').removeAttr('style')
     });
+  </script>
+  <script>
+    const swiper = new Swiper(".swiper", {
+      effect: 'fade',
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+      },
+
+      loop: true,
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: false,
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      observer: true,
+      observeParents: true,
+    });
+    // swiper.update();
   </script>
   </footer>
 </body>

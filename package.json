@@ -16,6 +16,7 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "moment": "^2.29.4",
-    "pdfkit": "^0.13.0"
+    "pdfkit": "^0.13.0",
+    "swiper": "^10.2.0"
   }
 }
