@@ -211,7 +211,7 @@
 
   <!--Livechat-->
   <!-- Sendinblue Conversations {literal} -->
-  <script async>
+  <!-- <script async>
     (function (d, w, c) {
       w.SibConversationsID = '63ecf30e30fa536b8236917a';
       w[c] = w[c] || function () {
@@ -222,7 +222,7 @@
       s.src = 'https://conversations-widget.sendinblue.com/sib-conversations.js';
       if (d.head) d.head.appendChild(s);
     })(document, window, 'SibConversations');
-  </script>
+  </script> -->
   <!-- /Sendinblue Conversations {/literal} -->
 </head>
 
@@ -248,7 +248,7 @@
         <a href="https://courses.pactel.info/index.html"
           class="flex ml-2 font-semibold hover:text-gray-400">Courses</a><img class=" md:mr-4 ml-2" src="soon.png"
           width="50" height="40" alt="coming">
-        <button onclick="about()" class="px-2 font-semibold hover:text-gray-400"><a href="#">About US</a></button>
+        <button onclick="about()" class="px-2 font-semibold hover:text-gray-400">About US</button>
       </div>
       <div class="flex m-10">
         <label for="tg" class="toggle-switchy" data-label="left" data-size="sm" data-style="rounded">
@@ -537,8 +537,9 @@
 
         </div>
         <!--content-->
+        <div id="serv"></div>
         <h3 class="y-16 px-10 text-4xl mt-10 mb-4 font-serif font-bold reveal">Our Services</h3>
-        <div id="serv" class="md:flex py-10 px-10 text-center font-sans">
+        <div class="md:flex py-10 px-10 text-center font-sans">
           <div class="mr-6 mt-6 ml-6 md:w- c4-izmir c4-image-zoom-in reveal">
             <img src="wd.webp" class="transform scale-100 hover:scale-110 ease-in duration-500 w-full rounded  p-10 "
               width="1080px" height="1079px" alt="pic1" loading="lazy">
@@ -781,10 +782,11 @@
         var aboutd = document.getElementById('aboutus')
         aboutd.scrollIntoView({ behavior: 'smooth' });
         let position = aboutd.getBoundingClientRect();
-        window.scrollTo(position.left, position.top + window.scrollY - 700);
+        window.scrollTo(position.left, position.top + window.scrollY - 500);
         console.log("done")
-      } else {
-        aboutd.scrollIntoView({ behavior: 'smooth' });
+      } else if (window.innerWidth > 768) {
+        document.getElementById('aboutus').scrollIntoView({ behavior: 'smooth' });
+        console.log("desktop")
       }
       console.log(window.innerWidth)
     }

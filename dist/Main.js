@@ -73,12 +73,14 @@ function ourwork() {
 const services = document.querySelector("#serv");
 function serv() {
   if (window.innerWidth < 768) {
-    services.scrollIntoView({ behavior: 'smooth' });
-    let position = services.getBoundingClientRect();
-    window.scrollTo(position.left, position.top + window.scrollY - 700);
+    document.querySelector("#serv").scrollIntoView({ behavior: 'smooth' });
+    let position = document.querySelector("#serv").getBoundingClientRect();
+    window.scrollTo(position.left, position.top + window.scrollY - 400);
     console.log("done")
-  } else {
-    services.scrollIntoView({ behavior: 'smooth' });
+  } else if (window.innerWidth > 768) {
+    document.querySelector("#serv").scrollIntoView({ behavior: 'smooth' });
+    
+    console.log("desktop")
   }
 }
 function soon() {
