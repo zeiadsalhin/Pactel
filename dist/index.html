@@ -211,18 +211,7 @@
 
   <!--Livechat-->
   <!-- Sendinblue Conversations {literal} -->
-  <!-- <script async>
-    (function (d, w, c) {
-      w.SibConversationsID = '63ecf30e30fa536b8236917a';
-      w[c] = w[c] || function () {
-        (w[c].q = w[c].q || []).push(arguments);
-      };
-      var s = d.createElement('script');
-      s.async = true;
-      s.src = 'https://conversations-widget.sendinblue.com/sib-conversations.js';
-      if (d.head) d.head.appendChild(s);
-    })(document, window, 'SibConversations');
-  </script> -->
+
   <!-- /Sendinblue Conversations {/literal} -->
 </head>
 
@@ -759,6 +748,18 @@
       </div>
   </div>
   <!--end-->
+  <script defer>
+    (function (d, w, c) {
+      w.SibConversationsID = '63ecf30e30fa536b8236917a';
+      w[c] = w[c] || function () {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      var s = d.createElement('script');
+      s.async = true;
+      s.src = 'https://conversations-widget.sendinblue.com/sib-conversations.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'SibConversations');
+  </script>
   <script async src="Main.js"></script>
   <script src="jquery.js"></script>
   <script>
@@ -779,17 +780,7 @@
 
 
     function about() {
-      if (window.innerWidth < 768) {
-        var aboutd = document.getElementById('aboutus')
-        aboutd.scrollIntoView({ behavior: 'smooth' });
-        let position = aboutd.getBoundingClientRect();
-        window.scrollTo(position.left, position.top + window.scrollY - 500);
-        console.log("done")
-      } else if (window.innerWidth > 768) {
-        document.getElementById('aboutus').scrollIntoView({ behavior: 'smooth' });
-        console.log("desktop")
-      }
-      console.log(window.innerWidth)
+      document.getElementById('aboutus').scrollIntoView({ behavior: 'smooth' });
     }
 
 
