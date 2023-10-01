@@ -9,7 +9,7 @@ const date1 = setInterval(datedisplay, 1)
 <template>
     <footer>
         <div id="aboutus" class=" bg-black text-white">
-            <div class="py-10 px-10 font-semibold md:flex justify-between ">
+            <div class="py-10 px-10 font-semibold md:flex md:space-x-52  mt-10">
                 <!--left-->
                 <div class="md:w-1/2">
 

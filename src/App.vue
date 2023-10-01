@@ -9,14 +9,16 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <div id="darkmode" class="darkmode">
       <div
-        class="hiddenm bg-gray-300 text-gray-600 shadow-sm p-4 flex justify-center items-center text-lg font-semibold ">
-        <div class="md:flex items-center text-gray-950 sansmed text-xl  font-extrabold">
-          <a href="https://pactel.info" onclick=""><img src="/logo_test.svg" width="80" height="70" class="mr-4 "
-              alt="logo"></a>
+        class="hiddenm bg-gray-300 text-gray-600 shadow-sm p-2 flex justify-center items-center text-lg font-semibold ">
+        <div class="md:flex items-center text-gray-950 sansmed text-xl space-x-16   font-extrabold">
+          <div class="flex-col -space-y-5">
+            <a href="https://pactel.info" onclick=""><img src="/logo_test.svg" width="80" height="70" class=""
+                alt="logo"></a>
+            <p class="text-sm text-center">Courses</p>
+          </div>
           <RouterLink to="/" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">Home</RouterLink>
-          <a href="#" class="flex justify-center ml-7 p-2 underline">Courses<img class="ml-2 mb-2" src="/soon.png"
-              width="50" height="20"></a>
-          <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
+          <RouterLink to="/list" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">Course list</RouterLink>
+
           <router-link to="/about" class="px-2 font-bold hover:text-gray-400">About US</router-link>
         </div>
       </div>
