@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@media (max-width: 767px) {
+    .lg\:text-5xl {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  
+    .hiddenm {
+      display: none;
+    }
+  }
