@@ -16,11 +16,12 @@ const date1 = setInterval(datedisplay, 1)
 
                     <div class="flex justify-end mb-10">
                         <a href="https://www.linkedin.com/company/pactel/mycompany/" target="_blank"
-                            class="ml-7 p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/pact.el/" target="_blank" class="  p-4 mt-4"><i
-                                class="fa-brands fa-check fa-xl fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/Pactel1" target="_blank" class=" p-4 mt-4"><i
-                                class="fa-brands fa-check fa-xl fa-facebook"></i></a>
+                            class="ml-7 p-4 mt-4"><img class="invert" src="/linkedin.svg" width="40" height="40"
+                                alt="linkedin"></a>
+                        <a href="https://www.instagram.com/pact.el/" target="_blank" class="  p-4 mt-4"><img
+                                class="invert mt-1.5" src="/instagram.svg" width="30" height="40" alt="instagram"></a>
+                        <a href="https://www.facebook.com/Pactel1" target="_blank" class=" p-4 mt-4"><img class="invert"
+                                src="/facebook.svg" width="40" height="40" alt="facebook"></a>
                         <!-- <a href="https://pactel-s.myshopify.com/" target="_blank" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-shopify"></i></a> -->
                         <!-- <a href="https://t.me/Helwanuniv" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-telegram"></i></a> -->
                         <!-- <a href="https://www.youtube.com/channel/UCd_hB3462dLbQ4_07esSPoA/videos" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-youtube"></i></a> -->
@@ -55,7 +56,8 @@ const date1 = setInterval(datedisplay, 1)
                 <a class="text-sm block m-8" href="https://pactel.info/license.txt">legal</a>
                 <p>&copy; copyrights Ziad pactel-<span id="copyrights">
                     </span>
-                    <a href="https://github.com/zeiadsalhin"><i class="fa-brands fa fa-xl fa-github-square"></i></a>
+                    <a href="https://github.com/zeiadsalhin"><img class="invert mx-auto m-2" src="/github.svg" width="25"
+                            height="35" alt="github"></a>
                 </p>
                 <!-- <a href=""><a href=""><i class="fa-brands fa fa-xl fa-facebook"></i></a> -->
 
