@@ -46,8 +46,9 @@ const date1 = setInterval(datedisplay, 1)
                     <br>
                     <p class="mt-2">Email:</p>
                     <a href="mailto:pactelcompeny@gmail.com" target="_blank">pactelcompeny@gmail.com</a>
-                </div> <button id="totopbutton" onclick="goToTop()"
-                    class="fixed gtt z-90 bottom-20 right-8 border-0 w-14 h-14 rounded-full drop-shadow-md bg-gray-800 text-white text-2xl font-semibold">&uarr;</button>
+                </div>
+                <!-- <button id="totopbutton" onclick="goToTop()"
+                    class="fixed gtt z-90 bottom-20 right-8 border-0 w-14 h-14 rounded-full drop-shadow-md bg-gray-800 text-white text-2xl font-semibold">&uarr;</button> -->
             </div>
 
             <div class="text-center flex-col justify-center p-4 text-gray-400">
