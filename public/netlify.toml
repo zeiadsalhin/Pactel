@@ -1,10 +1,6 @@
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
 
 
 [[redirects]]
 from = "https://pactel.info/"
-to = "https://www.pactel.info/"
+to = "https://home.pactel.info/"
 status = 302
