@@ -49,6 +49,17 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }
   },
+
+
+})
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+    NProgress.start()
+  }
+  next()
 })
 
+router.afterEach((to, from) => {
+  NProgress.done()
+})
 export default router

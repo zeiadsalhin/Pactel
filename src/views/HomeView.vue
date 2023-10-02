@@ -4,7 +4,9 @@ import footer1 from '../components/Footer.vue'
 import courses from '../components/CourseList.vue'
 </script>
 <template>
-    <hometop />
-    <courses />
-    <footer1 />
+    <div class="dark:bg-black dark:text-white">
+        <hometop />
+        <courses />
+        <footer1 />
+    </div>
 </template>
