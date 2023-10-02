@@ -31,7 +31,7 @@ function check() {
 
         <div class="video mt-20">
             <div class="text-right md:w-11/12">
-                <p class="text-2xl md:text-4xl font-semibold p-5">:محتوى الدورة</p>
+                <p class="text-2xl md:text-4xl font-semibold p-5 dark:text-gray-300">:محتوى الدورة</p>
             </div>
             <div class="mt-20 bg-gray-900 p-2">
                 <iframe id="video" class="mx-auto w-full md:h-screen h-80" src="" title="YouTube video player"
