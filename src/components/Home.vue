@@ -8,7 +8,7 @@
                 <img class="mx-auto md:mx-0" src="/course.svg" width="150" height="" alt="">
                 <h1 class="text-2xl md:text-5xl font-bold text-center md:text-right p-10">أهلا بكم في بكتل كورس</h1>
             </div>
-            <div class="w-40 h-1 bg-black mx-auto m-5 "></div>
+            <div class="w-40 h-1 bg-black dark:bg-gray-50 mx-auto m-5 "></div>
         </div>
     </div>
 </template>

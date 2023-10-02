@@ -12,17 +12,17 @@ function check() {
 </script>
 <template>
     <div id="darkmode" class="darkmode">
-        <div class="top mt-10 justify-center mx-auto p-10 md:w-11/12 bg-gray-200">
-            <h1 class="text-3xl md:text-5xl font-bold text-center">دورة المبيعات</h1>
+        <div class="top mt-10 justify-center mx-auto p-10 md:w-11/12 bg-gray-200 dark:bg-gray-900 dark:text-white ">
+            <h1 class="text-3xl md:text-5xl font-bold text-center">دورة التسويق</h1>
             <div class="w-60 h-1 mx-auto bg-black mt-10 m-5 "></div>
         </div>
-        <div class="inst mt-5 p-10 md:w-1/2 bg-gray-100 mx-auto text-right space-y-3">
+        <div class="inst mt-5 p-10 md:w-1/2 bg-gray-100 dark:bg-gray-800 dark:text-white  mx-auto text-right space-y-3">
             <h2 class="text-right text-xl font-semibold mb-10">: التعليمات</h2>
-            <p class="">-1</p>
-            <p class="">-2</p>
-            <p class="">-3</p>
-            <p class="">-4</p>
-            <p class="">-5</p>
+            <p class="">الرجاء التركيز الكامل وانهاء الفيديو في وقته كاملا لما يترتب عليه في المرحله القادمه</p>
+            <p class="">يرجي تسجيل الملاحظات في ورقه خارجية</p>
+            <p class="">بعد الانتهاء من الفيديوهات الاربعه الدخول على الرابط التالي لانهاء الامتحان والحصول على
+                شهاده المرحلة الأولى</p>
+            <p class="">التأكيد على قراءة التعليمات حتى تتمكن من بدأ الكورس</p>
         </div>
         <div class="confirm flex justify-center font-extrabold bg-gray-300 md:w-1/2 mx-auto">
             <p class="p-2 ">لقد قرأت جميع التعليمات المكتوبة وفهمتها</p>
@@ -39,5 +39,11 @@ function check() {
                     allowfullscreen></iframe>
             </div>
         </div>
+        <RouterLink to="/hr">
+            <p
+                class="mt-10 mb-20 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
+                الدورة التالية
+            </p>
+        </RouterLink>
     </div>
 </template>

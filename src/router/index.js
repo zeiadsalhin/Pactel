@@ -45,6 +45,12 @@ const router = createRouter({
 
       component: () => import('../views/Sales.vue')
     },
+    {
+      path: '/quiz',
+      name: 'quiz',
+
+      component: () => import('../views/Quiz.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }

@@ -10,7 +10,8 @@ function barincrease() {
 </script>
 <template>
     <div id="darkmode" class="darkmode">
-        <div id="bar" class="-translate-x-5 h-10 w-0 transform trasition ease-in-out duration-700 bg-gray-400 -skew-x-6">
+        <div id="bar"
+            class="-translate-x-5 h-10 w-0 transform ease-in-out duration-700 bg-gray-400 dark:bg-gray-900 -skew-x-6">
         </div>
     </div>
     <courses />
