@@ -7,6 +7,6 @@
             alt="pactel">
         <iframe class="mx-auto w-full dark:invert" scrolling="no" allowfullscreen title="quiz"
             src="https://docs.google.com/forms/d/e/1FAIpQLSe546I-JsIXezcx77T-iCJoZIW6eNMlxikgeLxsOg-1nzBfOg/viewform?embedded=true"
-            width="640" height="2300" frameborder="0" marginheight="0" marginwidth="0">جارٍ التحميل…</iframe>
+            width="640" height="2450" frameborder="0" marginheight="0" marginwidth="0">جارٍ التحميل…</iframe>
     </div>
 </template>
