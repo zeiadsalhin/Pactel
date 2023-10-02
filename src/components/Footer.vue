@@ -16,12 +16,14 @@ const date1 = setInterval(datedisplay, 1)
 
                     <div class="flex justify-end mb-10">
                         <a href="https://www.linkedin.com/company/pactel/mycompany/" target="_blank"
-                            class="ml-7 p-4 mt-4"><img class="invert" src="/linkedin.svg" width="40" height="40"
-                                alt="linkedin"></a>
+                            class="ml-7 p-4 mt-4"><img class="invert hover:invert-0 hover:bg-gray-300 " src="/linkedin.svg"
+                                width="40" height="40" alt="linkedin"></a>
                         <a href="https://www.instagram.com/pact.el/" target="_blank" class="  p-4 mt-4"><img
-                                class="invert mt-1.5" src="/instagram.svg" width="30" height="40" alt="instagram"></a>
-                        <a href="https://www.facebook.com/Pactel1" target="_blank" class=" p-4 mt-4"><img class="invert"
-                                src="/facebook.svg" width="40" height="40" alt="facebook"></a>
+                                class="invert hover:invert-0 hover:bg-gray-300 mt-1.5" src="/instagram.svg" width="30"
+                                height="40" alt="instagram"></a>
+                        <a href="https://www.facebook.com/Pactel1" target="_blank" class=" p-4 mt-4"><img
+                                class="invert hover:invert-0 hover:bg-gray-300" src="/facebook.svg" width="40" height="40"
+                                alt="facebook"></a>
                         <!-- <a href="https://pactel-s.myshopify.com/" target="_blank" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-shopify"></i></a> -->
                         <!-- <a href="https://t.me/Helwanuniv" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-telegram"></i></a> -->
                         <!-- <a href="https://www.youtube.com/channel/UCd_hB3462dLbQ4_07esSPoA/videos" class=" p-4 mt-4"><i class="fa-brands fa-check fa-xl fa-youtube"></i></a> -->

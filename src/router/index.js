@@ -21,7 +21,34 @@ const router = createRouter({
 
       component: () => import('../views/CourseList.vue')
     },
-  ]
+    {
+      path: '/hr',
+      name: 'hr',
+
+      component: () => import('../views/Hr.vue')
+    },
+    {
+      path: '/marketing',
+      name: 'marketing',
+
+      component: () => import('../views/Marketing.vue')
+    },
+    {
+      path: '/pr',
+      name: 'pr',
+
+      component: () => import('../views/Pr.vue')
+    },
+    {
+      path: '/sales',
+      name: 'sales',
+
+      component: () => import('../views/Sales.vue')
+    },
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  },
 })
 
 export default router

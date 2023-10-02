@@ -1,6 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
+function m() {
+  const menu = document.querySelector("#menu")
+  menu.classList.toggle("active")
+}
 
 
 </script>
@@ -28,7 +32,7 @@ import { RouterLink, RouterView } from 'vue-router'
           <a href="https://pactel.info" onclick=""> <img src="/logo_test.svg" width="60" class="justify-between"
               alt="logo"></a>
           <h1 style="font-weight: 800;" class="p-3 text-3xl text-gray-300">Courses</h1>
-          <button id="menub" class="md:hidden justify-between">
+          <button @click="m" id="menub" class="md:hidden justify-between">
             <div class="container">
               <div class="bar1">
                 <hr class="border-2 bg-black border-black">
@@ -43,15 +47,16 @@ import { RouterLink, RouterView } from 'vue-router'
           </button>
         </div>
         <div class=" flex justify-center p-1">
-          <div class="menu bg-gray-600 text-gray-300 transition ease-in duration-500  mt-2 px-4 bg-gray-200 " id="menu">
-            <a onclick="" href="https://pactel.info" class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a>
+          <div class="menu notactive bg-gray-600 text-gray-300 transition ease-in duration-500  mt-2 px-4 bg-gray-00 "
+            id="menu">
+            <RouterLink to="/" @click="m"><a href="#" class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a></RouterLink>
             <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
             <div class="hidden transition ease-in-out duration-200" id="lang"><a href=""
                 class="inline-block mr-2 hover:bg-gray-400 px-4 py-2 lang">عربي</a></div>
-            <a onclick="d()" class="flex justify-center ml-7 hover:bg-gray-400 p-2 underline">Courses<img
-                class="ml-2 mb-2" src="/soon.png" width="50" height="20"></a>
+            <RouterLink to="/list" @click="m"><a class="flex justify-center hover:bg-gray-400 p-2 underline">Courses</a>
+            </RouterLink>
             <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
-            <RouterLink to="/about" id="menub" class="block  hover:bg-blue-500 p-2">About Us</RouterLink>
+            <RouterLink to="/about" @click="m" id="menub" class="block  hover:bg-gray-400 p-2">About Us</RouterLink>
           </div>
         </div>
       </nav>
@@ -59,4 +64,30 @@ import { RouterLink, RouterView } from 'vue-router'
   </header>
   <RouterView />
 </template>
+<style>
+.notactive {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  overflow-y: hidden;
+  width: 100%;
+  height: 0vh;
+  transition: ease-in-out 0.1s;
+}
+
+.active {
+  height: 40vh;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 3px;
+  background-color: #0c0c0c;
+  margin: 8px 5px;
+  transition: 0s;
+}
+</style>
+
 
