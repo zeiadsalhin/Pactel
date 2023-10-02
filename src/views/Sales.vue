@@ -41,7 +41,7 @@ function check() {
         </div>
         <RouterLink to="/quiz">
             <p
-                class="mt-10 mb-20 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
+                class="mt-10 mb-20 text-center bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-3/4 mx-auto px-10 py-2 text-xl font-extrabold">
                 الذهاب للاختبار للحصول على الشهادة
             </p>
         </RouterLink>
