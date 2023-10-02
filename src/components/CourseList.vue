@@ -29,8 +29,7 @@ import dots from './Dots.vue'
                         class="course2 hover:cursor-pointer hover:scale-105 transform transition ease-out duration-300 p-5 space-y-5 h-auto bg-gray-400 text-gray-900 dark:bg-gray-800 dark:text-white">
                         <h3 class="text-lg font-bold">مقدمة في الموارد البشرية</h3>
                         <div class="md:w-20 h-0.5 bg-gray-900 mx-auto m-5 "></div>
-                        <p class="text-md">يشرح الفيديو اساسيات ومفهوم التسويق واستخداماته </p>
-                        <p class="">التعرف على الاساليب الجديدة المتبعة في علم التسويق </p>
+                        <p class="text-md">يشرح الفيديو اساسيات ومفهوم الموارد البشرية </p>
                         <p class="">الحصول على شهادة معتمدة عند اتمام الدورة </p>
                         <p class="font-bold">يرجى قراءة التعليمات جيدا قبل البدأ لضمان الحصول على الشهادة وسلاسة استيعاب
                             المعلومات</p>
@@ -46,8 +45,8 @@ import dots from './Dots.vue'
                         class="course3 hover:cursor-pointer hover:scale-105 transform transition ease-out duration-300 p-5 space-y-5 h-auto bg-gray-400 text-gray-900 dark:bg-gray-800 dark:text-white">
                         <h3 class="text-lg font-bold"> علاقات عامة </h3>
                         <div class="md:w-20 h-0.5 bg-gray-900 mx-auto m-5 "></div>
-                        <p class="text-md">يشرح الفيديو اساسيات ومفهوم التسويق واستخداماته </p>
-                        <p class="">التعرف على الاساليب الجديدة المتبعة في علم التسويق </p>
+                        <p class="text-md">يشرح الفيديو اساسيات ومفهوم العلاقات العامة </p>
+                        <p class="">التعرف على الاساليب الجديدة في العلاقات العامة </p>
                         <p class="">الحصول على شهادة معتمدة عند اتمام الدورة </p>
                         <p class="font-bold">يرجى قراءة التعليمات جيدا قبل البدأ لضمان الحصول على الشهادة وسلاسة استيعاب
                             المعلومات</p>
@@ -63,8 +62,7 @@ import dots from './Dots.vue'
                         class="course4 hover:cursor-pointer hover:scale-105 transform transition ease-out duration-300 p-5 space-y-5 h-auto bg-gray-400 text-gray-900 dark:bg-gray-800 dark:text-white">
                         <h3 class="text-lg font-bold">مقدمة في المبيعات</h3>
                         <div class="md:w-20 h-0.5 bg-gray-900 mx-auto m-5 "></div>
-                        <p class="text-md">يشرح الفيديو اساسيات ومفهوم التسويق واستخداماته </p>
-                        <p class="">التعرف على الاساليب الجديدة المتبعة في علم التسويق </p>
+                        <p class="text-md">يشرح الفيديو مفهوم المبيعات وطرقها </p>
                         <p class="">الحصول على شهادة معتمدة عند اتمام الدورة </p>
                         <p class="font-bold">يرجى قراءة التعليمات جيدا قبل البدأ لضمان الحصول على الشهادة وسلاسة استيعاب
                             المعلومات</p>
@@ -74,8 +72,9 @@ import dots from './Dots.vue'
                                 البدء
                             </p>
                         </RouterLink>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div></template>
+</template>

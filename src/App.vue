@@ -69,17 +69,17 @@ function darktoggle() {
         </div>
         <div class=" flex justify-center p-1">
           <div
-            class="menu notactive bg-gray-600 transform dark:bg-black text-gray-300 transition ease-in duration-500  mt-2 px-4 bg-gray-00 "
+            class="menu notactive bg-gray-600 text-xl font-semibold transform dark:bg-black text-gray-300 transition ease-in duration-500  mt-2 px-4 bg-gray-00 "
             id="menu">
             <RouterLink to="/" @click="m"><a href="#" class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a></RouterLink>
             <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
             <div class="hidden transition ease-in-out duration-200" id="lang"><a href=""
                 class="inline-block mr-2 hover:bg-gray-400 px-4 py-2 lang">عربي</a></div>
-            <RouterLink to="/list" @click="m"><a class="flex justify-center hover:bg-gray-400 p-2 underline">Courses</a>
+            <RouterLink to="/list" @click="m"><a class="flex justify-center hover:bg-gray-400 p-2 ">Courses</a>
             </RouterLink>
             <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
             <RouterLink to="/about" @click="m" id="menub" class="block  hover:bg-gray-400 p-2">About Us</RouterLink>
-            <button id="darkbtn" @click="darktoggle" class="mx-auto my-auto mt-5 justify-center">
+            <button id="darkbtn" @click="darktoggle" class="mx-auto my-auto mt-10 justify-center">
               <img id="light2" src="/dark.svg" class="light  -mt-5  transform transition ease-in-out duration-1000"
                 width="25" height="25" alt="light">
               <img id="darkicon2" src="/light.svg"
