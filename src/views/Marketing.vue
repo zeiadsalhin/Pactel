@@ -15,8 +15,7 @@ function check() {
 
     }
 }
-</script>
-<script>
+
 // create youtube player
 var player;
 function onYouTubePlayerAPIReady() {
@@ -32,7 +31,7 @@ function onYouTubePlayerAPIReady() {
 } setTimeout(onYouTubePlayerAPIReady, 500)
 // autoplay video
 function onPlayerReady(event) {
-    event.target.playVideo();
+    // event.target.playVideo();
 }
 // when video ends
 function onPlayerStateChange(event) {
