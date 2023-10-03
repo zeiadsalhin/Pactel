@@ -3,7 +3,7 @@ import dots from './Dots.vue'
 </script>
 <template>
     <div id="darkmode" class="darkmode">
-        <div class="dark:bg-black dark:text-white bg-gray-300">
+        <div class="dark:bg-black dark:text-white bg-gray-300 reveal">
             <div class="contentcenter flex-col justify-center mx-auto text-center p-5 md:w-1/2 mt-20">
                 <h1 class="text-2xl font-semibold ">:قائمة الدورات المتاحة</h1>
                 <div class="w-20 h-1 bg-black dark:bg-gray-300 mx-auto m-5 "></div>

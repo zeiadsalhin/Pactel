@@ -20,6 +20,14 @@ function darktoggle() {
   bl2.classList.toggle("opacity-0")
   bd2.classList.toggle("opacity-100")
 }
+
+function reveal() {
+  for (var e = document.querySelectorAll(".reveal"), t = 0; t < e.length; t++) {
+    var o,
+      s = window.innerHeight;
+    e[t].getBoundingClientRect().top < s - 150 && e[t].classList.add("active");
+  }
+} setInterval(reveal, 1500)
 </script>
 
 <template>
@@ -116,6 +124,19 @@ function darktoggle() {
   background-color: #0c0c0c;
   margin: 8px 5px;
   transition: 0s;
+}
+
+.reveal {
+  height: auto;
+  position: relative;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
 }
 </style>
 
