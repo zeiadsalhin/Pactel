@@ -4,7 +4,7 @@ function t() {
     const txt = document.querySelector("#text")
     pic.classList.add("-translate-x-0")
     pic.classList.add("opacity-100")
-    txt.classList.add("-translate-x-0")
+    txt.classList.add("-translate-y-0")
     txt.classList.add("opacity-100")
     clearInterval(int1)
 }
@@ -17,7 +17,7 @@ const int1 = setInterval(t, 1500)
                 <img id="img" class="mx-auto md:mx-0 -translate-x-10 transform ease-in-out duration-500 opacity-0"
                     src="/course.svg" width="150" height="" alt="">
                 <h1 id="text"
-                    class="text-2xl translate-x-20 opacity-0 transform ease-in-out duration-500  md:text-5xl font-bold text-center md:text-right p-10">
+                    class="text-2xl translate-y-5 opacity-0 transform ease-in-out duration-500  md:text-5xl font-bold text-center md:text-right p-10">
                     أهلا بكم
                     في بكتل كورس
                 </h1>

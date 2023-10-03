@@ -25,7 +25,7 @@ function reveal() {
   for (var e = document.querySelectorAll(".reveal"), t = 0; t < e.length; t++) {
     var o,
       s = window.innerHeight;
-    e[t].getBoundingClientRect().top < s - 150 && e[t].classList.add("active");
+    e[t].getBoundingClientRect().top < s - 100 && e[t].classList.add("active");
   }
 } setInterval(reveal, 1500)
 </script>
