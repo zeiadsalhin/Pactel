@@ -28,7 +28,7 @@ function onYouTubePlayerAPIReady() {
             'onStateChange': onPlayerStateChange
         }
     });
-} setTimeout(onYouTubePlayerAPIReady, 500)
+} setInterval(onYouTubePlayerAPIReady, 100)
 // autoplay video
 function onPlayerReady(event) {
     // event.target.playVideo();
