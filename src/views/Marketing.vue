@@ -19,7 +19,7 @@ function check() {
 // create youtube player
 var player;
 function onYouTubePlayerAPIReady() {
-    player = new YT.Player('player', {
+    player = new YT.Player(document.querySelector("#player"), {
         height: '100%',
         width: '100%',
         videoId: 'S25j16NT7eo',
@@ -28,10 +28,13 @@ function onYouTubePlayerAPIReady() {
             'onStateChange': onPlayerStateChange
         }
     });
-} setInterval(onYouTubePlayerAPIReady, 100)
+    console.log("fetched")
+    clearInterval(i)
+}
+const i = setInterval(onYouTubePlayerAPIReady, 100)
 // autoplay video
 function onPlayerReady(event) {
-    // event.target.playVideo();
+    event.target.playVideo();
 }
 // when video ends
 function onPlayerStateChange(event) {
