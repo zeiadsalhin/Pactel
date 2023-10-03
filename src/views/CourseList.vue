@@ -13,6 +13,7 @@ function barincrease() {
         <div id="bar"
             class="-translate-x-5 h-10 w-0 transform ease-in-out duration-700 bg-gray-400 dark:bg-gray-900 -skew-x-6">
         </div>
+        <img class="mx-auto -mb-20 w-1/2 md:w-1/5" src="/onlinecourse.svg" width="100%" height="100%" alt="course">
     </div>
     <courses />
     <footer1 />

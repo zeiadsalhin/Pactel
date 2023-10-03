@@ -12,7 +12,9 @@ function check() {
 </script>
 <template>
     <div id="darkmode" class="darkmode">
-        <div class="top mt-10 justify-center mx-auto p-10 md:w-11/12 bg-gray-200 dark:bg-gray-900 dark:text-white ">
+        <div
+            class="top mt-10 justify-center mx-auto p-5 space-y-5 md:w-11/12 bg-gray-200 dark:bg-gray-900 dark:text-white ">
+            <img class="mx-auto w-1/2 md:w-1/6" src="/marketing.svg" width="100%" height="100%" alt="marketing">
             <h1 class="text-3xl md:text-5xl font-bold text-center">دورة التسويق</h1>
             <div class="w-60 h-1 mx-auto bg-black mt-10 m-5 "></div>
         </div>
