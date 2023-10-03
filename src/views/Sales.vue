@@ -23,15 +23,15 @@ function onYouTubePlayerAPIReady() {
         width: '100%',
         videoId: 'FU-n8qxCW2o',
         events: {
-            // 'onReady': onPlayerReady,
+            'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
         }
     });
 } setTimeout(onYouTubePlayerAPIReady, 500)
 // autoplay video
-// function onPlayerReady(event) {
-//     event.target.playVideo();
-// }
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
 // when video ends
 function onPlayerStateChange(event) {
     if (event.data === 0) {
