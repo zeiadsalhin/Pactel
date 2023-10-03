@@ -2,9 +2,9 @@
 function t() {
     const pic = document.querySelector("#img")
     const txt = document.querySelector("#text")
-    pic.classList.add("-translate-x-0")
+    pic.classList.add("translate-x-0")
     pic.classList.add("opacity-100")
-    txt.classList.add("-translate-y-0")
+    txt.classList.add("translate-y-0")
     txt.classList.add("opacity-100")
     clearInterval(int1)
 }
