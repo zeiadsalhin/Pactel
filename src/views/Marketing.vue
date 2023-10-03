@@ -34,7 +34,7 @@ function onYouTubePlayerAPIReady() {
 const i = setInterval(onYouTubePlayerAPIReady, 100)
 // autoplay video
 function onPlayerReady(event) {
-    event.target.playVideo();
+    // event.target.playVideo();
 }
 // when video ends
 function onPlayerStateChange(event) {
