@@ -3,10 +3,41 @@
 function check() {
     const checkmark = document.querySelector("#confirm")
     const vsrc = document.querySelector("#video")
+    const player = document.querySelector("#player")
     checkmark.classList.add("pointer-events-none")
 
     if (checkmark.checked == true) {
-        vsrc.src = "https://www.youtube.com/embed/oH1VF0vEz68?si=p65qonFMsKAAppnS&amp;controls=1"
+        player.classList.remove("pointer-events-none")
+        // vsrc.src = "https://www.youtube.com/embed/S25j16NT7eo?si=ESIYx8QQ9A-x67Y0&amp;controls=1"
+        player.classList.remove("opacity-0")
+
+    }
+}
+</script>
+<script>
+// create youtube player
+var player;
+function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        videoId: 'oH1VF0vEz68',
+        events: {
+            // 'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+} setTimeout(onYouTubePlayerAPIReady, 500)
+// autoplay video
+// function onPlayerReady(event) {
+//     event.target.playVideo();
+// }
+// when video ends
+function onPlayerStateChange(event) {
+    if (event.data === 0) {
+        const r = document.querySelector("#next")
+        r.classList.remove("hidden")
+        window.scrollBy(0, 100)
     }
 }
 </script>
@@ -35,14 +66,17 @@ function check() {
                 <p class="text-2xl md:text-4xl font-semibold p-5 dark:text-gray-300">:محتوى الدورة</p>
             </div>
             <div class="mt-20 bg-gray-900 p-2">
-                <iframe id="video" class="mx-auto w-full md:h-screen h-80" src="" title="YouTube video player"
+                <!-- <iframe id="video" class="mx-auto w-full md:h-screen h-80" src="" title="YouTube video player"
                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; "
-                    allowfullscreen></iframe>
+                    allowfullscreen></iframe> -->
+                <div id="player"
+                    class="opacity-0 pointer-events-none transform ease-in-out duration-1000 mx-auto w-full md:h-screen h-80">
+                </div>
             </div>
         </div>
         <RouterLink to="/pr">
-            <p
-                class="mt-10 mb-20 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
+            <p id="next"
+                class="mt-10 mb-20 hidden bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
                 الدورة التالية
             </p>
         </RouterLink>
