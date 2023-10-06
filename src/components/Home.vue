@@ -15,7 +15,7 @@ const int1 = setInterval(t, 1500)
         <div class="contenttop flex-col justify-end text-right">
             <div class="flex-row md:flex justify-center md:space-x-10">
                 <img id="img" class="mx-auto md:mx-0 -translate-x-10 transform ease-in-out duration-500 opacity-0"
-                    src="/course.svg" width="150" height="" alt="">
+                    src="/course.svg" width="150" height="150" alt="course">
                 <h1 id="text"
                     class="text-2xl translate-y-5 opacity-0 transform ease-in-out duration-500  md:text-5xl font-bold text-center md:text-right p-10">
                     أهلا بكم

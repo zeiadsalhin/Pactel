@@ -58,7 +58,7 @@ function reveal() {
       <nav
         class="nav bg-gray-500 dark:bg-black text-gray-200 md:hidden shadow-md sticky top-0 z-10 p-4 justify-between font-semibold ">
         <div class="flex justify-between">
-          <a href="https://pactel.info" onclick=""> <img src="/logo_test.svg" width="60"
+          <a href="https://pactel.info" onclick=""> <img src="/logo_test.svg" width="60" height="60"
               class="justify-between dark:invert" alt="logo"></a>
           <h1 style="font-weight: 800;" class="p-3 text-3xl text-gray-300">Courses</h1>
           <button @click="m" id="menub" class="md:hidden justify-between">
@@ -81,9 +81,9 @@ function reveal() {
             id="menu">
             <RouterLink to="/" @click="m"><a href="#" class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a></RouterLink>
             <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
-            <div class="hidden transition ease-in-out duration-200" id="lang"><a href=""
+            <div class="hidden transition ease-in-out duration-200" id="lang"><a href="#"
                 class="inline-block mr-2 hover:bg-gray-400 px-4 py-2 lang">عربي</a></div>
-            <RouterLink to="/list" @click="m"><a class="flex justify-center hover:bg-gray-400 p-2 ">Courses</a>
+            <RouterLink to="/list" @click="m"><a href="#" class="flex justify-center hover:bg-gray-400 p-2 ">Courses</a>
             </RouterLink>
             <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
             <RouterLink to="/about" @click="m" id="menub" class="block  hover:bg-gray-400 p-2">About Us</RouterLink>
