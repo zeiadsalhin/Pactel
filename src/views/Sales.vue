@@ -43,7 +43,7 @@ function onPlayerStateChange(event) {
 }
 
 function form() {
-    sessionStorage.setItem("form", "inject")
+    localStorage.setItem("form", "inject")
 }
 </script>
 <template>

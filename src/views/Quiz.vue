@@ -1,7 +1,7 @@
 <script setup>
 
 function form() {
-    if (sessionStorage.getItem("form") === "inject") {
+    if (localStorage.getItem("form") === "inject") {
         document.querySelector("#form").src = "https://docs.google.com/forms/d/e/1FAIpQLSe546I-JsIXezcx77T-iCJoZIW6eNMlxikgeLxsOg-1nzBfOg/viewform?embedded=true"
         document.querySelector(".text").classList.add("hidden")
         clearInterval(check)
