@@ -41,6 +41,10 @@ function onPlayerStateChange(event) {
         window.scrollBy(0, 100)
     }
 }
+
+function form() {
+    sessionStorage.setItem("form", "inject")
+}
 </script>
 <template>
     <div id="darkmode" class="darkmode">
@@ -76,7 +80,7 @@ function onPlayerStateChange(event) {
             </div>
         </div>
         <RouterLink to="/quiz">
-            <p id="next"
+            <p @click="form" id="next"
                 class="mt-10 mb-20 hidden text-center bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-3/4 mx-auto px-10 py-2 text-xl font-extrabold">
                 الذهاب للاختبار للحصول على الشهادة
             </p>
