@@ -77,7 +77,7 @@ import dots from './Dots.vue'
                 <div class="stage2 mt-20 reveal">
                     <div class="content flex justify-center space-x-2 opacity-60">
                         <h1 class="text-xl md:text-3xl my-auto">انتظروا المرحلة الثانية قريبا</h1>
-                        <img src="/lock.svg" class=" dark:grayscale " width="50" height="" alt="">
+                        <img src="/lock.svg" class=" dark:grayscale " width="50" height="50" alt="lock">
                     </div>
                 </div>
             </div>
