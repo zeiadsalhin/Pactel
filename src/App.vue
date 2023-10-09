@@ -6,6 +6,12 @@ function m() {
   menu.classList.toggle("active")
 }
 
+function version() {
+  var v = "V 1.4"
+  document.querySelector(".version").innerHTML = v
+  document.querySelector(".versionm").innerHTML = v
+} setTimeout(version, 1)
+
 function darktoggle() {
   const t = document.querySelector(".darkmode")
   const bl = document.querySelector("#light")
@@ -52,6 +58,9 @@ function reveal() {
               class="hidden dark:invert -mt-5  transform transition ease-in-out duration-1000" width="25" height="25"
               alt="light">
           </button>
+          <div class="absolute top-1 right-2 text-sm font-medium">
+            <span class="version"></span>
+          </div>
         </div>
       </div>
       <!--mob-->
@@ -94,6 +103,9 @@ function reveal() {
                 class="darkicon opacity-0 dark:invert -mt-5  transform transition ease-in-out duration-1000" width="25"
                 height="25" alt="light">
             </button>
+            <div class="absolute bottom-1 right-2 text-sm font-medium">
+              <span class="versionm"></span>
+            </div>
           </div>
         </div>
       </nav>
