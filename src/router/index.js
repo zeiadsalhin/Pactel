@@ -51,6 +51,18 @@ const router = createRouter({
 
       component: () => import('../views/Quiz.vue')
     },
+    {
+      path: '/signup',
+      name: 'signup',
+
+      component: () => import('../views/SignUp.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+
+      component: () => import('../views/Login.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }

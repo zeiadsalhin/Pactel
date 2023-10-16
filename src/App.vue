@@ -1,5 +1,27 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRouter } from 'vue-router'
+import { ref, watchEffect } from 'vue'
+import { firebase } from './firebase'
+const isLoggedIn = ref(true)
+const router = useRouter();
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    isLoggedIn.value = true // if we have a user
+    document.querySelector("#displayuser").classList.remove("hidden")
+    document.querySelector("#user").innerHTML = user.displayName
+    document.querySelector("#displayuser1").classList.remove("hidden")
+    document.querySelector("#user1").innerHTML = user.displayName
+  } else {
+    isLoggedIn.value = false // if we do not
+    document.querySelector("#displayuser").classList.add("hidden")
+    document.querySelector("#displayuser1").classList.add("hidden")
+  }
+  console.log(user)
+})
+const signOut = () => {
+  router.push('/home')
+  firebase.auth().signOut()
+}
 
 function m() {
   const menu = document.querySelector("#menu")
@@ -47,8 +69,20 @@ function reveal() {
                 alt="logo"></a>
             <p class="text-sm text-center">Courses</p>
           </div>
-          <RouterLink to="/" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">Home</RouterLink>
-          <RouterLink to="/list" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">Course list</RouterLink>
+          <RouterLink to="/" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">Home
+          </RouterLink>
+
+          <span v-if="!isLoggedIn">
+            <RouterLink to="/signup" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">SignUp/Login
+            </RouterLink>
+          </span>
+          <span v-if="isLoggedIn">
+            <button @click="signOut">Logout</button>
+          </span>
+          <span v-if="isLoggedIn">
+            <RouterLink to="/list" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">Course list
+            </RouterLink>
+          </span>
 
           <router-link to="/about" class="px-2 font-bold hover:text-gray-400">About US</router-link>
           <button id="darkbtn" @click="darktoggle" class="mx-auto my-auto">
@@ -60,6 +94,8 @@ function reveal() {
           </button>
           <div class="absolute top-1 right-2 text-sm font-medium">
             <span class="version"></span>
+          </div>
+          <div id="displayuser" class="text-right text-sm font-medium absolute right-0"><span id="user"></span> ،مرحبا
           </div>
         </div>
       </div>
@@ -92,9 +128,20 @@ function reveal() {
             <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
             <div class="hidden transition ease-in-out duration-200" id="lang"><a href="#"
                 class="inline-block mr-2 hover:bg-gray-400 px-4 py-2 lang">عربي</a></div>
-            <RouterLink to="/list" @click="m"><a href="#" class="flex justify-center hover:bg-gray-400 p-2 ">Courses</a>
-            </RouterLink>
-            <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
+            <span v-if="!isLoggedIn">
+              <RouterLink to="/signup" @click="m" class="block mr-2 mt-4 hover:bg-gray-400 p-2">SignUp/Login
+              </RouterLink>
+            </span>
+            <span v-if="isLoggedIn">
+              <button @click="signOut">Logout</button>
+            </span>
+            <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
+            <span v-if="isLoggedIn">
+              <RouterLink to="/list" @click="m" class="block mr-2 mt-4 hover:bg-gray-400 ">Courses
+              </RouterLink>
+              <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
+            </span>
+
             <RouterLink to="/about" @click="m" id="menub" class="block  hover:bg-gray-400 p-2">About Us</RouterLink>
             <button id="darkbtn" @click="darktoggle" class="mx-auto my-auto mt-10 justify-center">
               <img id="light2" src="/dark.svg" class="light  -mt-5  transform transition ease-in-out duration-1000"
@@ -103,6 +150,9 @@ function reveal() {
                 class="darkicon opacity-0 dark:invert -mt-5  transform transition ease-in-out duration-1000" width="25"
                 height="25" alt="light">
             </button>
+            <div id="displayuser1" class=" text-sm font-medium "><span id="user1"></span>
+              ،مرحبا
+            </div>
             <div class="absolute bottom-1 right-2 text-sm font-medium">
               <span class="versionm"></span>
             </div>
@@ -125,7 +175,7 @@ function reveal() {
 }
 
 .active {
-  height: 40vh;
+  height: 50vh;
 }
 
 .bar1,

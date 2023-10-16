@@ -1,5 +1,13 @@
 <script setup>
-
+import { firebase } from '../firebase'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const authListener = firebase.auth().onAuthStateChanged(function (user) {
+    if (!user) { // not logged in
+        alert('you must be logged in to view this. redirecting to the home page')
+        router.push('/')
+    }
+})
 function form() {
     if (localStorage.getItem("form") === "inject") {
         document.querySelector("#form").src = "https://docs.google.com/forms/d/e/1FAIpQLSe546I-JsIXezcx77T-iCJoZIW6eNMlxikgeLxsOg-1nzBfOg/viewform?embedded=true"

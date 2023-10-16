@@ -1,5 +1,16 @@
 <script setup>
 import dots from './Dots.vue'
+import { firebase } from '../firebase'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+function check() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (!user) { // not logged in
+            alert('you must be logged in to view this. redirecting to the home page')
+            router.push('/signup')
+        }
+    })
+}
 </script>
 <template>
     <div id="darkmode" class="darkmode">
@@ -17,7 +28,7 @@ import dots from './Dots.vue'
                         <p class="">الحصول على شهادة معتمدة عند اتمام الدورة </p>
                         <p class="font-bold">يرجى قراءة التعليمات جيدا قبل البدأ لضمان الحصول على الشهادة وسلاسة استيعاب
                             المعلومات</p>
-                        <RouterLink to="/marketing">
+                        <RouterLink to="/marketing" @click="check">
                             <p
                                 class="mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
                                 البدء
@@ -33,7 +44,7 @@ import dots from './Dots.vue'
                         <p class="">الحصول على شهادة معتمدة عند اتمام الدورة </p>
                         <p class="font-bold">يرجى قراءة التعليمات جيدا قبل البدأ لضمان الحصول على الشهادة وسلاسة استيعاب
                             المعلومات</p>
-                        <RouterLink to="/hr">
+                        <RouterLink to="/hr" @click="check">
                             <p
                                 class="mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
                                 البدء
@@ -50,7 +61,7 @@ import dots from './Dots.vue'
                         <p class="">الحصول على شهادة معتمدة عند اتمام الدورة </p>
                         <p class="font-bold">يرجى قراءة التعليمات جيدا قبل البدأ لضمان الحصول على الشهادة وسلاسة استيعاب
                             المعلومات</p>
-                        <RouterLink to="/pr">
+                        <RouterLink to="/pr" @click="check">
                             <p
                                 class="mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
                                 البدء
@@ -66,7 +77,7 @@ import dots from './Dots.vue'
                         <p class="">الحصول على شهادة معتمدة عند اتمام الدورة </p>
                         <p class="font-bold">يرجى قراءة التعليمات جيدا قبل البدأ لضمان الحصول على الشهادة وسلاسة استيعاب
                             المعلومات</p>
-                        <RouterLink to="/sales">
+                        <RouterLink to="/sales" @click="check">
                             <p
                                 class="mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
                                 البدء

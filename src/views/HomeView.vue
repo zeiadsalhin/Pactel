@@ -5,6 +5,7 @@ import courses from '../components/CourseList.vue'
 </script>
 <template>
     <div class="dark:bg-black dark:text-white">
+
         <hometop />
         <courses />
         <footer1 />
