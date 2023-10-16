@@ -66,7 +66,7 @@ const register = () => {
                 Sign Up
             </button>
         </form>
-        <div class="w-1/4 h-1 m-5 rounded-xl mx-auto bg-gray-800"></div>
+        <div class="w-1/4 h-1 m-2 rounded-xl mx-auto bg-gray-800"></div>
         <RouterLink to="/login" onclick=""
             class="text-center mx-auto flex w-48 justify-center px-5 py-2 rounded-md hover:cursor-pointer hover:bg-gray-800 bg-gray-900">
             login</RouterLink>

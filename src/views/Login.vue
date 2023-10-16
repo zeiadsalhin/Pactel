@@ -55,7 +55,7 @@ const register = () => {
                 <input v-model="password" class="bg-gray-200 text-black p-2 rounded-md focus:outline-none md:w-1/5 "
                     type="password" required />
             </div>
-
+            <p v-if="errMsg">{{ errMsg }}</p>
             <button @click="" type="submit"
                 class="px-5 py-2 w-32 rounded-md hover:cursor-pointer hover:bg-gray-900 bg-gray-800">
                 Log in
