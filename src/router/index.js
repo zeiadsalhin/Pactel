@@ -63,6 +63,12 @@ const router = createRouter({
 
       component: () => import('../views/Login.vue')
     },
+    {
+      path: '/reset',
+      name: 'reset',
+
+      component: () => import('../views/reset.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }

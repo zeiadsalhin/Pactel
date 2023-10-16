@@ -57,9 +57,13 @@ const register = () => {
             </div>
             <p v-if="errMsg">{{ errMsg }}</p>
             <button @click="" type="submit"
-                class="px-5 py-2 w-32 rounded-md hover:cursor-pointer hover:bg-gray-900 bg-gray-800">
+                class="px-5 m-5 py-2 w-32 rounded-md hover:cursor-pointer hover:bg-gray-900 bg-gray-800">
                 Log in
             </button>
+            <router-link to="/reset"><button
+                    class="px-5 m-5 py-2 w-fit rounded-md hover:cursor-pointer hover:bg-gray-900 bg-gray-700">
+                    Forget password?
+                </button></router-link>
         </form>
     </div>
 </template>
