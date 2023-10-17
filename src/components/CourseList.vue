@@ -7,7 +7,7 @@ function check() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (!user) { // not logged in
             Swal.fire({
-                title: 'you must be logged in to view course',
+                title: 'you must be logged in to view this course',
                 icon: 'warning',
             })
             router.push('/signup')
