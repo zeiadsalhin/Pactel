@@ -43,7 +43,8 @@ const register = () => {
         <h1 class="text-3xl md:text-5xl text-white text-center font-bold p-2">Sign Up</h1>
 
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-900"></div>
-        <form id="form" class="space-y-5 p-5 text-center mx-auto justify-center flex-col" @submit.prevent="register">
+        <form id="form" class="space-y-5 p-5 h-screen text-center mx-auto justify-center flex-col"
+            @submit.prevent="register">
             <div class="form flex-col">
                 <label class="p-2 text-md md:text-xl text-right md:mr-14">Name</label>
                 <input id="name" type="name" v-model="displayname"
@@ -59,18 +60,22 @@ const register = () => {
                 <label class="p-3 text-md md:text-xl text-center md:mr-5">Password</label>
                 <input v-model="password" class="bg-gray-200 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
                     type="password" required />
+                <span class="block text-sm p-2">(password must contain at least 6 characters and include for example: $, #,
+                    @,
+                    &, *, %)</span>
             </div>
 
             <button @click="" type="submit"
                 class="px-5 py-2 w-32 rounded-md hover:cursor-pointer hover:bg-gray-900 bg-gray-800">
                 Sign Up
             </button>
+
+            <div class="w-1/4 h-1 m-2 rounded-xl mx-auto bg-gray-800"></div>
+            <p class="m-5 text-center">Already have an account?</p>
+            <RouterLink to="/login" onclick=""
+                class="text-center mx-auto flex w-48 justify-center px-5 py-2 rounded-md hover:cursor-pointer hover:bg-gray-800 bg-gray-900">
+                login</RouterLink>
         </form>
-        <div class="w-1/4 h-1 m-2 rounded-xl mx-auto bg-gray-800"></div>
-        <p class="m-5 text-center">Already have an account?</p>
-        <RouterLink to="/login" onclick=""
-            class="text-center mx-auto flex w-48 justify-center px-5 py-2 rounded-md hover:cursor-pointer hover:bg-gray-800 bg-gray-900">
-            login</RouterLink>
     </div>
 </template>
 <script>

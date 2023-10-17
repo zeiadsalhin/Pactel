@@ -10,7 +10,7 @@ const router = useRouter()
         <form id="form" class="space-y-5 p-5 h-screen text-center mx-auto justify-center flex-col"
             @submit.prevent="resetpassword">
             <div class="form mt-3">
-                <label class="p-3 text-md md:text-xl hidde block ">Email</label>
+                <label class="p-3 text-md md:text-xl block ">Email:</label>
                 <input placeholder="Enter your registered Email" id="email" v-model="user.email"
                     class="bg-gray-200 placeholder:text-sm  text-black  p-1 md:p-1.5 ml- rounded-md focus:outline-none w-2/3 md:w-1/5 "
                     type="email" required />

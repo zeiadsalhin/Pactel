@@ -39,12 +39,13 @@ const register = () => {
 }
 </script>
 <template>
-    <div class="about p-1 md:p-10 flex-col justify-center h-full bg-gray-950 text-white reveal1">
-        <img src="/logo_test.svg" class="mx-auto invert -p-10 -m-10" width="250" height="250" alt="">
-        <h1 class="text-3xl md:text-5xl text-white text-center font-bold p-2">Log in</h1>
+    <div class="about p-1 md:p-10 flex-col justify-center h-full bg-gray-950 text-white">
+        <img src="/logo_test.svg" class="mx-auto invert -p-10 -m-10 reveal" width="250" height="250" alt="pactel">
+        <h1 class="text-3xl md:text-5xl text-white text-center font-bold p-2 reveal">Log in</h1>
 
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-900"></div>
-        <form id="form" class="space-y-5 p-5 h-80 text-center mx-auto justify-center flex-col" @submit.prevent="register">
+        <form id="form" class="space-y-5 p-5 h-screen text-center mx-auto justify-center flex-col reveal"
+            @submit.prevent="register">
             <div class="form mt-3">
                 <label class="p-3 text-md md:text-xl md:mr-14 hiddenm">Email</label>
                 <input placeholder="Email" v-model="email"
@@ -65,6 +66,10 @@ const register = () => {
             <router-link to="/reset"><button
                     class="px-5 m-5 py-2 w-fit rounded-md hover:cursor-pointer hover:bg-gray-900 bg-gray-700">
                     Forget password?
+                </button></router-link>
+            <router-link to="/signup"><button
+                    class="px-5 m-5 py-2 w-fit hover:cursor-pointer mx-auto block hover:bg-gray-900">
+                    return to Sign Up
                 </button></router-link>
         </form>
     </div>
