@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.querySelector("#displayuser").classList.remove("hidden")
     document.querySelector("#user").innerHTML = user.displayName
     document.querySelector("#displayuser1").classList.remove("hidden")
-    // document.querySelector("#user1").innerHTML = user.displayName
+    document.querySelector("#user1").innerHTML = user.displayName
   } else {
     isLoggedIn.value = false // if we do not
     document.querySelector("#displayuser").classList.add("hidden")
