@@ -15,7 +15,6 @@ const register = () => {
                 displayName: document.querySelector("#name").value
             })
 
-
             data.user.sendEmailVerification()
             console.log('Successfully registered!');
             Swal.fire({
@@ -31,29 +30,32 @@ const register = () => {
         })
         .catch(error => {
             console.log(error.code)
-            alert(error.message);
+            Swal.fire({
+                title: error.message,
+                icon: 'info',
+                confirmButtonText: 'Ok'
+            })
         });
 
 
 }
 </script>
 <template>
-    <div class="about p-1 md:p-10 flex-col justify-center h-full bg-gray-950 text-white reveal1">
-        <img src="/logo_test.svg" class="mx-auto invert -p-10 -m-10" width="250" height="250" alt="">
-        <h1 class="text-3xl md:text-5xl text-white text-center font-bold p-2">Sign Up</h1>
+    <div class="about p-1 md:p-10 flex-col justify-center h-full dark:bg-gray-950 dark:text-white reveal1">
+        <img src="/logo_test.svg" class="mx-auto dark:invert -p-10 -m-10" width="250" height="250" alt="">
+        <h1 class="text-3xl md:text-5xl dark:text-white text-center font-bold p-2">Sign Up</h1>
 
-        <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-900"></div>
-        <form id="form" class="space-y-5 p-5 h-screen text-center mx-auto justify-center flex-col"
-            @submit.prevent="register">
+        <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
+        <form id="form" class="space-y-5 p-5 h- text-center mx-auto justify-center flex-col" @submit.prevent="register">
             <div class="form flex-col">
                 <label class="p-2 text-md md:text-xl text-right md:mr-14">Name</label>
                 <input id="name" type="name" v-model="displayname"
-                    class="bg-gray-200 text-black p-1 md:p-2 ml- rounded-md focus:outline-none md:w-1/5 " required />
+                    class="bg-gray-200 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 " required />
             </div>
 
             <div class="form mt-3">
                 <label class="p-3 text-md md:text-xl md:mr-14">Email</label>
-                <input v-model="email" class="bg-gray-200 text-black p-1 md:p-2 ml- rounded-md focus:outline-none md:w-1/5 "
+                <input v-model="email" class="bg-gray-200 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
                     type="email" required />
             </div>
             <div class="form mt-3">
@@ -66,14 +68,19 @@ const register = () => {
             </div>
 
             <button @click="" type="submit"
-                class="px-5 py-2 w-32 rounded-md hover:cursor-pointer hover:bg-gray-900 bg-gray-800">
+                class="px-5 py-2 w-32 rounded-md hover:cursor-pointer bg-gray-400 hover:bg-gray-500 dark:hover:bg-gray-900 dark:bg-gray-800">
                 Sign Up
             </button>
 
-            <div class="w-1/4 h-1 m-2 rounded-xl mx-auto bg-gray-800"></div>
+            <div class="">
+                <div class="relative md:w-1/4 h-1 m-5 rounded-xl mx-auto bg-gray-800">
+                    <h1 style="left: 0; right: 0; margin-left: auto; margin-right: auto; width: 50px"
+                        class="absolute  -top-4 bg-gray-100 dark:bg-gray-950 px-2  text-2xl">or</h1>
+                </div>
+            </div>
             <p class="m-5 text-center">Already have an account?</p>
             <RouterLink to="/login" onclick=""
-                class="text-center mx-auto flex w-48 justify-center px-5 py-2 rounded-md hover:cursor-pointer hover:bg-gray-800 bg-gray-900">
+                class="text-center mx-auto flex w-48 justify-center px-5 py-2 rounded-md hover:cursor-pointer bg-gray-300 hover:bg-gray-400 dark:hover:bg-gray-800 dark:bg-gray-900">
                 login</RouterLink>
         </form>
     </div>

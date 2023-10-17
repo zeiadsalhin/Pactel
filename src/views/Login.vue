@@ -39,11 +39,11 @@ const register = () => {
 }
 </script>
 <template>
-    <div class="about p-1 md:p-10 flex-col justify-center h-full bg-gray-950 text-white">
-        <img src="/logo_test.svg" class="mx-auto invert -p-10 -m-10 reveal" width="250" height="250" alt="pactel">
-        <h1 class="text-3xl md:text-5xl text-white text-center font-bold p-2 reveal">Log in</h1>
+    <div class="about p-1 md:p-10 flex-col justify-center h-full dark:bg-gray-950 dark:text-white">
+        <img src="/logo_test.svg" class="mx-auto dark:invert -p-10 -m-10 reveal" width="250" height="250" alt="pactel">
+        <h1 class="text-3xl md:text-5xl dark:text-white text-center font-bold p-2 reveal">Log in</h1>
 
-        <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-900"></div>
+        <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
         <form id="form" class="space-y-5 p-5 h-screen text-center mx-auto justify-center flex-col reveal"
             @submit.prevent="register">
             <div class="form mt-3">
@@ -60,15 +60,15 @@ const register = () => {
             </div>
             <p v-if="errMsg">{{ errMsg }}</p>
             <button @click="" type="submit"
-                class="px-5 m-5 py-2 w-32 rounded-md hover:cursor-pointer hover:bg-gray-900 bg-gray-800">
+                class="px-5 m-5 py-2 w-32 rounded-md hover:cursor-pointer bg-gray-400 hover:bg-gray-500 dark:hover:bg-gray-900 dark:bg-gray-800">
                 Log in
             </button>
             <router-link to="/reset"><button
-                    class="px-5 m-5 py-2 w-fit rounded-md hover:cursor-pointer hover:bg-gray-900 bg-gray-700">
+                    class="px-5 m-5 py-2 w-fit rounded-md hover:cursor-pointer bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-800 dark:bg-gray-900">
                     Forget password?
                 </button></router-link>
             <router-link to="/signup"><button
-                    class="px-5 m-5 py-2 w-fit hover:cursor-pointer mx-auto block hover:bg-gray-900">
+                    class="px-5 m-5 py-2 w-fit hover:cursor-pointer mx-auto block hover:underline dark:hover:bg-gray-900">
                     return to Sign Up
                 </button></router-link>
         </form>

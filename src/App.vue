@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.querySelector("#displayuser").classList.remove("hidden")
     document.querySelector("#user").innerHTML = user.displayName
     document.querySelector("#displayuser1").classList.remove("hidden")
-    document.querySelector("#user1").innerHTML = user.displayName
+    // document.querySelector("#user1").innerHTML = user.displayName
   } else {
     isLoggedIn.value = false // if we do not
     document.querySelector("#displayuser").classList.add("hidden")
@@ -29,7 +29,7 @@ function m() {
 }
 
 function version() {
-  var v = "V 1.4"
+  var v = "V 1.5"
   document.querySelector(".version").innerHTML = v
   document.querySelector(".versionm").innerHTML = v
 } setTimeout(version, 1)
