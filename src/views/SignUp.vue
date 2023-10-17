@@ -40,24 +40,24 @@ const register = () => {
 <template>
     <div class="about p-1 md:p-10 flex-col justify-center h-full bg-gray-950 text-white reveal1">
         <img src="/logo_test.svg" class="mx-auto invert -p-10 -m-10" width="250" height="250" alt="">
-        <h1 class="text-5xl text-white text-center font-bold p-2">Sign Up</h1>
+        <h1 class="text-3xl md:text-5xl text-white text-center font-bold p-2">Sign Up</h1>
 
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-900"></div>
         <form id="form" class="space-y-5 p-5 text-center mx-auto justify-center flex-col" @submit.prevent="register">
             <div class="form flex-col">
-                <label class="p-2 text-xl text-right md:mr-14">Name</label>
+                <label class="p-2 text-md md:text-xl text-right md:mr-14">Name</label>
                 <input id="name" type="name" v-model="displayname"
-                    class="bg-gray-200 text-black p-2 ml- rounded-md focus:outline-none md:w-1/5 " required />
+                    class="bg-gray-200 text-black p-1 md:p-2 ml- rounded-md focus:outline-none md:w-1/5 " required />
             </div>
 
             <div class="form mt-3">
-                <label class="p-3 text-xl md:mr-14">Email</label>
-                <input v-model="email" class="bg-gray-200 text-black p-2 ml- rounded-md focus:outline-none md:w-1/5 "
+                <label class="p-3 text-md md:text-xl md:mr-14">Email</label>
+                <input v-model="email" class="bg-gray-200 text-black p-1 md:p-2 ml- rounded-md focus:outline-none md:w-1/5 "
                     type="email" required />
             </div>
             <div class="form mt-3">
-                <label class="p-3 text-xl text-center md:mr-5">Password</label>
-                <input v-model="password" class="bg-gray-200 text-black p-2 rounded-md focus:outline-none md:w-1/5 "
+                <label class="p-3 text-md md:text-xl text-center md:mr-5">Password</label>
+                <input v-model="password" class="bg-gray-200 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
                     type="password" required />
             </div>
 
@@ -67,6 +67,7 @@ const register = () => {
             </button>
         </form>
         <div class="w-1/4 h-1 m-2 rounded-xl mx-auto bg-gray-800"></div>
+        <p class="m-5 text-center">Already have an account?</p>
         <RouterLink to="/login" onclick=""
             class="text-center mx-auto flex w-48 justify-center px-5 py-2 rounded-md hover:cursor-pointer hover:bg-gray-800 bg-gray-900">
             login</RouterLink>

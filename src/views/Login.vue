@@ -11,7 +11,7 @@ const register = () => {
         .auth() // get the auth api
         .signInWithEmailAndPassword(email.value, password.value) // need .value because ref()
         .then((data) => {
-            console.log('Successfully registered!');
+            console.log('Successfully login!');
             Swal.fire({
                 title: 'Success!',
                 icon: 'success',
@@ -41,19 +41,21 @@ const register = () => {
 <template>
     <div class="about p-1 md:p-10 flex-col justify-center h-full bg-gray-950 text-white reveal1">
         <img src="/logo_test.svg" class="mx-auto invert -p-10 -m-10" width="250" height="250" alt="">
-        <h1 class="text-5xl text-white text-center font-bold p-2">Log in</h1>
+        <h1 class="text-3xl md:text-5xl text-white text-center font-bold p-2">Log in</h1>
 
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-900"></div>
         <form id="form" class="space-y-5 p-5 h-80 text-center mx-auto justify-center flex-col" @submit.prevent="register">
             <div class="form mt-3">
-                <label class="p-3 text-xl md:mr-14">Email</label>
-                <input v-model="email" class="bg-gray-200 text-black p-2 ml- rounded-md focus:outline-none md:w-1/5 "
-                    type="email" required />
+                <label class="p-3 text-md md:text-xl md:mr-14 hiddenm">Email</label>
+                <input placeholder="Email" v-model="email"
+                    class="bg-gray-200 text-black p-1 md:p-2 ml- rounded-md focus:outline-none w-2/3 md:w-1/5 " type="email"
+                    required />
             </div>
             <div class="form mt-3">
-                <label class="p-3 text-xl text-center md:mr-5">Password</label>
-                <input v-model="password" class="bg-gray-200 text-black p-2 rounded-md focus:outline-none md:w-1/5 "
-                    type="password" required />
+                <label class="p-3 text-md md:text-xl text-center md:mr-5 hiddenm">Password</label>
+                <input placeholder="Password" v-model="password"
+                    class="bg-gray-200 text-black p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 " type="password"
+                    required />
             </div>
             <p v-if="errMsg">{{ errMsg }}</p>
             <button @click="" type="submit"

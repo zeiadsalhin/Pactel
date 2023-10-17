@@ -19,7 +19,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   console.log(user)
 })
 const signOut = () => {
-  router.push('/home')
+  router.push('/')
   firebase.auth().signOut()
 }
 
