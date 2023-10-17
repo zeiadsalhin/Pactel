@@ -22,9 +22,7 @@ const register = () => {
                 icon: 'success',
                 confirmButtonText: 'Ok'
             })
-            router.push('/list') // redirect to the feed
-
-
+            router.push('/list')
             document.querySelector("#form").reset()
 
         })
