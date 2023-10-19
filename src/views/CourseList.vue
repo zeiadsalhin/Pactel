@@ -10,7 +10,7 @@ const authListener = firebase.auth().onAuthStateChanged(function (user) {
         //     title: 'you must be logged in to view course',
         //     icon: 'warning',
         // })
-        router.push('/')
+        router.push('/signup')
     }
 })
 

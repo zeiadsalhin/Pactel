@@ -12,9 +12,9 @@ firebase.auth().onAuthStateChanged(function (user) {
 </script>
 <template>
     <div class="content mx-auto text-center reveal">
-        <div v-if="isLoggedIn" class="options flex justify-center space-x-2 mt-10">
-            <h1 class="text-2xl my-auto">المرحلة الاولى</h1>
-            <img src="/one.svg" class="my-auto" width="50" height="50" alt="one">
+        <div v-if="isLoggedIn" class="options flex justify-center space-x-2 mt-">
+            <h1 class="md:text-2xl my-auto">المرحلة الاولى</h1>
+            <img src="/one.svg" class="my-auto w-10" width="100%" height="100%" alt="one">
         </div>
 
 

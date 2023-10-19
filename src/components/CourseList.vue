@@ -1,5 +1,6 @@
 <script setup>
 import dots from './Dots.vue'
+import greet from './Greeting.vue'
 import { firebase } from '../firebase'
 import { useRouter } from 'vue-router'
 import { ref, watchEffect } from 'vue'
@@ -33,6 +34,7 @@ function check() {
             <div class="contentcenter flex-col justify-center mx-auto text-center p-5 md:w-1/2 mt-20">
                 <h1 class="text-2xl font-semibold ">:قائمة الدورات المتاحة</h1>
                 <div class="w-20 h-1 bg-black dark:bg-gray-300 mx-auto m-5 "></div>
+                <greet />
                 <div class="courselist flex-col space-y-5 mt-10">
                     <div
                         class="course1 hover:cursor-pointer hover:scale-105 transform transition ease-out duration-300 p-5 space-y-5 h-auto bg-gray-400 text-gray-900 dark:bg-gray-800 dark:text-white ">

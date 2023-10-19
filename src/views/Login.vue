@@ -58,14 +58,14 @@ const register = () => {
             <div class="form mt-3">
                 <label class="p-3 text-md md:text-xl md:mr-14 hiddenm">Email</label>
                 <input placeholder="Email" v-model="email"
-                    class="bg-gray-200 text-black p-1 md:p-2 ml- rounded-md focus:outline-none w-2/3 md:w-1/5 " type="email"
-                    required />
+                    class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 ml- rounded-md focus:outline-none w-2/3 md:w-1/5 "
+                    type="email" required />
             </div>
             <div class="form mt-3">
                 <label class="p-3 text-md md:text-xl text-center md:mr-5 hiddenm">Password</label>
                 <input placeholder="Password" v-model="password"
-                    class="bg-gray-200 text-black p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 " type="password"
-                    required />
+                    class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 "
+                    type="password" required />
             </div>
             <p v-if="errMsg">{{ errMsg }}</p>
             <button @click="" type="submit"

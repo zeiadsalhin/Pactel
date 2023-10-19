@@ -57,17 +57,20 @@ const register = () => {
             <div class="form flex-col">
                 <label class="p-2 text-md md:text-xl text-right md:mr-14">Name</label>
                 <input id="name" type="name" v-model="displayname"
-                    class="bg-gray-200 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 " required />
+                    class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
+                    required />
             </div>
 
             <div class="form mt-3">
                 <label class="p-3 text-md md:text-xl md:mr-14">Email</label>
-                <input v-model="email" class="bg-gray-200 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
+                <input v-model="email"
+                    class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
                     type="email" required />
             </div>
             <div class="form mt-3">
                 <label class="p-3 text-md md:text-xl text-center md:mr-5">Password</label>
-                <input v-model="password" class="bg-gray-200 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
+                <input v-model="password"
+                    class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
                     type="password" required />
                 <span class="block text-sm p-2">(password must contain at least 6 characters and include for example: $, #,
                     @,
