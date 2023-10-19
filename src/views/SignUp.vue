@@ -6,6 +6,15 @@ const displayname = ref('')
 const email = ref('')
 const password = ref('')
 const router = useRouter() // get a reference to our vue router
+const isLoggedIn = ref(true)
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        isLoggedIn.value = true
+        router.push('/')
+    } else {
+        isLoggedIn.value = false
+    }
+})
 const register = () => {
     firebase
         .auth() // get the auth api
@@ -73,7 +82,7 @@ const register = () => {
             <div class="">
                 <div class="relative md:w-1/4 h-1 m-5 rounded-xl mx-auto bg-gray-800">
                     <h1 style="left: 0; right: 0; margin-left: auto; margin-right: auto; width: 50px"
-                        class="absolute  -top-4 bg-gray-100 dark:bg-gray-950 px-2  text-2xl">or</h1>
+                        class="absolute  -top-4 bg-white dark:bg-gray-950 px-2  text-2xl">or</h1>
                 </div>
             </div>
             <p class="m-5 text-center">Already have an account?</p>

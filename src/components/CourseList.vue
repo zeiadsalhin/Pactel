@@ -2,10 +2,22 @@
 import dots from './Dots.vue'
 import { firebase } from '../firebase'
 import { useRouter } from 'vue-router'
+import { ref, watchEffect } from 'vue'
 const router = useRouter()
+const isLoggedIn = ref(true)
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        isLoggedIn.value = true
+    } else {
+        isLoggedIn.value = false
+    }
+})
 function check() {
     firebase.auth().onAuthStateChanged(function (user) {
-        if (!user) { // not logged in
+        if (user) {
+            isLoggedIn.value = true
+        } else {
+            isLoggedIn.value = false
             Swal.fire({
                 title: 'you must be logged in to view this course',
                 icon: 'warning',
@@ -33,8 +45,11 @@ function check() {
                             المعلومات</p>
                         <RouterLink to="/marketing" @click="check">
                             <p
-                                class="mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
-                                البدء
+                                class="flex space-x-1 mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
+                                البدء <img v-if="isLoggedIn" src="/pointer.svg" class="invert px-1" width="35" height="50"
+                                    alt="one">
+                                <img v-if="!isLoggedIn" src="/lock.svg" class="dark:invert px-1" width="35" height="50"
+                                    alt="one">
                             </p>
                         </RouterLink>
                     </div>
@@ -49,8 +64,11 @@ function check() {
                             المعلومات</p>
                         <RouterLink to="/hr" @click="check">
                             <p
-                                class="mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
-                                البدء
+                                class="flex space-x-1 mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
+                                البدء <img v-if="isLoggedIn" src="/pointer.svg" class="invert px-1" width="35" height="50"
+                                    alt="one">
+                                <img v-if="!isLoggedIn" src="/lock.svg" class="dark:invert px-1" width="35" height="50"
+                                    alt="one">
                             </p>
                         </RouterLink>
                     </div>
@@ -66,8 +84,11 @@ function check() {
                             المعلومات</p>
                         <RouterLink to="/pr" @click="check">
                             <p
-                                class="mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
-                                البدء
+                                class="flex space-x-1 mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
+                                البدء <img v-if="isLoggedIn" src="/pointer.svg" class="invert px-1" width="35" height="50"
+                                    alt="one">
+                                <img v-if="!isLoggedIn" src="/lock.svg" class="dark:invert px-1" width="35" height="50"
+                                    alt="one">
                             </p>
                         </RouterLink>
                     </div>
@@ -82,8 +103,11 @@ function check() {
                             المعلومات</p>
                         <RouterLink to="/sales" @click="check">
                             <p
-                                class="mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
-                                البدء
+                                class="flex space-x-1 mt-10 bg-gray-800 dark:bg-gray-950 text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-900 w-fit mx-auto px-10 py-2 text-xl font-extrabold">
+                                البدء <img v-if="isLoggedIn" src="/pointer.svg" class="invert px-1" width="35" height="50"
+                                    alt="one">
+                                <img v-if="!isLoggedIn" src="/lock.svg" class="dark:invert px-1" width="35" height="50"
+                                    alt="one">
                             </p>
                         </RouterLink>
                     </div>

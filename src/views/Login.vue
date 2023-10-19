@@ -6,6 +6,15 @@ const errMsg = ref()
 const email = ref('')
 const password = ref('')
 const router = useRouter() // get a reference to our vue router
+const isLoggedIn = ref(true)
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        isLoggedIn.value = true
+        router.push('/')
+    } else {
+        isLoggedIn.value = false
+    }
+})
 const register = () => {
     firebase
         .auth() // get the auth api

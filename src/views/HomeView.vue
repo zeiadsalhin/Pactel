@@ -3,12 +3,17 @@ import hometop from '../components/Home.vue'
 import footer1 from '../components/Footer.vue'
 import courses from '../components/CourseList.vue'
 import sign from '../components/SignOptions.vue'
+import greet from '../components/Greeting.vue'
 </script>
 <template>
     <div class="dark:bg-black dark:text-white">
-
+        <div class="flex justify-end">
+            <p class="flex space-x-2">ادعو لاخوانكم في فلسطين <img src="/palestine.svg" class="my-auto dark:invert px-1"
+                    width="30" height="50" alt="israel"></p>
+        </div>
         <hometop />
         <sign />
+        <greet />
         <courses />
         <footer1 />
     </div>
