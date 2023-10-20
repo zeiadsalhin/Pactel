@@ -41,7 +41,7 @@ const register = () => {
         .catch(error => {
             console.log(error.code)
         });
-    user.updateEmail("zeyadali3712@gmail.com").then(() => {
+    user.updateEmail(email.value).then(() => {
         console.log('Updated email!');
     }).catch((error) => {
         console.log(error.code)
