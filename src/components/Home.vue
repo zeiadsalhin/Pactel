@@ -17,7 +17,7 @@ const int1 = setInterval(t, 1500)
                 <img id="img" class="mx-auto md:mx-0 -translate-x-10 transform ease-in-out duration-500 opacity-0"
                     src="/course.svg" width="150" height="150" alt="course">
                 <h1 id="text"
-                    class="text-2xl translate-y-5 opacity-0 transform ease-in-out duration-500  md:text-5xl font-bold text-center md:text-right p-10">
+                    class="text-2xl translate-y-5 opacity-0 transform ease-in-out duration-500  md:text-5xl font-bold text-center -mt-10 md:-mt-0 md:text-right p-10">
                     أهلا بكم
                     في بكتل كورس
                 </h1>
