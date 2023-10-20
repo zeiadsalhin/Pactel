@@ -83,6 +83,10 @@ function reveal() {
             <RouterLink to="/list" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">Course list
             </RouterLink>
           </span>
+          <span v-if="isLoggedIn">
+            <RouterLink to="/profile" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">Profile
+            </RouterLink>
+          </span>
 
           <router-link to="/about" class="px-2 font-bold hover:text-gray-400">About US</router-link>
           <button id="darkbtn" @click="darktoggle" class="mx-auto my-auto">
@@ -95,8 +99,12 @@ function reveal() {
           <div class="absolute top-1 right-2 text-sm font-medium">
             <span class="version"></span>
           </div>
-          <div id="displayuser" class="text-right text-sm font-medium absolute right-0"><span id="user"></span> ،مرحبا
-          </div>
+          <router-link to="/profile">
+            <div id="displayuser" class="flex text-right text-sm font-medium absolute right-0"><span id="user"></span>
+              ،مرحبا
+              <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one">
+            </div>
+          </router-link>
         </div>
       </div>
       <!--mob-->
@@ -137,6 +145,11 @@ function reveal() {
             </span>
             <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
             <span v-if="isLoggedIn">
+              <RouterLink to="/profile" @click="m" class="block mr-2 mt-4 hover:bg-gray-400 ">Profile
+              </RouterLink>
+              <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
+            </span>
+            <span v-if="isLoggedIn">
               <RouterLink to="/list" @click="m" class="block mr-2 mt-4 hover:bg-gray-400 ">Courses
               </RouterLink>
               <hr class="border-1 rounded border-gray-400 m-2 opacity-50">
@@ -150,9 +163,12 @@ function reveal() {
                 class="darkicon opacity-0 dark:invert -mt-5  transform transition ease-in-out duration-1000" width="25"
                 height="25" alt="light">
             </button>
-            <div id="displayuser1" class=" text-sm font-medium "><span id="user1"></span>
-              ،مرحبا
-            </div>
+            <router-link to="/profile" @click="m">
+              <div id="displayuser1" class="flex justify-center mx-auto text-center text-sm font-medium "><span
+                  id="user1"></span>
+                ،مرحبا <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one">
+              </div>
+            </router-link>
             <div class="absolute bottom-1 right-2 text-sm font-medium">
               <span class="versionm"></span>
             </div>
@@ -175,7 +191,7 @@ function reveal() {
 }
 
 .active {
-  height: 50vh;
+  height: 60vh;
 }
 
 .bar1,
