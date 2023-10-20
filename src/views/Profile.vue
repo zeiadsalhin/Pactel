@@ -31,6 +31,7 @@ const register = () => {
     firebase
     var user = firebase.auth().currentUser;
     user.updateProfile({
+        photoURL: photoURL,
         displayName: document.querySelector("#username").value,
         email: email,
     })
@@ -40,10 +41,7 @@ const register = () => {
         .catch(error => {
             console.log(error.code)
         });
-    user.updateProfile({
-        photoURL: ""
-    })
-    user.updateEmail(email.value).then(() => {
+    user.updateEmail("zeyadali3712@gmail.com").then(() => {
         console.log('Updated email!');
     }).catch((error) => {
         console.log(error.code)
@@ -64,6 +62,9 @@ const register = () => {
         window.location.reload();
     })
 
+}
+function choose() {
+    document.querySelector("#choose").click()
 }
 
 function editname() {
@@ -105,10 +106,11 @@ function deleteuser() {
         <div class="bg-gray-200 mt-5 w-32 h-32 mx-auto"><img id="profile" src="" class="mx-auto p-4" width="200"
                 height="200" alt="user" onerror="this.style.display='none'">
         </div>
-        <!-- <button @click="" class="mx-auto flex p-2">
+        <button @click="choose" class="mx-auto flex p-2">
+            <input type="file" id="choose" name="img" accept="image/*" hidden>
             <p class="my-auto text-sm">تعديل الصورة الشخصية</p><img src="/edit.svg"
                 class="p-2 dark:invert hover:cursor-pointer" width="30" height="40" alt="edit">
-        </button> -->
+        </button>
         <h1 class="text-2xl md:text-4xl dark:text-white text-center font-bold p-2">ادارة الحساب</h1>
 
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
