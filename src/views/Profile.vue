@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { firebase } from '../firebase'
 import { useRouter } from 'vue-router' // import router
+const storage = firebase.storage();
 const photoURL = ref('')
 const displayname = ref('')
 const email = ref('')
@@ -12,7 +13,7 @@ const verified = ref(true)
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         isLoggedIn.value = true
-        document.querySelector("#profile").src = user.photoURL || "https://pactel.info/logo_test.svg"
+        document.querySelector("#profile").src = user.photoURL
         document.querySelector("#username").value = user.displayName
         document.querySelector("#email").value = user.email
         if (firebase.auth().currentUser.emailVerified) {
@@ -30,8 +31,9 @@ firebase.auth().onAuthStateChanged(function (user) {
 const register = () => {
     firebase
     var user = firebase.auth().currentUser;
+    const storage = firebase.storage();
+    const file = document.querySelector("#choose").files[0];
     user.updateProfile({
-        photoURL: photoURL,
         displayName: document.querySelector("#username").value,
         email: email,
     })
@@ -41,6 +43,16 @@ const register = () => {
         .catch(error => {
             console.log(error.code)
         });
+    storage.ref('users/' + user.uid + '/profile.jpg').put(file).then(snapshot => snapshot.ref.getDownloadURL()).then(url => {
+        console.log(url)
+        user.updateProfile({
+            photoURL: url,
+        })
+    }).then(function () {
+        console.log("picture uploaded")
+    }).catch(error => {
+        console.log(error.code)
+    })
     user.updateEmail(email.value).then(() => {
         console.log('Updated email!');
     }).catch((error) => {
@@ -103,10 +115,11 @@ function deleteuser() {
 </script>
 <template>
     <div class="about p-1 md:p-10 flex-col justify-center h-full dark:bg-gray-950 dark:text-white reveal1">
-        <div class="bg-gray-200 mt-5 w-32 h-32 mx-auto"><img id="profile" src="" class="mx-auto p-4" width="200"
-                height="200" alt="user" onerror="this.style.display='none'">
+        <div class="bg-gray-200 mt-5 w-32 h-32 mx-auto"><img id="profile" src="/logo_test.svg" class="mx-auto p-4"
+                width="200" height="200" alt="user">
         </div>
         <button @click="choose" class="mx-auto flex p-2">
+
             <input type="file" id="choose" name="img" accept="image/*" hidden>
             <p class="my-auto text-sm">تعديل الصورة الشخصية</p><img src="/edit.svg"
                 class="p-2 dark:invert hover:cursor-pointer" width="30" height="40" alt="edit">
