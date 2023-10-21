@@ -9,7 +9,7 @@ const email = ref('')
 const password = ref('')
 const router = useRouter() // get a reference to our vue router
 const isLoggedIn = ref(true)
-const verified = ref(true)
+const verified = ref('')
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         isLoggedIn.value = true
@@ -17,9 +17,10 @@ firebase.auth().onAuthStateChanged(function (user) {
         document.querySelector("#username").value = user.displayName
         document.querySelector("#email").value = user.email
         if (firebase.auth().currentUser.emailVerified) {
-            verified.value = true
+            document.querySelector("#verified").classList.remove("hidden")
+            document.querySelector("#sendverification").classList.add("hidden")
         } else {
-
+            document.querySelector("#notverified").classList.remove("hidden")
         }
     } else {
         isLoggedIn.value = false
@@ -27,6 +28,15 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 })
 
+const sendverfication = function sendverfication() {
+    firebase.auth().currentUser.sendEmailVerification()
+    console.log("email verification sent")
+    Swal.fire({
+        title: 'Check your Email',
+        icon: 'info',
+        confirmButtonText: 'Ok'
+    })
+}
 
 const register = () => {
     firebase
@@ -167,10 +177,14 @@ function deleteuser() {
             </div>
             <div class="form mt-3">
                 <label class="p-3 font-semibold text-md md:text-xl text-center md:mr-5">Email Verified:</label>
-                <input v-if="verified" readonly placeholder="yes"
-                    class="bg-gray-200 dark:bg-gray-300 text-black text-center p-1 md:p-2 rounded-md placeholder:text-green-700 focus:outline-none" />
-                <input v-if="!verified" readonly placeholder="No"
-                    class="bg-gray-200 dark:bg-gray-300 text-black text-center p-1 md:p-2 rounded-md placeholder:text-red-700 focus:outline-none" />
+                <input id="verified" readonly placeholder="yes"
+                    class="hidden bg-gray-200 dark:bg-gray-300 text-black text-center p-1 md:p-2 rounded-md placeholder:text-green-700 focus:outline-none" />
+                <input id="notverified" readonly placeholder="No"
+                    class="hidden bg-gray-200 dark:bg-gray-300 text-black text-center p-1 md:p-2 rounded-md placeholder:text-red-700 focus:outline-none" />
+                <p id="sendverification" @click="sendverfication"
+                    class="p-2 m-5 hover:cursor-pointer w-fit mx-auto bg-gray-100 dark:bg-gray-900 hover:bg-gray-300">Send
+                    verification
+                    Link</p>
             </div>
 
             <button @click="" type="submit"

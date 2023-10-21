@@ -30,8 +30,6 @@ const register = () => {
                 title: 'Success!',
                 icon: 'success',
                 confirmButtonText: 'Ok'
-            }).then(function () {
-                window.location.reload();
             })
             router.push('/list')
             document.querySelector("#form").reset()
@@ -125,7 +123,7 @@ function checkpassword() {
             <div class="form flex justify-center">
                 <label class="p-2 text-md md:text-xl text-right md:mr-14">Name</label>
                 <input @change="changed" id="name" type="name" v-model="displayname" @input="checkname" spellcheck="false"
-                    class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
+                    class="bg-gray-200 dark:bg-gray-300 text-black text-center h-fit my-auto p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 "
                     required /><img id="correctname" src="/correct.svg" class="hidden p-1" width="30" height="50"
                     alt="correct">
                 <img id="wrongname" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
@@ -134,7 +132,7 @@ function checkpassword() {
             <div class="form mt-3 flex justify-center">
                 <label class="p-3 text-md md:text-xl md:mr-14">Email</label>
                 <input id="email" v-model="email" @input="checkemail" spellcheck="false"
-                    class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
+                    class="bg-gray-200 dark:bg-gray-300 text-black text-center h-fit my-auto p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 "
                     type="email" required /><img id="correctemail" src="/correct.svg" class="hidden p-1" width="30"
                     height="50" alt="correct">
                 <img id="wrongemail" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
@@ -142,7 +140,7 @@ function checkpassword() {
             <div class="form mt-3 flex justify-center">
                 <label class="p-3 text-md md:text-xl text-center md:mr-5">Password</label>
                 <input id="password" v-model="password" @input="checkpassword"
-                    class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
+                    class="bg-gray-200 dark:bg-gray-300 text-black h-fit my-auto p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 "
                     type="password" required />
                 <img id="correctpassword" src="/correct.svg" class="hidden p-1" width="30" height="50" alt="correct">
                 <img id="wrongpassword" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
