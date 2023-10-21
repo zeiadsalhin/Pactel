@@ -43,16 +43,6 @@ const register = () => {
         .catch(error => {
             console.log(error.code)
         });
-    storage.ref('users/' + user.uid + '/profile.jpg').put(file).then(snapshot => snapshot.ref.getDownloadURL()).then(url => {
-        console.log(url)
-        user.updateProfile({
-            photoURL: url,
-        })
-    }).then(function () {
-        console.log("picture uploaded")
-    }).catch(error => {
-        console.log(error.code)
-    })
     user.updateEmail(email.value).then(() => {
         console.log('Updated email!');
     }).catch((error) => {
@@ -77,6 +67,32 @@ const register = () => {
 }
 function choose() {
     document.querySelector("#choose").click()
+    document.querySelector("#edit").classList.remove("hidden")
+}
+const update = () => {
+    firebase
+    var user = firebase.auth().currentUser;
+    const storage = firebase.storage();
+    const file = document.querySelector("#choose").files[0];
+    storage.ref('users/' + user.uid + '/profile.jpg').put(file).then(snapshot => snapshot.ref.getDownloadURL()).then(url => {
+        console.log(url)
+        user.updateProfile({
+            photoURL: url,
+        })
+    }).then(function () {
+        console.log("picture uploaded")
+    }).catch(error => {
+        console.log(error.code)
+    })
+
+    Swal.fire({
+        title: 'Updated Successfully!',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+    }).then(function () {
+        window.location.reload();
+    })
+
 }
 
 function editname() {
@@ -115,18 +131,22 @@ function deleteuser() {
 </script>
 <template>
     <div class="about p-1 md:p-10 flex-col justify-center h-full dark:bg-gray-950 dark:text-white reveal1">
-        <div class="bg-gray-200 mt-5 w-32 h-32 mx-auto"><img id="profile" src="/logo_test.svg" class="mx-auto p-4"
-                width="200" height="200" alt="user">
-        </div>
-        <button @click="choose" class="mx-auto flex p-2">
-
-            <input type="file" id="choose" name="img" accept="image/*" hidden>
-            <p class="my-auto text-sm">تعديل الصورة الشخصية</p><img src="/edit.svg"
-                class="p-2 dark:invert hover:cursor-pointer" width="30" height="40" alt="edit">
-        </button>
         <h1 class="text-2xl md:text-4xl dark:text-white text-center font-bold p-2">ادارة الحساب</h1>
-
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
+        <div class="bg-gray-200 mt-5 w-1/2 mx-auto"><img id="profile" src="/logo_test.svg" class="mx-auto p-4" width="250"
+                height="200" alt="user">
+        </div>
+        <form @submit.prevent="update">
+            <input type="file" id="choose" name="img" accept="image/*" required hidden>
+            <button @click="choose" class="mx-auto flex p-2">
+                <p class="my-auto text-sm">تعديل الصورة الشخصية</p><img src="/edit.svg"
+                    class="p-2 dark:invert hover:cursor-pointer" width="30" height="40" alt="edit">
+            </button>
+            <button id="edit" type="submit"
+                class="mx-auto flex justify-center text-center text-white text-sm bg-red-700 px-4 py-1 hidden">تحديث</button>
+        </form>
+
+        <div class="w-1/6 h-1 m-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
         <form id="form" class="space-y-5 p-5 h- text-center mx-auto justify-center flex-col" @submit.prevent="register">
             <div class="form flex justify-center">
                 <label class="p-2 font-semibold text-md md:text-xl text-right md:mr-14">Name</label>
