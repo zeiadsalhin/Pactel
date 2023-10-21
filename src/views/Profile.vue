@@ -13,7 +13,7 @@ const verified = ref(true)
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         isLoggedIn.value = true
-        document.querySelector("#profile").src = user.photoURL
+        document.querySelector("#profile").src = user.photoURL || "https://pactel.info/logo_test.svg"
         document.querySelector("#username").value = user.displayName
         document.querySelector("#email").value = user.email
         if (firebase.auth().currentUser.emailVerified) {

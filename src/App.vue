@@ -29,7 +29,7 @@ function m() {
 }
 
 function version() {
-  var v = "V 1.6"
+  var v = "V 1.7"
   document.querySelector(".version").innerHTML = v
   document.querySelector(".versionm").innerHTML = v
 } setTimeout(version, 1)

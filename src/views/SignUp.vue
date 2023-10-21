@@ -30,6 +30,8 @@ const register = () => {
                 title: 'Success!',
                 icon: 'success',
                 confirmButtonText: 'Ok'
+            }).then(function () {
+                window.location.reload();
             })
             router.push('/list')
             document.querySelector("#form").reset()
@@ -46,38 +48,110 @@ const register = () => {
 
 
 }
+function checkname() {
+    const c = document.querySelector("#correctname")
+    const w = document.querySelector("#wrongname")
+    const input = document.querySelector("#name")
+    const b = document.querySelector("#submitbtn")
+
+    if (input.value.length > 25) {
+        w.classList.remove("hidden")
+        c.classList.add("hidden")
+        b.setAttribute("disabled", "true")
+    } else {
+        if (input.value.length > 1) {
+            c.classList.remove("hidden")
+            w.classList.add("hidden")
+            b.removeAttribute("disabled", "true")
+        } else {
+            c.classList.add("hidden")
+            w.classList.add("hidden")
+        }
+
+    }
+}
+function checkemail() {
+    const c = document.querySelector("#correctemail")
+    const w = document.querySelector("#wrongemail")
+    const input = document.querySelector("#email")
+    const b = document.querySelector("#submitbtn")
+
+    if (input.value.length > 40) {
+        w.classList.remove("hidden")
+        c.classList.add("hidden")
+    } else {
+        if (input.value.includes("@") && input.value.includes(".com")) {
+            c.classList.remove("hidden")
+            w.classList.add("hidden")
+            b.removeAttribute("disabled", "true")
+        } else {
+            c.classList.add("hidden")
+            w.classList.remove("hidden")
+            b.setAttribute("disabled", "true")
+        }
+
+    }
+}
+function checkpassword() {
+    const c = document.querySelector("#correctpassword")
+    const w = document.querySelector("#wrongpassword")
+    const input = document.querySelector("#password")
+    const b = document.querySelector("#submitbtn")
+    var re = /[a-zA-Z!@#$%^&*]/;
+    if (input.value.length < 6) {
+        w.classList.remove("hidden")
+        c.classList.add("hidden")
+    } else {
+        if (input.value.search(re) > 0) {
+            c.classList.remove("hidden")
+            w.classList.add("hidden")
+            b.removeAttribute("disabled", "true")
+        } else {
+            c.classList.add("hidden")
+            w.classList.remove("hidden")
+            b.setAttribute("disabled", "true")
+        }
+
+    }
+}
 </script>
 <template>
     <div class="about p-1 md:p-10 flex-col justify-center h-full dark:bg-gray-950 dark:text-white reveal1">
-        <img src="/logo_test.svg" class="mx-auto dark:invert -p-10 -m-10" width="250" height="250" alt="">
+        <img src="/logo_test.svg" class="mx-auto dark:invert -p-10 -m-10" width="250" height="250" alt="logo">
         <h1 class="text-3xl md:text-5xl dark:text-white text-center font-bold p-2">Sign Up</h1>
 
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
         <form id="form" class="space-y-5 p-5 h- text-center mx-auto justify-center flex-col" @submit.prevent="register">
-            <div class="form flex-col">
+            <div class="form flex justify-center">
                 <label class="p-2 text-md md:text-xl text-right md:mr-14">Name</label>
-                <input id="name" type="name" v-model="displayname"
+                <input @change="changed" id="name" type="name" v-model="displayname" @input="checkname" spellcheck="false"
                     class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
-                    required />
+                    required /><img id="correctname" src="/correct.svg" class="hidden p-1" width="30" height="50"
+                    alt="correct">
+                <img id="wrongname" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
             </div>
 
-            <div class="form mt-3">
+            <div class="form mt-3 flex justify-center">
                 <label class="p-3 text-md md:text-xl md:mr-14">Email</label>
-                <input v-model="email"
+                <input id="email" v-model="email" @input="checkemail" spellcheck="false"
                     class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
-                    type="email" required />
+                    type="email" required /><img id="correctemail" src="/correct.svg" class="hidden p-1" width="30"
+                    height="50" alt="correct">
+                <img id="wrongemail" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
             </div>
-            <div class="form mt-3">
+            <div class="form mt-3 flex justify-center">
                 <label class="p-3 text-md md:text-xl text-center md:mr-5">Password</label>
-                <input v-model="password"
+                <input id="password" v-model="password" @input="checkpassword"
                     class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none md:w-1/5 "
                     type="password" required />
-                <span class="block text-sm p-2">(password must contain at least 6 characters and include for example: $, #,
-                    @,
-                    &, *, %)</span>
-            </div>
+                <img id="correctpassword" src="/correct.svg" class="hidden p-1" width="30" height="50" alt="correct">
+                <img id="wrongpassword" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
+            </div><span class="block text-sm p-2">(password must contain at least 6 characters and include for example:
+                $, #,
+                @,
+                &, *, %)</span>
 
-            <button @click="" type="submit"
+            <button id="submitbtn" @click="" type="submit"
                 class="px-5 py-2 w-32 rounded-md hover:cursor-pointer bg-gray-400 hover:bg-gray-500 dark:hover:bg-gray-900 dark:bg-gray-800">
                 Sign Up
             </button>
@@ -122,6 +196,7 @@ export default {
             })
             document.querySelector("#form").reset()
         }
-    }
+    },
+
 }
 </script>
