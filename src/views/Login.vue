@@ -67,7 +67,7 @@ const register = () => {
                     class="bg-gray-200 dark:bg-gray-300 text-black p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 "
                     type="password" required />
             </div>
-            <p v-if="errMsg">{{ errMsg }}</p>
+            <p class="text-red-500" v-if="errMsg">{{ errMsg }}</p>
             <button @click="" type="submit"
                 class="px-5 m-5 py-2 w-32 rounded-md hover:cursor-pointer bg-gray-400 hover:bg-gray-500 dark:hover:bg-gray-900 dark:bg-gray-800">
                 Log in

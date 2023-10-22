@@ -55,15 +55,20 @@ function checkname() {
     if (input.value.length > 25) {
         w.classList.remove("hidden")
         c.classList.add("hidden")
+        input.classList.add("focus:border-red-500")
         b.setAttribute("disabled", "true")
     } else {
         if (input.value.length > 1) {
             c.classList.remove("hidden")
             w.classList.add("hidden")
+            input.classList.remove("focus:border-red-500")
+            input.classList.add("focus:border-green-500")
             b.removeAttribute("disabled", "true")
         } else {
             c.classList.add("hidden")
             w.classList.add("hidden")
+            input.classList.remove("focus:border-red-500")
+            input.classList.remove("focus:border-green-500")
         }
 
     }
@@ -77,14 +82,18 @@ function checkemail() {
     if (input.value.length > 40) {
         w.classList.remove("hidden")
         c.classList.add("hidden")
+        input.classList.add("focus:border-red-500")
     } else {
         if (input.value.includes("@") && input.value.includes(".com")) {
             c.classList.remove("hidden")
             w.classList.add("hidden")
+            input.classList.remove("focus:border-red-500")
+            input.classList.add("focus:border-green-500")
             b.removeAttribute("disabled", "true")
         } else {
             c.classList.add("hidden")
             w.classList.remove("hidden")
+            input.classList.add("focus:border-red-500")
             b.setAttribute("disabled", "true")
         }
 
@@ -99,14 +108,18 @@ function checkpassword() {
     if (input.value.length < 6) {
         w.classList.remove("hidden")
         c.classList.add("hidden")
+        input.classList.add("focus:border-red-500")
     } else {
         if (input.value.search(re) > 0) {
             c.classList.remove("hidden")
             w.classList.add("hidden")
+            input.classList.remove("focus:border-red-500")
+            input.classList.add("focus:border-green-500")
             b.removeAttribute("disabled", "true")
         } else {
             c.classList.add("hidden")
             w.classList.remove("hidden")
+            input.classList.add("focus:border-red-500")
             b.setAttribute("disabled", "true")
         }
 
@@ -123,7 +136,7 @@ function checkpassword() {
             <div class="form flex justify-center">
                 <label class="p-2 text-md md:text-xl text-right md:mr-14">Name</label>
                 <input @change="changed" id="name" type="name" v-model="displayname" @input="checkname" spellcheck="false"
-                    class="bg-gray-200 dark:bg-gray-300 text-black text-center h-fit my-auto p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 "
+                    class="bg-gray-200 dark:bg-gray-300 text-black h-fit my-auto p-1 md:p-2 rounded-md focus:outline-none border-2 focus:border-gray-400 w-2/3 md:w-1/5 "
                     required /><img id="correctname" src="/correct.svg" class="hidden p-1" width="30" height="50"
                     alt="correct">
                 <img id="wrongname" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
@@ -132,7 +145,7 @@ function checkpassword() {
             <div class="form mt-3 flex justify-center">
                 <label class="p-3 text-md md:text-xl md:mr-14">Email</label>
                 <input id="email" v-model="email" @input="checkemail" spellcheck="false"
-                    class="bg-gray-200 dark:bg-gray-300 text-black text-center h-fit my-auto p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 "
+                    class="bg-gray-200 dark:bg-gray-300 text-black h-fit my-auto p-1 md:p-2 rounded-md focus:outline-none border-2 focus:border-gray-400 w-2/3 md:w-1/5 "
                     type="email" required /><img id="correctemail" src="/correct.svg" class="hidden p-1" width="30"
                     height="50" alt="correct">
                 <img id="wrongemail" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
@@ -140,7 +153,7 @@ function checkpassword() {
             <div class="form mt-3 flex justify-center">
                 <label class="p-3 text-md md:text-xl text-center md:mr-5">Password</label>
                 <input id="password" v-model="password" @input="checkpassword"
-                    class="bg-gray-200 dark:bg-gray-300 text-black h-fit my-auto p-1 md:p-2 rounded-md focus:outline-none w-2/3 md:w-1/5 "
+                    class="bg-gray-200 dark:bg-gray-300 text-black h-fit my-auto p-1 md:p-2 rounded-md focus:outline-none border-2 focus:border-gray-400 w-2/3 md:w-1/5 "
                     type="password" required />
                 <img id="correctpassword" src="/correct.svg" class="hidden p-1" width="30" height="50" alt="correct">
                 <img id="wrongpassword" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
