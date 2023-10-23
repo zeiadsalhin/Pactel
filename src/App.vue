@@ -109,7 +109,7 @@ function reveal() {
               <p class="my-auto">،مرحبا</p>
               <!-- <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one"> -->
               <img id="profilemain" src="/logo_test.svg" class="my-auto p-1 rounded-full" width="30" height="200"
-                alt="user">
+                alt="user" loading="lazy">
             </div>
           </router-link>
         </div>
@@ -176,7 +176,7 @@ function reveal() {
                 <p class="my-auto">،مرحبا</p>
                 <!-- <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one"> -->
                 <img id="profilemainm" src="/logo_test.svg" class="my-auto p-1 rounded-full" width="30" height="200"
-                  alt="user">
+                  alt="user" loading="lazy">
               </div>
             </router-link>
             <div class="absolute bottom-1 right-2 text-sm font-medium">
