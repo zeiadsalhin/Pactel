@@ -99,6 +99,7 @@ const update = () => {
 
 function imageload() {
     document.querySelector("#loader").classList.remove("animate-pulse")
+    document.querySelector("#profile").classList.remove("hidden")
 }
 function editname() {
     document.querySelector("#username").removeAttribute("readonly")
@@ -162,8 +163,9 @@ function deleteuser() {
         <h1 class="text-2xl md:text-4xl dark:text-white text-center font-bold p-2">ادارة الحساب</h1>
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
         <div class="bg-gray-200 dark:bg-gray-800 mt-5 w-1/2 mx-auto">
-            <div id="loader" class="bg-gray-300 w-96 animate-pulse mx-auto"><img id="profile" @load="imageload"
-                    src="/logo_test.svg" class="mx-auto p-4" width="250" height="200" alt="user"></div>
+            <div id="loader" class="bg-gray-200 dark:bg-gray-800 w-fit animate-pulse mx-auto"><img id="profile"
+                    @load="imageload" src="/logo_test.svg" class="mx-auto p-4 hidden" width="250" height="200" alt="user">
+            </div>
         </div>
         <form @submit.prevent="update">
             <input type="file" id="choose" name="img" accept="image/*" required hidden>
