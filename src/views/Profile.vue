@@ -76,24 +76,32 @@ const update = () => {
     var user = firebase.auth().currentUser;
     const storage = firebase.storage();
     const file = document.querySelector("#choose").files[0];
-    storage.ref('users/' + user.uid + '/profile.jpg').put(file).then(snapshot => snapshot.ref.getDownloadURL()).then(url => {
-        console.log(url)
-        user.updateProfile({
-            photoURL: url,
+    if (file.size > 1048576) {
+        Swal.fire({
+            title: 'File size exceeds 1Mb!',
+            icon: 'error',
+            confirmButtonText: 'Ok'
         })
-    }).then(function () {
-        console.log("picture uploaded")
-    }).catch(error => {
-        console.log(error.code)
-    })
+    } else {
+        storage.ref('users/' + user.uid + '/profile.jpg').put(file).then(snapshot => snapshot.ref.getDownloadURL()).then(url => {
+            console.log(url)
+            user.updateProfile({
+                photoURL: url,
+            })
+        }).then(function () {
+            console.log("picture uploaded")
+        }).catch(error => {
+            console.log(error.code)
+        })
 
-    Swal.fire({
-        title: 'Updated Successfully!',
-        icon: 'success',
-        confirmButtonText: 'Ok'
-    }).then(function () {
-        window.location.reload();
-    })
+        Swal.fire({
+            title: 'Uploaded Successfully!',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        }).then(function () {
+            window.location.reload();
+        })
+    }
 
 }
 
@@ -102,10 +110,11 @@ function imageload() {
     document.querySelector("#profile").classList.remove("opacity-0")
 }
 function editname() {
-    document.querySelector("#username").removeAttribute("readonly")
+    document.querySelector("#username").toggleAttribute("readonly")
     document.querySelector("#username").focus()
-    document.querySelector("#username").classList.add("bg-gray-200")
-
+    document.querySelector("#username").classList.toggle("bg-gray-200")
+    document.querySelector("#editname").classList.toggle("hidden")
+    document.querySelector("#confirmname").classList.toggle("hidden")
 }
 function editemail() {
     document.querySelector("#email").removeAttribute("readonly")
@@ -171,10 +180,11 @@ function deleteuser() {
         </div>
         <form @submit.prevent="update">
             <input type="file" id="choose" name="img" accept="image/*" required hidden>
-            <button @click="choose" class="mx-auto flex p-2">
+            <button @click="choose" type="button" class="mx-auto flex p-2">
                 <p class="my-auto text-sm">تعديل الصورة الشخصية</p><img src="/edit.svg"
                     class="p-2 dark:invert hover:cursor-pointer" width="30" height="40" alt="edit">
             </button>
+            <span class="text-sm flex justify-center opacity-50 -mt-3 mb-4">Max size 1Mb</span>
             <button id="edit" type="submit"
                 class="mx-auto flex justify-center text-center text-white text-sm bg-red-700 px-4 py-1 hidden">تحديث</button>
         </form>
@@ -184,21 +194,24 @@ function deleteuser() {
             <div class="form flex justify-center">
                 <label class="p-2 font-semibold text-md md:text-xl text-right md:mr-14">Name</label>
                 <input id="username" type="name" readonly spellcheck="false"
-                    class="bg-gray-100 dark:bg-gray-950 dark:text-white text-black text-center p-1 md:p-2 rounded-md  focus:outline-none w-2/3 md:w-1/6 "
+                    class="bg-gray-100 dark:bg-gray-950 dark:text-white text-black text-center rounded-md  focus:outline-none w-2/3 md:w-1/6 "
                     required />
-                <img @click="editname" src="/edit.svg" class="p-2 dark:invert hover:cursor-pointer" width="40" height="40"
-                    alt="edit">
+                <img id="editname" @click="editname" src="/edit.svg" class="px-2 dark:invert hover:cursor-pointer"
+                    width="40" height="40" alt="edit">
+                <img id="confirmname" @click="editname" src="/confirm.svg"
+                    class="hidden px-3 mx-2 dark:invert bg-gray-300 dark:bg-gray-200 rounded-xl hover:cursor-pointer"
+                    width="40" height="40" alt="edit">
             </div>
 
             <div class="form mt-3 flex justify-center">
-                <label class="p-3 font-semibold text-md md:text-xl md:mr-14">Email</label>
+                <label class="p-2 font-semibold text-md md:text-xl md:mr-14">Email</label>
                 <input v-model="email" id="email" type="email" readonly spellcheck="false"
-                    class="bg-gray-100 dark:bg-gray-950 dark:text-white text-black text-center p-1 md:p-2 rounded-md  focus:outline-none w-2/3 md:w-1/6 "
+                    class="bg-gray-100 dark:bg-gray-950 dark:text-white text-black text-center rounded-md  focus:outline-none w-2/3 md:w-1/6 "
                     required />
                 <img id="editemail" @click="editemail" src="/edit.svg"
-                    class="p-2 dark:invert hover:cursor-pointer opacity-100" width="40" height="40" alt="edit">
+                    class="px-2 dark:invert hover:cursor-pointer opacity-100" width="40" height="40" alt="edit">
                 <button id="updatemailb" @click="updatemail" type="button"
-                    class="bg-gray-300 dark:bg-gray-800 m-2 px-1 rounded-md hidden">Update</button>
+                    class="bg-gray-300 dark:bg-gray-800 m-1 px-2 rounded-md hidden">Update</button>
             </div>
             <div class="form mt-3">
                 <label class="p-3 font-semibold text-md md:text-xl text-center md:mr-5">Email Verified:</label>
