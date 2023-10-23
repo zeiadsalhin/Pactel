@@ -163,9 +163,10 @@ function deleteuser() {
         <h1 class="text-2xl md:text-4xl dark:text-white text-center font-bold p-2">ادارة الحساب</h1>
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
         <div class="bg-gray-200 dark:bg-gray-800 mt-5 w-1/2 mx-auto">
-            <div id="loader" class="bg-gray-300 dark:bg-gray-800 w-96 animate-pulse mx-auto"><img id="profile"
-                    @load="imageload" src="/logo_test.svg" class="mx-auto p-4 opacity-0" width="250" height="200"
-                    alt="user">
+            <div id="loader"
+                class="bg-gray-300 dark:bg-gray-700 border-8 border-gray-200 dark:border-gray-800 w-fit animate-pulse    mx-auto">
+                <img id="profile" @load="imageload" src="/logo_test.svg" class="mx-auto p- opacity-0" width="250"
+                    height="200" alt="user">
             </div>
         </div>
         <form @submit.prevent="update">
