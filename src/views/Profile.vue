@@ -99,7 +99,7 @@ const update = () => {
 
 function imageload() {
     document.querySelector("#loader").classList.remove("animate-pulse")
-    document.querySelector("#profile").classList.remove("hidden")
+    document.querySelector("#profile").classList.remove("opacity-0")
 }
 function editname() {
     document.querySelector("#username").removeAttribute("readonly")
@@ -164,7 +164,8 @@ function deleteuser() {
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
         <div class="bg-gray-200 dark:bg-gray-800 mt-5 w-1/2 mx-auto">
             <div id="loader" class="bg-gray-200 dark:bg-gray-800 w-fit animate-pulse mx-auto"><img id="profile"
-                    @load="imageload" src="/logo_test.svg" class="mx-auto p-4 hidden" width="250" height="200" alt="user">
+                    @load="imageload" src="/logo_test.svg" class="mx-auto p-4 opacity-0" width="250" height="200"
+                    alt="user">
             </div>
         </div>
         <form @submit.prevent="update">
