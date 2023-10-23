@@ -104,13 +104,13 @@ function checkpassword() {
     const w = document.querySelector("#wrongpassword")
     const input = document.querySelector("#password")
     const b = document.querySelector("#submitbtn")
-    var re = /[a-zA-Z!@#$%^&*]/;
+
     if (input.value.length < 6) {
         w.classList.remove("hidden")
         c.classList.add("hidden")
         input.classList.add("focus:border-red-500")
     } else {
-        if (input.value.search(re) > 0) {
+        if (input.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,30}$/)) {
             c.classList.remove("hidden")
             w.classList.add("hidden")
             input.classList.remove("focus:border-red-500")
@@ -132,7 +132,7 @@ function checkpassword() {
         <h1 class="text-3xl md:text-5xl dark:text-white text-center font-bold p-2">Sign Up</h1>
 
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
-        <form id="form" class="space-y-5 p-5 h- text-center mx-auto justify-center flex-col" @submit.prevent="register">
+        <form id="form" class="p-5 text-center mx-auto justify-center flex-col" @submit.prevent="register">
             <div class="form flex justify-center">
                 <label class="p-2 text-md md:text-xl text-right md:mr-14">Name</label>
                 <input @change="changed" id="name" type="name" v-model="displayname" @input="checkname" spellcheck="false"
@@ -157,10 +157,7 @@ function checkpassword() {
                     type="password" required />
                 <img id="correctpassword" src="/correct.svg" class="hidden p-1" width="30" height="50" alt="correct">
                 <img id="wrongpassword" src="/wrong.svg" class="hidden p-1" width="30" height="50" alt="wrong">
-            </div><span class="block text-sm p-2">(password must contain at least 6 characters and include for example:
-                $, #,
-                @,
-                &, *, %)</span>
+            </div><span class="block text-sm opacity-40 p-2 -mt-2 mb-5">Ex: 1234aA@</span>
 
             <button id="submitbtn" @click="" type="submit"
                 class="px-5 py-2 w-32 rounded-md hover:cursor-pointer bg-gray-400 hover:bg-gray-500 dark:hover:bg-gray-900 dark:bg-gray-800">
