@@ -49,31 +49,23 @@ const register = () => {
     })
         .then((data) => {
             console.log('Updated registered!');
+            Swal.fire({
+                title: 'Updated Successfully!',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            }).then(function () {
+                window.location.reload();
+            })
         })
         .catch(error => {
             console.log(error.code)
+            Swal.fire({
+                title: error.code,
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
         });
-    user.updateEmail(email.value).then(() => {
-        console.log('Updated email!');
-    }).catch((error) => {
-        console.log(error.code)
-        Swal.fire({
-            title: error.message,
-            icon: 'info',
-            confirmButtonText: 'Ok'
-        })
-    });
     console.log(user)
-
-
-    Swal.fire({
-        title: 'Updated Successfully!',
-        icon: 'success',
-        confirmButtonText: 'Ok'
-    }).then(function () {
-        window.location.reload();
-    })
-
 }
 function choose() {
     document.querySelector("#choose").click()
@@ -115,7 +107,30 @@ function editemail() {
     document.querySelector("#email").removeAttribute("readonly")
     document.querySelector("#email").focus()
     document.querySelector("#email").classList.add("bg-gray-200")
+    document.querySelector("#editemail").classList.add("hidden")
+    document.querySelector("#updatemailb").classList.remove("hidden")
 
+}
+const updatemail = () => {
+    firebase
+    var user = firebase.auth().currentUser;
+    user.verifyBeforeUpdateEmail(email.value).then(() => {
+        console.log('Updated email!');
+        Swal.fire({
+            title: "Success, Please verify your new email and re-login",
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        })
+        document.querySelector("#updatemailb").innerHTML = "Pending Verification"
+        document.querySelector("#updatemailb").setAttribute("disabled", "true")
+    }).catch((error) => {
+        console.log(error.code)
+        Swal.fire({
+            title: "Email Already Exists",
+            icon: 'info',
+            confirmButtonText: 'Ok'
+        })
+    });
 }
 function deleteuser() {
     Swal.fire({
@@ -172,8 +187,10 @@ function deleteuser() {
                 <input v-model="email" id="email" type="email" readonly spellcheck="false"
                     class="bg-gray-100 dark:bg-gray-950 dark:text-white text-black text-center p-1 md:p-2 rounded-md  focus:outline-none w-2/3 md:w-1/6 "
                     required />
-                <img @click="" src="/edit.svg" class="p-2 hover:cursor-pointer1 opacity-0" width="40" height="40"
-                    alt="edit">
+                <img id="editemail" @click="editemail" src="/edit.svg" class="p-2 hover:cursor-pointer opacity-100"
+                    width="40" height="40" alt="edit">
+                <button id="updatemailb" @click="updatemail" type="button"
+                    class="bg-gray-300 m-2 px-1 rounded-md hidden">Update</button>
             </div>
             <div class="form mt-3">
                 <label class="p-3 font-semibold text-md md:text-xl text-center md:mr-5">Email Verified:</label>
@@ -187,7 +204,7 @@ function deleteuser() {
                     Link</p>
             </div>
 
-            <button @click="" type="submit"
+            <button id="submit" @click="" type="submit"
                 class="px-5 py-2 w-32 rounded-md hover:cursor-pointer bg-gray-400 hover:bg-gray-500 dark:hover:bg-gray-900 dark:bg-gray-800">
                 Save
             </button>
