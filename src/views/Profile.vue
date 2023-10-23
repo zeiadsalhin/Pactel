@@ -158,8 +158,8 @@ function deleteuser() {
     <div class="about p-1 md:p-10 flex-col justify-center h-full dark:bg-gray-950 dark:text-white reveal1">
         <h1 class="text-2xl md:text-4xl dark:text-white text-center font-bold p-2">ادارة الحساب</h1>
         <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div>
-        <div class="bg-gray-200 mt-5 w-1/2 mx-auto"><img id="profile" src="/logo_test.svg" class="mx-auto p-4" width="250"
-                height="200" alt="user">
+        <div class="bg-gray-200 dark:bg-gray-800 mt-5 w-1/2 mx-auto"><img id="profile" src="/logo_test.svg"
+                class="mx-auto p-4" width="250" height="200" alt="user">
         </div>
         <form @submit.prevent="update">
             <input type="file" id="choose" name="img" accept="image/*" required hidden>
@@ -187,10 +187,10 @@ function deleteuser() {
                 <input v-model="email" id="email" type="email" readonly spellcheck="false"
                     class="bg-gray-100 dark:bg-gray-950 dark:text-white text-black text-center p-1 md:p-2 rounded-md  focus:outline-none w-2/3 md:w-1/6 "
                     required />
-                <img id="editemail" @click="editemail" src="/edit.svg" class="p-2 hover:cursor-pointer opacity-100"
-                    width="40" height="40" alt="edit">
+                <img id="editemail" @click="editemail" src="/edit.svg"
+                    class="p-2 dark:invert hover:cursor-pointer opacity-100" width="40" height="40" alt="edit">
                 <button id="updatemailb" @click="updatemail" type="button"
-                    class="bg-gray-300 m-2 px-1 rounded-md hidden">Update</button>
+                    class="bg-gray-300 dark:bg-gray-800 m-2 px-1 rounded-md hidden">Update</button>
             </div>
             <div class="form mt-3">
                 <label class="p-3 font-semibold text-md md:text-xl text-center md:mr-5">Email Verified:</label>
