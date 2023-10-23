@@ -7,6 +7,8 @@ const router = useRouter();
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     isLoggedIn.value = true // if we have a user
+    document.querySelector("#profilemain").src = user.photoURL || "https://pactel.info/logo_test.svg"
+    document.querySelector("#profilemainm").src = user.photoURL || "https://pactel.info/logo_test.svg"
     document.querySelector("#displayuser").classList.remove("hidden")
     document.querySelector("#user").innerHTML = user.displayName
     document.querySelector("#displayuser1").classList.remove("hidden")
@@ -63,7 +65,8 @@ function reveal() {
     <div id="darkmode" class="darkmode">
       <div
         class="hiddenm bg-gray-300 transform transition ease-in-out duration-500 dark:bg-black text-gray-600 shadow-sm p-2 flex justify-center items-center text-lg font-semibold ">
-        <div class="md:flex items-center text-gray-950 dark:text-gray-100 sansmed text-xl space-x-16   font-extrabold">
+        <div
+          class="md:flex items-center text-gray-950 dark:text-gray-100 sansmed text-xl md:space-x-12 text-center  font-extrabold">
           <div class="flex-col -space-y-5">
             <a href="https://pactel.info" onclick=""><img src="/logo_test.svg" width="80" height="70" class="dark:invert "
                 alt="logo"></a>
@@ -100,9 +103,13 @@ function reveal() {
             <span class="version"></span>
           </div>
           <router-link to="/profile">
-            <div id="displayuser" class="flex text-right text-sm font-medium absolute right-0"><span id="user"></span>
-              ،مرحبا
-              <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one">
+            <div id="displayuser" style="z-index: 9999999;"
+              class="flex px-5 text-right text-sm font-medium absolute right-0 top-14 bg-gray-300 dark:bg-gray-950 transform transition ease-in-out duration-500 rounded-bl-full mt-5">
+              <span id="user" class="my-auto"></span>
+              <p class="my-auto">،مرحبا</p>
+              <!-- <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one"> -->
+              <img id="profilemain" src="/logo_test.svg" class="my-auto p-1 rounded-full" width="30" height="200"
+                alt="user">
             </div>
           </router-link>
         </div>
@@ -164,9 +171,12 @@ function reveal() {
                 height="25" alt="light">
             </button>
             <router-link to="/profile" @click="m">
-              <div id="displayuser1" class="flex justify-center mx-auto text-center text-sm font-medium "><span
-                  id="user1"></span>
-                ،مرحبا <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one">
+              <div id="displayuser1" class="flex justify-center mx-auto text-center text-sm font-medium "><span id="user1"
+                  class="my-auto"></span>
+                <p class="my-auto">،مرحبا</p>
+                <!-- <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one"> -->
+                <img id="profilemainm" src="/logo_test.svg" class="my-auto p-1 rounded-full" width="30" height="200"
+                  alt="user">
               </div>
             </router-link>
             <div class="absolute bottom-1 right-2 text-sm font-medium">
