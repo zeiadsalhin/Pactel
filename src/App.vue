@@ -8,7 +8,6 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     isLoggedIn.value = true // if we have a user
     document.querySelector("#profilemain").src = user.photoURL || "https://pactel.info/logo_test.svg"
-    document.querySelector("#profilemainm").src = user.photoURL || "https://pactel.info/logo_test.svg"
     document.querySelector("#displayuser").classList.remove("hidden")
     document.querySelector("#user").innerHTML = user.displayName
     document.querySelector("#displayuser1").classList.remove("hidden")
@@ -174,9 +173,7 @@ function reveal() {
               <div id="displayuser1" class="flex justify-center mx-auto text-center text-sm font-medium "><span id="user1"
                   class="my-auto"></span>
                 <p class="my-auto">،مرحبا</p>
-                <!-- <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one"> -->
-                <img id="profilemainm" src="/logo_test.svg" class="my-auto p-1 rounded-full" width="30" height="200"
-                  alt="user" loading="lazy">
+                <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one">
               </div>
             </router-link>
             <div class="absolute bottom-1 right-2 text-sm font-medium">
