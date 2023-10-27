@@ -56,9 +56,9 @@ const date1 = setInterval(datedisplay, 1)
 
             <div class="text-center flex-col justify-center p-4 text-gray-400">
                 <a class="text-sm block m-8" href="https://pactel.info/license.txt">legal</a>
-                <p>&copy; copyrights Ziad pactel-<span id="copyrights">
+                <p>&copy; copyrights Pactel-<span id="copyrights">
                     </span>
-                    <a href="https://github.com/zeiadsalhin"><img class="invert mx-auto m-2" src="/github.svg" width="25"
+                    <a href="https://github.com/zeiadsalhin"><img class="invert mx-auto m-2" src="/logo_test.svg" width="65"
                             height="35" alt="github"></a>
                 </p>
                 <!-- <a href=""><a href=""><i class="fa-brands fa fa-xl fa-facebook"></i></a> -->

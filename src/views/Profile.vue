@@ -177,6 +177,7 @@ function deleteuser() {
                 <img id="profile" @load="imageload" src="/logo_test.svg" class="mx-auto p- opacity-0" width="250"
                     height="200" alt="user">
             </div>
+
         </div>
         <form @submit.prevent="update">
             <input type="file" id="choose" name="img" accept="image/*" required hidden>
