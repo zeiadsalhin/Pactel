@@ -1,3 +1,4 @@
-https://pactel.info/* https://home.pactel.info/:splat 302!
+https://pactel.site/* https://home.pactel.site/:splat 302!
+https://pactel.info/* https://home.pactel.site/:splat 301!
 
 /* /index.html 200
