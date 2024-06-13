@@ -13,7 +13,7 @@ const verified = ref('')
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         isLoggedIn.value = true
-        document.querySelector("#profile").src = user.photoURL || "https://pactel.info/logo_test.svg"
+        document.querySelector("#profile").src = user.photoURL || "https://pactel.site/logo_test.svg"
         document.querySelector("#username").value = user.displayName
         document.querySelector("#email").value = user.email
         if (firebase.auth().currentUser.emailVerified) {
@@ -221,7 +221,8 @@ function deleteuser() {
                 <input id="notverified" readonly placeholder="No"
                     class="hidden bg-gray-200 dark:bg-gray-300 text-black text-center p-1 md:p-2 rounded-md placeholder:text-red-700 focus:outline-none" />
                 <p id="sendverification" @click="sendverfication"
-                    class="p-2 m-5 hover:cursor-pointer w-fit mx-auto bg-gray-100 dark:bg-gray-900 hover:bg-gray-300">Send
+                    class="p-2 m-5 hover:cursor-pointer w-fit mx-auto bg-gray-100 dark:bg-gray-900 hover:bg-gray-300">
+                    Send
                     verification
                     Link</p>
             </div>

@@ -7,7 +7,7 @@ const router = useRouter();
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     isLoggedIn.value = true // if we have a user
-    document.querySelector("#profilemain").src = user.photoURL || "https://pactel.info/logo_test.svg"
+    document.querySelector("#profilemain").src = user.photoURL || "https://pactel.site/logo_test.svg"
     document.querySelector("#displayuser").classList.remove("hidden")
     document.querySelector("#user").innerHTML = user.displayName
     document.querySelector("#displayuser1").classList.remove("hidden")
@@ -67,8 +67,8 @@ function reveal() {
         <div
           class="md:flex items-center text-gray-950 dark:text-gray-100 sansmed text-xl md:space-x-12 text-center  font-extrabold">
           <div class="flex-col -space-y-5">
-            <a href="https://pactel.info" onclick=""><img src="/logo_test.svg" width="80" height="70" class="dark:invert "
-                alt="logo"></a>
+            <a href="https://pactel.info" onclick=""><img src="/logo_test.svg" width="80" height="70"
+                class="dark:invert " alt="logo"></a>
             <p class="text-sm text-center">Courses</p>
           </div>
           <RouterLink to="/" onclick="" class="inline-block p-2 md:mr-2 hover:text-gray-400">Home
@@ -117,7 +117,7 @@ function reveal() {
       <nav
         class="nav bg-gray-500 dark:bg-black text-gray-200 md:hidden shadow-md sticky top-0 z-10 p-4 justify-between font-semibold ">
         <div class="flex justify-between">
-          <a href="https://pactel.info" onclick=""> <img src="/logo_test.svg" width="60" height="60"
+          <a href="https://pactel.site" onclick=""> <img src="/logo_test.svg" width="60" height="60"
               class="justify-between dark:invert" alt="logo"></a>
           <h1 style="font-weight: 800;" class="p-3 text-3xl text-gray-300">Courses</h1>
           <button @click="m" id="menub" class="md:hidden justify-between">
@@ -138,7 +138,8 @@ function reveal() {
           <div
             class="menu notactive bg-gray-600 text-xl font-semibold transform dark:bg-black text-gray-300 transition ease-in duration-500  mt-2 px-4 bg-gray-00 "
             id="menu">
-            <RouterLink to="/" @click="m"><a href="#" class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a></RouterLink>
+            <RouterLink to="/" @click="m"><a href="#" class="block mr-2 mt-4 hover:bg-gray-400 p-2">Home</a>
+            </RouterLink>
             <hr class="border-1 rounded border-gray-400 m-2 opacity-50 ">
             <div class="hidden transition ease-in-out duration-200" id="lang"><a href="#"
                 class="inline-block mr-2 hover:bg-gray-400 px-4 py-2 lang">عربي</a></div>
@@ -170,8 +171,8 @@ function reveal() {
                 height="25" alt="light">
             </button>
             <router-link to="/profile" @click="m">
-              <div id="displayuser1" class="flex justify-center mx-auto text-center text-sm font-medium "><span id="user1"
-                  class="my-auto"></span>
+              <div id="displayuser1" class="flex justify-center mx-auto text-center text-sm font-medium "><span
+                  id="user1" class="my-auto"></span>
                 <p class="my-auto">،مرحبا</p>
                 <img src="/user.svg" class="my-auto dark:invert px-1" width="30" height="50" alt="one">
               </div>
@@ -224,5 +225,3 @@ function reveal() {
   opacity: 1;
 }
 </style>
-
-
