@@ -67,7 +67,7 @@ function reveal() {
         <div
           class="md:flex items-center text-gray-950 dark:text-gray-100 sansmed text-xl md:space-x-12 text-center  font-extrabold">
           <div class="flex-col -space-y-5">
-            <a href="https://pactel.info" onclick=""><img src="/logo_test.svg" width="80" height="70"
+            <a href="https://pactel.site" onclick=""><img src="/logo_test.svg" width="80" height="70"
                 class="dark:invert " alt="logo"></a>
             <p class="text-sm text-center">Courses</p>
           </div>
