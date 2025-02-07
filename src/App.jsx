@@ -14,7 +14,7 @@ const OurDesigns = lazy(() => import('./components/OurDesigns'));
 const OurServices = lazy(() => import('./components/OurServices'));
 const Footer = lazy(() => import('./components/Footer'));
 
-// reveal banner
+// reveal banner 
 function reveal() {
   for (var e = document.querySelectorAll(".reveal"), t = 0; t < e.length; t++) {
     
