@@ -104,9 +104,9 @@ export default function Nav() {
             <a onClick={handleMenu} href="https://pactel20.wordpress.com/" className="flex ml-2 hover:text-gray-800 dark:hover:text-gray-400">
               Articles
             </a>
-            <img className="md:mr-4 dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=100&fm=webp&w=60&h=40' width="30" height="20" alt="new" />
+            <img className="md:mr-4 md:ml-1 dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=100&fm=webp&w=60&h=40' width="30" height="20" alt="new" />
             <a href="https://courses.pactel.site" className="flex ml-2 hover:text-gray-800 dark:hover:text-gray-400">Courses</a>
-            <img className="md:mr-4 dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=10&fm=webp&w=60&h=40' width="30" height="20" alt="new" />
+            <img className="md:mr-4 md:ml-1 dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=10&fm=webp&w=60&h=40' width="30" height="20" alt="new" />
             <button onClick={handleAbout} className="px-2 hover:underline hover:text-gray-800 dark:hover:text-gray-400">About Us</button>
             <button aria-label='theme-toggle' onClick={toggleTheme} className='theme-switch min-w-[4rem]'><FontAwesomeIcon icon={isDarkMode? faSun:faMoon} size='lg'/></button>
           </div>
@@ -154,12 +154,12 @@ export default function Nav() {
               </div>
               <button onClick={handleWork} className="flex justify-center mx-auto w-full hover:bg-gray-400 p-2">Our Work</button>
               <hr className="border-1 rounded border-gray-400 m-2 opacity-50" />
-              <a onClick={handleMenu} href="https://pactel20.wordpress.com/" className="flex justify-center mx-auto w-full hover:bg-gray-400 p-2">
-                Articles <img className="px-2a ml-2 dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=10&fm=webp&w=30&h=20' width="30" height="20" alt="new" />
+              <a onClick={handleMenu} href="https://pactel20.wordpress.com/" className="flex justify-center mx-auto w-full hover:bg-gray-400 p-1">
+                <p className='my-auto'>Articles</p> <img className="px-2a ml-2 dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=10&fm=webp&w=30&h=20' width="30" height="20" alt="new" />
               </a>
               <hr className="border-1 rounded border-gray-400 m-2 opacity-50" />
-              <a href="https://courses.pactel.site" className="flex justify-center mx-auto w-full hover:bg-gray-400 p-2">
-                Courses <img className="px-2a ml-2 dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=10&fm=webp&w=30&h=20' width="30" height="20" alt="new" />
+              <a href="https://courses.pactel.site" className="flex justify-center mx-auto w-full hover:bg-gray-400 p-1">
+                <p className='my-auto'>Courses</p> <img className="px-2a ml-2 dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=10&fm=webp&w=30&h=20' width="30" height="20" alt="new" />
               </a>
               <hr className="border-1 rounded border-gray-400 m-2 opacity-50" />
               <button onClick={handleAbout} className="flex justify-center mx-auto w-full hover:bg-blue-500 p-2">About Us</button>

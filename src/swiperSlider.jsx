@@ -19,7 +19,7 @@ export default function SwiperSlider() {
     <>
       <div className="flex justify-center p-2 m-2 bg-gray-100 dark:bg-gray-500 dark:text-gray-200 text-gray-800 md:max-w-[100rem] mx-auto min-h-[50px] rounded">
         <h1 className="my-auto text-3xl">News</h1>
-        <img className="p-1 my-auto dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=100&fm=webp&w=50&h=40' width="50" height="40" alt="new" />
+        <img className="p-1 my-auto dark:invert" src='https://pactel.site/.netlify/images?q=50&url=%2Fnew.svg&fit=cover&q=10&fm=webp&w=50&h=40' width="50" height="40" alt="new" />
       </div>
       <div className="md:w-1/2 lg:w-1/2 mx-auto min-h-[300px]">
         <Swiper
